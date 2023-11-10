@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.header`
+export const HeaderWrapper = styled.header`
   width: 100%;
 `;
-export const HeaderWrapper = styled.section`
+export const Wrapper = styled.section`
   display: flex;
   height: 103px;
   align-items: center;

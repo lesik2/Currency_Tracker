@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 import { LINKS_NAMES, PATHS } from '../../app/index.tsx';
 import Label from '../../assets/images/label.svg';
+import { STATIC_INFO } from '../../constants/index.ts';
 import { ToggleTheme } from '../ToggleTheme/index.tsx';
 import {
   HeaderImage,
@@ -13,8 +14,8 @@ import {
 
 export function Header() {
   return (
-    <Wrapper>
-      <HeaderWrapper>
+    <HeaderWrapper>
+      <Wrapper>
         <HeaderImage alt="label chart" src={Label} />
         <Navigation>
           {PATHS.map((path, index) => (
@@ -26,24 +27,23 @@ export function Header() {
           ))}
         </Navigation>
         <ToggleTheme />
-      </HeaderWrapper>
+      </Wrapper>
       <WrapperLabel>
         <WrapperInfo>
           <WrapperTitles>
             <MainTitle>
-              Modsen Currency
+              {STATIC_INFO.NAME_COMPANY}
             </MainTitle>
             <SecondTitle>
-              Tracker
+              {STATIC_INFO.NAME_APP}
             </SecondTitle>
           </WrapperTitles>
           <HeaderText>
-            Quotes for the dollar and other
-            international currencies.
+            {STATIC_INFO.HEADER_TEXT}
           </HeaderText>
         </WrapperInfo>
         <LabelImage alt="label chart" src={Label} />
       </WrapperLabel>
-    </Wrapper>
+    </HeaderWrapper>
   );
 }

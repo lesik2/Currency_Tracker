@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 
 import { ROUTES } from './app/index.tsx';
+import { Footer } from './components/Footer/index.tsx';
 import { Header } from './components/Header/index.tsx';
 
 export function App() {
@@ -18,6 +19,7 @@ export function App() {
           ))}
         </Routes>
       </main>
+      <Footer />
     </BrowserRouter>
   );
 }
