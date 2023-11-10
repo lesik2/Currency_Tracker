@@ -8,7 +8,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     filename: '[name].[contenthash:8].js',
-    chunkFilename: '[name].[contenthash:8].js'
+    chunkFilename: '[name].[contenthash:8].js',
   },
   optimization: {
     minimizer: [
@@ -18,14 +18,14 @@ module.exports = {
         terserOptions: {
           toplevel: true,
           output: {
-            comments: false
+            comments: false,
           },
           mangle: {
-            safari10: true
+            safari10: true,
           },
-          compress: { pure_funcs: ['console.info', 'console.debug', 'console.warn'] }
-        }
-      })
+          compress: { pure_funcs: ['console.info', 'console.debug', 'console.warn'] },
+        },
+      }),
     ],
     splitChunks: {
       chunks: 'async',
@@ -39,20 +39,20 @@ module.exports = {
         defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
-          reuseExistingChunk: true
+          reuseExistingChunk: true,
         },
         default: {
           minChunks: 2,
           priority: -20,
-          reuseExistingChunk: true
-        }
-      }
-    }
+          reuseExistingChunk: true,
+        },
+      },
+    },
   },
 
   plugins: [
     new DefinePlugin({
-      PRODUCTION: JSON.stringify(true)
-    })
-  ]
+      PRODUCTION: JSON.stringify(true),
+    }),
+  ],
 };

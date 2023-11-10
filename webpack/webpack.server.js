@@ -8,17 +8,17 @@ module.exports = {
   devServer: {
     hot: true,
     historyApiFallback: {
-      rewrites: [{ from: /favicon.ico/, to: 'public/favicon.ico' }]
+      rewrites: [{ from: /favicon.ico/, to: 'public/favicon.ico' }],
     },
     devMiddleware: {
       stats: {
         children: false,
-        modules: false
-      }
+        modules: false,
+      },
     },
     static: {
       directory: assets,
-      watch: true
-    }
-  }
+      watch: true,
+    },
+  },
 };
