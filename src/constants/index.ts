@@ -38,4 +38,9 @@ export const theme = {
   },
 };
 
-export enum STATIC_INFO {}
+export enum STATIC_INFO {
+  HOME_LINK = 'Home',
+  TIMELINE_LINK = 'Timeline',
+  BANK_CARD_LINK = 'Bank card',
+  CONTACT_LINK = 'Contato',
+}

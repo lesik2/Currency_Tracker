@@ -1,16 +1,11 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+
+import Header from '../components/header/index.tsx';
 
 function RootLayout() {
   return (
     <>
-      <header>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="contact">Contact</NavLink>
-          <NavLink to="bankcard">BankCard</NavLink>
-          <NavLink to="timeline">Timeline</NavLink>
-        </nav>
-      </header>
+      <Header />
       <main>
         <Outlet />
       </main>
