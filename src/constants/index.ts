@@ -1,46 +1,26 @@
 export const theme = {
   colors: {
-    white: '#FFF',
+    secondary: '#FFF',
     darkWhite: '#D9D9D9',
     gray: '#A7B2C3',
     darkGray: '#898989',
     green: '#00CE2C',
     lightGreen: '#AEDF23',
     lighterGreen: '#A3DC00',
-    black: '#030304',
+    primary: '#030304',
+  },
+  fontFamily: {
+    serif: ['Times', 'Times New Roman', 'Georgia', 'serif'],
   },
   fonts: {
     bold: 'bold',
     regular: 'regular',
     light: 'light',
   },
-  fontSizes: {
-    font20: '20px',
-    font76: '76px',
-    font90: '90px',
-    font25: '25px',
-  },
-  width: {
-    w40: '40px',
-    w50: '50px',
-  },
-  height: {},
+
   fontWeight: {
-    f300: '300',
+    light: '300',
   },
   zIndex: {},
-  borderRadius: {},
-  margin: {
-    m0: '0px',
-  },
-  padding: {
-    p0: '0px',
-  },
+  breakPoints: {},
 };
-
-export enum STATIC_INFO {
-  HOME_LINK = 'Home',
-  TIMELINE_LINK = 'Timeline',
-  BANK_CARD_LINK = 'Bank card',
-  CONTACT_LINK = 'Contato',
-}

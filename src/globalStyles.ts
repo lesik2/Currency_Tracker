@@ -3,7 +3,6 @@ import poppinsLight from '@assets/fonts/Poppins-Light.ttf';
 import poppinsRegular from '@assets/fonts/Poppins-Regular.ttf';
 import poppinsBold from '@assets/fonts/Poppins-SemiBold.ttf';
 import { createGlobalStyle } from 'styled-components';
-import {} from 'styled-components/cssprop';
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -17,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
       font-display: swap;
     }
     @font-face {
-      font-family: ${(props) => props.theme.fonts.regular};
+      font-family: ${(props) => props.theme.fonts.light};
       src: url(${poppinsLight}) format('truetype');
       font-display: swap;
     }
@@ -25,9 +24,9 @@ const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
     }
     body{
-      font-family: ${(props) => props.theme.fonts.regular};
-      margin: ${(props) => props.theme.margin.m0};
-      padding: ${(props) => props.theme.padding.p0};
+      font-family: ${(props) => props.theme.fonts.light}; 
+      margin: 0;
+      padding: 0;
       width: 100%;
     }
     img,
@@ -46,8 +45,8 @@ const GlobalStyle = createGlobalStyle`
       list-style: none;
     }
     p {
-      margin: ${(props) => props.theme.margin.m0};
-      padding: ${(props) => props.theme.padding.p0};
+      margin: 0;
+      padding: 0;
     }
 `;
 export default GlobalStyle;

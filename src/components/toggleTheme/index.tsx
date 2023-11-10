@@ -4,17 +4,16 @@ import {
   ThemeBowl, ToggleThemeInput, ToggleThemeLabel, Wrapper,
 } from './styled.ts';
 
-function ToggleTheme() {
+export function ToggleTheme() {
   const id = useId();
   const handleOnChange = () => {
   };
   return (
-    <Wrapper data-testid="toggle-theme">
+    <Wrapper>
       <ToggleThemeInput onChange={handleOnChange} type="checkbox" id={`${id}-themeInput`} />
       <ToggleThemeLabel className="theme-label" htmlFor={`${id}-themeInput`}>
-        <ThemeBowl data-cy="toggle-bowl" data-testid="toggle-bowl" className="theme-bowl" />
+        <ThemeBowl className="theme-bowl" />
       </ToggleThemeLabel>
     </Wrapper>
   );
 }
-export default ToggleTheme;

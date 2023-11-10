@@ -12,16 +12,16 @@ export const ToggleThemeLabel = styled.label`
   width: 50px;
   height: 26px;
   border-radius: 50px;
-  border: 2px solid #ff8a00;
+  border: 2px solid ${(props) => props.theme.colors.secondary};
   position: relative;
   cursor: pointer;
 `;
 export const ThemeBowl = styled.div`
-  background: #ffffff;
+  background: ${(props) => props.theme.colors.primary};
   border-radius: 100%;
   width: 25px;
   height: 25px;
-  border: 2px solid #ff8a00;
+  border: 2px solid ${(props) => props.theme.colors.secondary};
   position: absolute;
   bottom: -1px;
   left: -2px;

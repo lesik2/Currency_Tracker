@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
 
-import Header from '../components/header/index.tsx';
+import { Header } from '../components/Header/index.tsx';
 
-function RootLayout() {
+export function RootLayout() {
   return (
     <>
       <Header />
@@ -15,4 +15,3 @@ function RootLayout() {
     </>
   );
 }
-export default RootLayout;
