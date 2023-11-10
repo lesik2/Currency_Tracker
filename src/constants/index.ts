@@ -1,4 +1,4 @@
-const theme = {
+export const theme = {
   colors: {
     white: '#FFF',
     darkWhite: '#D9D9D9',
@@ -37,4 +37,5 @@ const theme = {
     p0: '0px',
   },
 };
-export default theme;
+
+export enum STATIC_INFO {}
