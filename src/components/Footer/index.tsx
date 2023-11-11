@@ -27,7 +27,7 @@ export function Footer() {
       </LogoWrapper>
       <FooterInfoWrapper>
         {FOOTER_INFO.map((item) => (
-          <FooterInfo>
+          <FooterInfo key={item.title}>
             <FooterInfoTitle>
               {item.title}
             </FooterInfoTitle>

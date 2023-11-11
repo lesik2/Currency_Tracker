@@ -53,6 +53,7 @@ export const MainTitle = styled.h1`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin: 0;
+  user-select: none;
 `;
 export const SecondTitle = styled.h1`
   font-size: 88px;
@@ -65,6 +66,7 @@ export const SecondTitle = styled.h1`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin: -17px 0px 0px 0px;
+  user-select: none;
 `;
 export const HeaderText = styled.p`
   color: ${(props) => props.theme.colors.darkWhite};

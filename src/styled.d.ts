@@ -1,6 +1,6 @@
 import 'styled-components';
 
-import { theme } from './constants/index.ts';
+import { theme } from './constants/theme.ts';
 
 type CustomTheme = typeof theme;
 

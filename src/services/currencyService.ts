@@ -1,20 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export interface ICurrency {
-  code: string;
-  value: number;
-}
-export interface IResultCurrencies {
-  meta: { lastUpdateDate: string };
-  data: {
-    [currencyCode: string]: ICurrency;
-  };
-}
+import { ICurrency, IResultCurrencies } from '../types/index.ts';
+
 export const currencyAPI = createApi({
   reducerPath: 'currencyAPI',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://api.currencyapi.com/v3/' }),
   endpoints: (build) => ({
-    fetchLatestCurrencies: build.query<IResultCurrencies, string>({
+    fetchLatestCurrencies: build.query<ICurrency[], string>({
       query: (param: string) => ({
         url: '/latest',
         headers: {
@@ -23,6 +15,7 @@ export const currencyAPI = createApi({
         params: {
           something: param,
         },
+        transformResponse: (response: IResultCurrencies) => Object.values(response.data),
       }),
     }),
   }),

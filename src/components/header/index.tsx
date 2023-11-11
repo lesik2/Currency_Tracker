@@ -19,7 +19,7 @@ export function Header() {
         <HeaderImage alt="label chart" src={Label} />
         <Navigation>
           {PATHS.map((path, index) => (
-            <NavLink to={path}>
+            <NavLink key={path} to={path}>
               <LinkText>
                 {LINKS_NAMES[index]}
               </LinkText>

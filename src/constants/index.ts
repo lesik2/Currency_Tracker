@@ -1,30 +1,15 @@
-export const theme = {
-  colors: {
-    secondary: '#FFF',
-    darkWhite: '#D9D9D9',
-    gray: '#A7B2C3',
-    footerGray: '#898989',
-    primary: '#030304',
-    primaryGradient: 'linear-gradient(90deg, #00CE2C 0.18%, #AEDF23 49.3%, #A3DC00 99.88%)',
-    secondaryGradient: 'linear-gradient(45deg, #030304 22%, rgba(36, 121, 64, 0.4) 45%,#030304 89%)',
-  },
-  fontFamily: {
-    serif: ['Times', 'Times New Roman', 'Georgia', 'serif'],
-  },
-  fonts: {
-    bold: 'bold',
-    regular: 'regular',
-    light: 'light',
-  },
-
-  fontWeight: {
-    light: '300',
-    normal: '400',
-    medium: '600',
-  },
-  zIndex: {},
-  breakPoints: {},
-};
+import australianDollarIcon from '../assets/images/australianDollarIcon.svg';
+import bitcoinIcon from '../assets/images/bitcoinIcon.svg';
+import bovespalIcon from '../assets/images/bovespaIcon.svg';
+import canadianDollarIcon from '../assets/images/canadianDollarIcon.svg';
+import dollarIcon from '../assets/images/dollarIcon.svg';
+import euroIcon from '../assets/images/euroIcon.svg';
+import ifixIcon from '../assets/images/ifix.svg';
+import libraIcon from '../assets/images/libraIcon.svg';
+import pesoArgentinoIcon from '../assets/images/pesoArgentinoIcon.svg';
+import wonIcon from '../assets/images/wonIcon.svg';
+import yenIcon from '../assets/images/yenIcon.svg';
+import { ICode } from '../types/index.ts';
 
 export const STATIC_INFO = {
   NAME_COMPANY: 'Modsen Currency',
@@ -52,3 +37,55 @@ export const FOOTER_INFO = [
     optionSecond: 'Streams',
   },
 ];
+export const CURRENCY_ICONS = {
+  dollarIcon,
+  yenIcon,
+  wonIcon,
+  pesoArgentinoIcon,
+  libraIcon,
+  australianDollarIcon,
+  canadianDollarIcon,
+  ifixIcon,
+  bitcoinIcon,
+  bovespalIcon,
+  euroIcon,
+};
+export type CODES = 'USD' | 'EUR' | 'JPY' | 'KRW' | 'ARS' | 'LBR' | 'AUD' | 'CAD' | 'BTC';
+export const CODE_CURRENCY: Record<CODES, ICode> = {
+  USD: {
+    name: 'Commercial Dollar',
+    icon: CURRENCY_ICONS.dollarIcon,
+  },
+  EUR: {
+    name: 'Euro',
+    icon: CURRENCY_ICONS.euroIcon,
+  },
+  JPY: {
+    name: 'Yen',
+    icon: CURRENCY_ICONS.yenIcon,
+  },
+  KRW: {
+    name: 'Yuan',
+    icon: CURRENCY_ICONS.wonIcon,
+  },
+  ARS: {
+    name: 'Argentine Pesco',
+    icon: CURRENCY_ICONS.pesoArgentinoIcon,
+  },
+  LBR: {
+    name: 'Libra',
+    icon: CURRENCY_ICONS.libraIcon,
+  },
+  AUD: {
+    name: 'Australian Dollar',
+    icon: CURRENCY_ICONS.australianDollarIcon,
+  },
+  CAD: {
+    name: 'Canadian Dollar',
+    icon: CURRENCY_ICONS.canadianDollarIcon,
+  },
+  BTC: {
+    name: 'Bitcoin',
+    icon: CURRENCY_ICONS.bitcoinIcon,
+  },
+};

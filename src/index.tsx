@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 
 import { App } from './app.tsx';
-import { theme } from './constants/index.ts';
+import { theme } from './constants/theme.ts';
 import GlobalStyle from './globalStyles.ts';
 
 const rootElement = document.getElementById('root');
