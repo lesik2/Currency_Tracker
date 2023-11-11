@@ -20,13 +20,13 @@ export const FooterText = styled.h3`
   font-family: ${(props) => props.theme.fonts.regular};
   margin: 0;
 `;
-export const Wrapper = styled.div`
+export const LogoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
   margin: 10px 0px 70px 0px;
 `;
-export const LogoWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   gap: 17px;
   align-items: flex-end;

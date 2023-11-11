@@ -43,7 +43,7 @@ export const WrapperTitles = styled.div`
   margin-right: 64px;
 `;
 export const MainTitle = styled.h1`
-  font-size: 76px;
+  font-size: 75px;
   font-weight: ${(props) => props.theme.fontWeight.medium};
   font-family: ${(props) => props.theme.fonts.bold};
   font-style: normal;
@@ -55,7 +55,7 @@ export const MainTitle = styled.h1`
   margin: 0;
 `;
 export const SecondTitle = styled.h1`
-  font-size: 90px;
+  font-size: 88px;
   font-weight: ${(props) => props.theme.fontWeight.medium};
   font-family: ${(props) => props.theme.fonts.bold};
   font-style: normal;
@@ -64,7 +64,7 @@ export const SecondTitle = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin: 0;
+  margin: -17px 0px 0px 0px;
 `;
 export const HeaderText = styled.p`
   color: ${(props) => props.theme.colors.darkWhite};

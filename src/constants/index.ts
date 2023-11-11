@@ -30,8 +30,8 @@ export const STATIC_INFO = {
   NAME_COMPANY: 'Modsen Currency',
   NAME_APP: 'Tracker',
   HEADER_TEXT: 'Quotes for the dollar and other international currencies.',
-  // eslint-disable-next-line max-len
   FOOTER_DESCRIPTION:
+    // eslint-disable-next-line max-len
     "Since then, the company has grown organically to. Starsup is the world's largest trading platform, with $12 billion worth of currency trading and 500,000 tickets sold daily to tens of thousands of traders worldwide.",
   FOOTER_TEXT: 'Startsup © 2023-2024, All Rights Reserved',
 };

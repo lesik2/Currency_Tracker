@@ -12,19 +12,19 @@ import {
 export function Footer() {
   return (
     <FooterWrapper>
-      <Wrapper>
-        <LogoWrapper>
+      <LogoWrapper>
+        <Wrapper>
           <LogoFooter alt="label chart" src={Label} />
           <LogoText>
             {STATIC_INFO.NAME_COMPANY}
             {' '}
             {STATIC_INFO.NAME_APP}
           </LogoText>
-        </LogoWrapper>
+        </Wrapper>
         <LogoDescription>
           {STATIC_INFO.FOOTER_DESCRIPTION}
         </LogoDescription>
-      </Wrapper>
+      </LogoWrapper>
       <FooterInfoWrapper>
         {FOOTER_INFO.map((item) => (
           <FooterInfo>
