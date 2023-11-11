@@ -13,10 +13,10 @@ module.exports = (env, argv) => {
     devtool: 'source-map',
     plugins: [
       new DefinePlugin({
-        PRODUCTION: JSON.stringify(false)
+        PRODUCTION: JSON.stringify(false),
       }),
-      new BundleAnalyzerPlugin()
-    ]
+      new BundleAnalyzerPlugin(),
+    ],
   };
 
   return merge(config, devServer);
