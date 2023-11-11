@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { LINKS_NAMES, PATHS } from '../../app/index.tsx';
@@ -13,6 +14,13 @@ import {
 } from './styled.ts';
 
 export function Header() {
+  const [active, setActive] = useState('Home');
+  const handleClick = (event: React.MouseEvent) => {
+    const nameOfLink = event.currentTarget.textContent;
+    if (nameOfLink) {
+      setActive(nameOfLink);
+    }
+  };
   return (
     <HeaderWrapper>
       <Wrapper>
@@ -20,7 +28,7 @@ export function Header() {
         <Navigation>
           {PATHS.map((path, index) => (
             <NavLink key={path} to={path}>
-              <LinkText>
+              <LinkText $isActive={active === LINKS_NAMES[index]} onClick={handleClick}>
                 {LINKS_NAMES[index]}
               </LinkText>
             </NavLink>

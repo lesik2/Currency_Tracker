@@ -1,19 +1,22 @@
-import { Provider } from 'react-redux';
 import {
   BrowserRouter,
   Route,
   Routes,
 } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 
 import { ROUTES } from './app/index.tsx';
 import { DateUpdate } from './components/DateUpdate/index.tsx';
 import { Footer } from './components/Footer/index.tsx';
 import { Header } from './components/Header/index.tsx';
-import { store } from './store/index.ts';
+import GlobalStyle from './globalStyles.ts';
+import { useTheme } from './hooks/theme.ts';
 
 export function App() {
+  const theme = useTheme();
   return (
-    <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <BrowserRouter>
         <Header />
         <DateUpdate />
@@ -26,7 +29,7 @@ export function App() {
         </main>
         <Footer />
       </BrowserRouter>
-    </Provider>
+    </ThemeProvider>
 
   );
 }

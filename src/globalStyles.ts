@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding: 0;
       width: 100%;
+      transition: background-color 0.2s;
       background-color: ${(props) => props.theme.colors.primary};
     }
     img,

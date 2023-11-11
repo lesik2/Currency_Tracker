@@ -1,17 +1,14 @@
 import { createRoot } from 'react-dom/client';
-import { ThemeProvider } from 'styled-components';
+import { Provider } from 'react-redux';
 
 import { App } from './app.tsx';
-import { theme } from './constants/theme.ts';
-import GlobalStyle from './globalStyles.ts';
+import { store } from './store/index.ts';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Failed to find the root element');
 const root = createRoot(rootElement);
 root.render(
-  <ThemeProvider theme={theme}>
+  <Provider store={store}>
     <App />
-    <GlobalStyle />
-  </ThemeProvider>,
-
+  </Provider>,
 );

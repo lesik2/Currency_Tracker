@@ -8,7 +8,15 @@ export const WrapperCard = styled.div`
   gap: 30px;
   border-radius: 8px;
   border: 1px solid ${(props) => props.theme.colors.cardGray};
-  background: ${(props) => props.theme.colors.lightBlack};
+  background-color: ${(props) => props.theme.colors.lightBlack};
+  cursor: pointer;
+  transition:
+    transform 0.3s,
+    border-radius 0.3s;
+  &:hover {
+    transform: scale(1.1);
+    border-radius: 20px;
+  }
 `;
 export const CardIcon = styled.img`
   width: 80px;

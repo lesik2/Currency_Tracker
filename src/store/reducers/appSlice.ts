@@ -4,11 +4,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Times } from '../../constants/index.ts';
 
 export interface AppState {
-  isDarkTheme: boolean;
+  isLightTheme: boolean;
   timeOfUpdate: string;
 }
 const initialState: AppState = {
-  isDarkTheme: JSON.parse(localStorage.getItem('theme') ?? 'false'),
+  isLightTheme: JSON.parse(localStorage.getItem('theme') ?? 'false'),
   timeOfUpdate: '',
 };
 export const themeSlice = createSlice({
@@ -16,8 +16,8 @@ export const themeSlice = createSlice({
   initialState,
   reducers: {
     changeTheme: (state) => {
-      state.isDarkTheme = !state.isDarkTheme;
-      localStorage.setItem('theme', JSON.stringify(state.isDarkTheme));
+      state.isLightTheme = !state.isLightTheme;
+      localStorage.setItem('theme', JSON.stringify(state.isLightTheme));
     },
     setTimeOfUpdate: (state, action: PayloadAction<string>) => {
       const date = new Date(action.payload);
