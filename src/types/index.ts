@@ -10,16 +10,17 @@ export interface ICode {
   icon: string;
 }
 export interface ICurrency {
-  code: string;
+  code: TYPE_CODES;
   value: number;
 }
-export type CODES = 'USD' | 'EUR' | 'JPY' | 'KRW' | 'ARS' | 'LBR' | 'AUD' | 'CAD' | 'BTC';
+export type TYPE_CODES = 'USD' | 'EUR' | 'JPY' | 'KRW' | 'ARS' | 'LRD' | 'AUD' | 'CAD' | 'BTC' | 'IFIX' | 'BOVI';
 export interface ICurrencyCard {
-  code: CODES;
+  code: TYPE_CODES;
   value: number;
+  isStock?: boolean;
 }
 export interface IResultCurrencies {
-  meta: { lastUpdateDate: string };
+  meta: { ['last_updated_at']: string };
   data: {
     [currencyCode: string]: ICurrency;
   };

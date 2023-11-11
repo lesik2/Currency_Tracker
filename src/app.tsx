@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import { ROUTES } from './app/index.tsx';
-import { CurrencyCard } from './components/CurrencyCard/index.tsx';
+import { DateUpdate } from './components/DateUpdate/index.tsx';
 import { Footer } from './components/Footer/index.tsx';
 import { Header } from './components/Header/index.tsx';
 import { store } from './store/index.ts';
@@ -16,7 +16,7 @@ export function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Header />
-        <CurrencyCard code="USD" value={5.56} />
+        <DateUpdate />
         <main>
           <Routes>
             {ROUTES.map((route) => (

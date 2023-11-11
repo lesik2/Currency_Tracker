@@ -9,7 +9,7 @@ import libraIcon from '../assets/images/libraIcon.svg';
 import pesoArgentinoIcon from '../assets/images/pesoArgentinoIcon.svg';
 import wonIcon from '../assets/images/wonIcon.svg';
 import yenIcon from '../assets/images/yenIcon.svg';
-import { CODES, ICode } from '../types/index.ts';
+import { ICode, ICurrencyCard, TYPE_CODES } from '../types/index.ts';
 
 export const STATIC_INFO = {
   NAME_COMPANY: 'Modsen Currency',
@@ -19,6 +19,9 @@ export const STATIC_INFO = {
     // eslint-disable-next-line max-len
     "Since then, the company has grown organically to. Starsup is the world's largest trading platform, with $12 billion worth of currency trading and 500,000 tickets sold daily to tens of thousands of traders worldwide.",
   FOOTER_TEXT: 'Startsup © 2023-2024, All Rights Reserved',
+  LAST_UPDATE: 'Last updated at',
+  STOCKS: 'Stocks',
+  QUOTES: 'Quotes',
 };
 export const FOOTER_INFO = [
   {
@@ -50,8 +53,26 @@ export const CURRENCY_ICONS = {
   bovespalIcon,
   euroIcon,
 };
-export const DOLLAR_SYMBOL = 'R$';
-export const CODE_CURRENCY: Record<CODES, ICode> = {
+export const DOLLAR_SYMBOL = '$';
+export const PERCENTAGE_SYMBOL = '%';
+export const STOCKS: ICurrencyCard[] = [
+  {
+    code: 'IFIX',
+    value: 0.15,
+    isStock: true,
+  },
+  {
+    code: 'BOVI',
+    value: 0.15,
+    isStock: true,
+  },
+];
+export const Times = {
+  morning: 'PM',
+  evening: 'AM',
+  change: 12,
+};
+export const CODE_CURRENCY: Record<TYPE_CODES, ICode> = {
   USD: {
     name: 'Commercial Dollar',
     icon: CURRENCY_ICONS.dollarIcon,
@@ -72,7 +93,7 @@ export const CODE_CURRENCY: Record<CODES, ICode> = {
     name: 'Argentine Pesco',
     icon: CURRENCY_ICONS.pesoArgentinoIcon,
   },
-  LBR: {
+  LRD: {
     name: 'Libra',
     icon: CURRENCY_ICONS.libraIcon,
   },
@@ -88,4 +109,13 @@ export const CODE_CURRENCY: Record<CODES, ICode> = {
     name: 'Bitcoin',
     icon: CURRENCY_ICONS.bitcoinIcon,
   },
+  IFIX: {
+    name: 'IFIX',
+    icon: CURRENCY_ICONS.ifixIcon,
+  },
+  BOVI: {
+    name: 'Bovespa Index',
+    icon: CURRENCY_ICONS.bovespalIcon,
+  },
 };
+export const CODES_NAMES = ['USD', 'EUR', 'JPY', 'KRW', 'ARS', 'LRD', 'AUD', 'CAD', 'BTC'];
