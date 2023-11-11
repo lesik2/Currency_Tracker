@@ -13,6 +13,11 @@ export interface ICurrency {
   code: string;
   value: number;
 }
+export type CODES = 'USD' | 'EUR' | 'JPY' | 'KRW' | 'ARS' | 'LBR' | 'AUD' | 'CAD' | 'BTC';
+export interface ICurrencyCard {
+  code: CODES;
+  value: number;
+}
 export interface IResultCurrencies {
   meta: { lastUpdateDate: string };
   data: {

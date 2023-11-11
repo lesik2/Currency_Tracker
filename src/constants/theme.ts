@@ -7,6 +7,8 @@ export const theme = {
     primary: '#030304',
     primaryGradient: 'linear-gradient(90deg, #00CE2C 0.18%, #AEDF23 49.3%, #A3DC00 99.88%)',
     secondaryGradient: 'linear-gradient(45deg, #030304 22%, rgba(36, 121, 64, 0.4) 45%,#030304 89%)',
+    lightBlack: '#202025',
+    cardGray: '#474747',
   },
   fontFamily: {
     serif: ['Times', 'Times New Roman', 'Georgia', 'serif'],
