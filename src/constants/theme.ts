@@ -14,6 +14,7 @@ export const lightTheme = {
   inputText: '#030304',
   inputBack: '#e6e6e6',
   error: '#ff0000',
+  loader: '#00CE2C',
 };
 export const darkTheme = {
   secondary: '#FFF',
@@ -31,6 +32,7 @@ export const darkTheme = {
   inputText: '#9E9E9E',
   inputBack: '#1B2028',
   error: '#ff0000',
+  loader: '#00CE2C',
 };
 
 export const theme = {

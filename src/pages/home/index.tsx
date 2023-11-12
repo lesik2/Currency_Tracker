@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import { CurrencyCard } from '../../components/CurrencyCard/index.tsx';
+import { Loader } from '../../components/InfinityLoader/index.tsx';
 import { STATIC_INFO, STOCKS } from '../../constants/index.ts';
 import { useAppDispatch } from '../../hooks/redux.ts';
 import { useFetchLatestCurrenciesQuery } from '../../services/currencyService.ts';
@@ -38,6 +39,7 @@ export function Home() {
         </CardsWrapper>
       </Wrapper>
       <Wrapper>
+        <Loader />
         <Title>
           {STATIC_INFO.QUOTES}
         </Title>
