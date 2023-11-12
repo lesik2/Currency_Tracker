@@ -35,6 +35,7 @@ export const theme = {
   fontWeight: {
     light: '300',
     normal: '400',
+    regular: '500',
     medium: '600',
   },
   zIndex: {},
