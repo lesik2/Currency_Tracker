@@ -14,7 +14,7 @@ export const WrapperCard = styled.div`
     transform 0.3s,
     border-radius 0.3s;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     border-radius: 20px;
   }
 `;

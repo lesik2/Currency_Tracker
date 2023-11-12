@@ -16,7 +16,7 @@ import {
 export function Header() {
   const [active, setActive] = useState('Home');
   const handleClick = (event: React.MouseEvent) => {
-    const nameOfLink = event.currentTarget.textContent;
+    const nameOfLink = event.currentTarget.getAttribute('data-name');
     if (nameOfLink) {
       setActive(nameOfLink);
     }
@@ -28,7 +28,7 @@ export function Header() {
         <Navigation>
           {PATHS.map((path, index) => (
             <NavLink key={path} to={path}>
-              <LinkText $isActive={active === LINKS_NAMES[index]} onClick={handleClick}>
+              <LinkText data-name={LINKS_NAMES[index]} $isActive={active === LINKS_NAMES[index]} onClick={handleClick}>
                 {LINKS_NAMES[index]}
               </LinkText>
             </NavLink>
