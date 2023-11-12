@@ -28,7 +28,12 @@ export function Home() {
         </Title>
         <CardsWrapper>
           {STOCKS.map((stoke) => (
-            <CurrencyCard key={stoke.code} code={stoke.code} value={stoke.value} isStock={stoke.isStock ?? false} />
+            <CurrencyCard
+              key={stoke.code}
+              code={stoke.code}
+              value={stoke.value}
+              isStock={stoke.isStock ?? false}
+            />
           ))}
         </CardsWrapper>
       </Wrapper>

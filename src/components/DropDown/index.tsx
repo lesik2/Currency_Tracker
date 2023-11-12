@@ -10,11 +10,10 @@ export interface IDropDown{
   lists: string[],
   value: string;
   setValue:React.Dispatch<React.SetStateAction<string>>;
-  initialValue: string;
 
 }
 export function DropDown({
-  lists, value, setValue, initialValue,
+  lists, value, setValue,
 }:IDropDown) {
   const [active, setActive] = useState(false);
   const handleClick = () => {
@@ -30,18 +29,16 @@ export function DropDown({
   return (
     <Wrapper>
       <SelectedValue onClick={handleClick}>
-        {initialValue === value ? initialValue : CODE_CURRENCY[value].name}
+        {CODE_CURRENCY[value].name}
         <Icon $active={active} alt="arrow" src={arrowIcon} />
       </SelectedValue>
-      {active && (
-      <List>
+      <List $active={active}>
         {lists.map((code) => (
           <ItemList onClick={handleSelect} key={code} data-code={code}>
             {CODE_CURRENCY[code].name}
           </ItemList>
         ))}
       </List>
-      )}
     </Wrapper>
   );
 }

@@ -13,6 +13,11 @@ export interface ICurrency {
   code: TYPE_CODES;
   value: number;
 }
+export interface IModal {
+  onClose: () => void;
+  nameCard: string;
+  code: string;
+}
 export type TYPE_CODES = 'USD' | 'EUR' | 'JPY' | 'KRW' | 'ARS' | 'LRD' | 'AUD' | 'CAD' | 'BTC' | 'IFIX' | 'BOVI';
 export interface ICurrencyCard {
   code: TYPE_CODES;
@@ -24,4 +29,9 @@ export interface IResultCurrencies {
   data: {
     [currencyCode: string]: ICurrency;
   };
+}
+export interface IConvertCurrencies {
+  value: string;
+  base_currency: string;
+  currencies: string;
 }

@@ -40,8 +40,17 @@ const GlobalStyle = createGlobalStyle`
     a {
       cursor: pointer;
       color: inherit;
-      text-decoration: inherit;
+      text-decoration: none;
       -webkit-tap-highlight-color: transparent;
+    }
+    a:active{
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: none;
+    }
+    a:visited{
+      text-decoration: none;
     }
     ol, ul {
       list-style: none;

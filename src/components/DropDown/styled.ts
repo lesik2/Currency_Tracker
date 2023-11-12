@@ -5,10 +5,11 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 360px;
+  position: relative;
 `;
 export const SelectedValue = styled.button`
   color: ${(props) => props.theme.colors.secondary};
-  font-size: 28px;
+  font-size: 26px;
   font-style: normal;
   font-weight: ${(props) => props.theme.fontWeight.regular};
   line-height: normal;
@@ -24,11 +25,17 @@ export const SelectedValue = styled.button`
   cursor: pointer;
 `;
 
-export const List = styled.div`
+export const List = styled.div<{ $active?: boolean }>`
   width: 100%;
-  background-color: ${(props) => props.theme.colors.secondary};
-  height: 120px;
+  position: absolute;
+  background-color: ${(props) => props.theme.colors.dropDown};
+  height: ${(props) => (props.$active ? '120px' : '0px')};
+  transition: height 0.3s;
   overflow-y: scroll;
+  scrollbar-width: thin;
+  border-radius: 10px;
+  left: 0;
+  top: 45px;
 `;
 export const ItemList = styled.p`
   font-size: 20px;
@@ -38,7 +45,7 @@ export const ItemList = styled.p`
   cursor: pointer;
   transition: background-color 0.2s;
   &:hover {
-    background-color: ${(props) => props.theme.colors.darkWhite};
+    background-color: ${(props) => props.theme.colors.hover};
   }
 `;
 export const Icon = styled.img<{ $active?: boolean }>`
