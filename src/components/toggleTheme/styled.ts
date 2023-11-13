@@ -17,7 +17,7 @@ export const ToggleThemeLabel = styled.label`
   cursor: pointer;
 `;
 export const ThemeBowl = styled.div`
-  background: ${(props) => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primary};
   border-radius: 100%;
   width: 25px;
   height: 25px;
@@ -25,5 +25,7 @@ export const ThemeBowl = styled.div`
   position: absolute;
   bottom: -1px;
   left: -2px;
-  transition: transform 0.3s;
+  transition:
+    transform 0.3s,
+    background-color 0.3s;
 `;

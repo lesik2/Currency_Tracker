@@ -3,23 +3,33 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 
 import { ROUTES } from './app/index.tsx';
+import { DateUpdate } from './components/DateUpdate/index.tsx';
 import { Footer } from './components/Footer/index.tsx';
 import { Header } from './components/Header/index.tsx';
+import GlobalStyle from './globalStyles.ts';
+import { useTheme } from './hooks/theme.ts';
 
 export function App() {
+  const theme = useTheme();
   return (
-    <BrowserRouter>
-      <Header />
-      <main>
-        <Routes>
-          {ROUTES.map((route) => (
-            <Route index={route.index || false} path={route.path} element={route.component} />
-          ))}
-        </Routes>
-      </main>
-      <Footer />
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Header />
+        <DateUpdate />
+        <main>
+          <Routes>
+            {ROUTES.map((route) => (
+              <Route key={route.path} index={route.index || false} path={route.path} element={route.component} />
+            ))}
+          </Routes>
+        </main>
+        <Footer />
+      </BrowserRouter>
+    </ThemeProvider>
+
   );
 }

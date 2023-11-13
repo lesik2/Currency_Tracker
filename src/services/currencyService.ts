@@ -1,30 +1,39 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export interface ICurrency {
-  code: string;
-  value: number;
-}
-export interface IResultCurrencies {
-  meta: { lastUpdateDate: string };
-  data: {
-    [currencyCode: string]: ICurrency;
-  };
-}
+import { IConvertCurrencies, ICurrency, IResultCurrencies } from '../types/index.ts';
+
 export const currencyAPI = createApi({
   reducerPath: 'currencyAPI',
+  refetchOnFocus: true,
   baseQuery: fetchBaseQuery({ baseUrl: 'https://api.currencyapi.com/v3/' }),
   endpoints: (build) => ({
     fetchLatestCurrencies: build.query<IResultCurrencies, string>({
       query: (param: string) => ({
-        url: '/latest',
+        url: `/latest${param}`,
         headers: {
-          apikey: 'cur_live_RHvricND7GsGNPrOAViBTCRCfeDWA97jwzNIyDf3',
-        },
-        params: {
-          something: param,
+          apikey: 'cur_live_qtVRTmyv41q8m8VGWZkq5ZZNWQylMV2pJEklnvub',
         },
       }),
     }),
+    convertCurrency: build.query<ICurrency[], IConvertCurrencies>({
+      query: (param: IConvertCurrencies) => ({
+        url: '/latest',
+        headers: {
+          apikey: 'cur_live_qtVRTmyv41q8m8VGWZkq5ZZNWQylMV2pJEklnvub',
+        },
+        params: {
+          value: param.value,
+          base_currency: param.base_currency,
+          'currencies[]': param.currencies,
+        },
+      }),
+      transformResponse: (response: IResultCurrencies) => Object.values(response.data),
+    }),
   }),
 });
-export const { useFetchLatestCurrenciesQuery, useLazyFetchLatestCurrenciesQuery } = currencyAPI;
+export const {
+  useFetchLatestCurrenciesQuery,
+  useLazyFetchLatestCurrenciesQuery,
+  useConvertCurrencyQuery,
+  useLazyConvertCurrencyQuery,
+} = currencyAPI;

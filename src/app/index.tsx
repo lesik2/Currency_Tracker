@@ -16,6 +16,7 @@ const PATHS_NAMES = {
 export const PATHS = Object.values(PATHS_NAMES);
 export const ROUTES: Readonly<IPaths[]> = [
   {
+    path: PATHS_NAMES.home,
     index: true,
     component: <Home />,
   },

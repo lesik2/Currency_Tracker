@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding: 0;
       width: 100%;
+      transition: background-color 0.2s;
       background-color: ${(props) => props.theme.colors.primary};
     }
     img,
@@ -39,8 +40,17 @@ const GlobalStyle = createGlobalStyle`
     a {
       cursor: pointer;
       color: inherit;
-      text-decoration: inherit;
+      text-decoration: none;
       -webkit-tap-highlight-color: transparent;
+    }
+    a:active{
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: none;
+    }
+    a:visited{
+      text-decoration: none;
     }
     ol, ul {
       list-style: none;

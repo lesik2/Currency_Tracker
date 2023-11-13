@@ -13,11 +13,22 @@ export const HeaderImage = styled.img`
   width: 40px;
   height: 41px;
 `;
-export const LinkText = styled.p`
+export const LinkText = styled.p<{ $isActive?: boolean }>`
   font-size: 20px;
-  color: ${(props) => props.theme.colors.secondary};
+  display: block;
+  padding: 0px 15px 0px 15px;
+  color: ${(props) => (props.$isActive ? props.theme.colors.primary : props.theme.colors.secondary)};
+  background-color: ${(props) => props.$isActive && props.theme.colors.darkWhite};
   font-weight: ${(props) => props.theme.fontWeight.light};
   line-height: 41px;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+  border-radius: 60px;
+  &:hover {
+    background-color: ${(props) => props.theme.colors.darkWhite};
+    color: ${(props) => props.theme.colors.primary};
+  }
 `;
 export const Navigation = styled.nav`
   display: flex;
@@ -53,6 +64,7 @@ export const MainTitle = styled.h1`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin: 0;
+  user-select: none;
 `;
 export const SecondTitle = styled.h1`
   font-size: 88px;
@@ -65,6 +77,7 @@ export const SecondTitle = styled.h1`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin: -17px 0px 0px 0px;
+  user-select: none;
 `;
 export const HeaderText = styled.p`
   color: ${(props) => props.theme.colors.darkWhite};
