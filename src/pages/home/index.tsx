@@ -13,7 +13,7 @@ import {
 } from './styled.ts';
 
 export function Home() {
-  const { data } = useFetchLatestCurrenciesQuery(getParametersForCurrencies());
+  const { data, isLoading } = useFetchLatestCurrenciesQuery(getParametersForCurrencies());
   const cards:ICurrency[]| undefined = data && Object.values(data?.data);
   const dispatch = useAppDispatch();
   useEffect(() => {
@@ -39,10 +39,10 @@ export function Home() {
         </CardsWrapper>
       </Wrapper>
       <Wrapper>
-        <Loader />
         <Title>
           {STATIC_INFO.QUOTES}
         </Title>
+        {isLoading && <Loader />}
         <CardsWrapper>
           {cards && cards.map((card) => (
             <CurrencyCard key={card.code} code={card.code} value={card.value} />

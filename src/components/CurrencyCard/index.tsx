@@ -2,18 +2,18 @@ import { useState } from 'react';
 
 import { CODE_CURRENCY, DOLLAR_SYMBOL, PERCENTAGE_SYMBOL } from '../../constants/index.ts';
 import { ICurrencyCard } from '../../types/index.ts';
+import { ROUND_UP_CURRENCY } from '../../utils/index.ts';
 import { Modal } from '../Modal/index.tsx';
+import { ModalContext } from '../ModalContext/index.tsx';
 import {
   CardIcon, CardSubTitle, CardTitle, WrapperCard,
   WrapperTitles,
 } from './styled.ts';
 
-export { Modal } from '../Modal/index.tsx';
-
 export function CurrencyCard({
   code, value, isStock = false,
 }:ICurrencyCard) {
-  const subtitle = isStock ? `${value}${PERCENTAGE_SYMBOL}` : `${DOLLAR_SYMBOL} ${Math.round(value * 100000) / 100000}`;
+  const subtitle = isStock ? `${value}${PERCENTAGE_SYMBOL}` : `${DOLLAR_SYMBOL} ${ROUND_UP_CURRENCY(value)}`;
   const [isOpen, setIsOpen] = useState(false);
   const handleOpen = () => {
     setIsOpen(!isOpen);
@@ -36,7 +36,14 @@ export function CurrencyCard({
           </CardSubTitle>
         </WrapperTitles>
       </WrapperCard>
-      {isOpen && isStock && <Modal onClose={handleClose} code={code} nameCard={CODE_CURRENCY[code].name} />}
+      {isOpen && !isStock
+      && (
+      <Modal
+        onClose={handleClose}
+      >
+        <ModalContext code={code} nameCard={CODE_CURRENCY[code].name} />
+      </Modal>
+      )}
     </>
 
   );

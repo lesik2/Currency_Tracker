@@ -15,8 +15,16 @@ export interface ICurrency {
 }
 export interface IModal {
   onClose: () => void;
+  children: React.ReactElement;
+}
+export interface IModalContext {
   nameCard: string;
   code: string;
+}
+export interface IDropDown {
+  lists: string[];
+  value: string;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 export type TYPE_CODES = 'USD' | 'EUR' | 'JPY' | 'KRW' | 'ARS' | 'LRD' | 'AUD' | 'CAD' | 'BTC' | 'IFIX' | 'BOVI';
 export interface ICurrencyCard {

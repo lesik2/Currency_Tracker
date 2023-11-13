@@ -23,6 +23,10 @@ export const STATIC_INFO = {
   STOCKS: 'Stocks',
   QUOTES: 'Quotes',
   DROP_DOWN: 'Select currency',
+  ERROR_MESSAGE: 'Input should be a number (e.g. 12)',
+};
+export const REGULAR_EXPRESSIONS = {
+  validateInput: /^[0-9]*[.,]?[0-9]+$/,
 };
 export const FOOTER_INFO = [
   {

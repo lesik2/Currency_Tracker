@@ -2,16 +2,11 @@ import React, { useState } from 'react';
 
 import arrowIcon from '../../assets/images/arrow.svg';
 import { CODE_CURRENCY } from '../../constants/index.ts';
+import { IDropDown } from '../../types/index.ts';
 import {
   Icon, ItemList, List, SelectedValue, Wrapper,
 } from './styled.ts';
 
-export interface IDropDown{
-  lists: string[],
-  value: string;
-  setValue:React.Dispatch<React.SetStateAction<string>>;
-
-}
 export function DropDown({
   lists, value, setValue,
 }:IDropDown) {
