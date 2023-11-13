@@ -21,6 +21,18 @@ export interface IModalContext {
   nameCard: string;
   code: string;
 }
+export interface IElasticSearch {
+  list: ICurrencySearch[];
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
+}
+export interface IResultCurrencySearch {
+  currencies: ICurrencySearch[];
+}
+export interface ICurrencySearch {
+  nameOfCurrency: string;
+  id: number;
+}
 export interface IDropDown {
   lists: string[];
   value: string;

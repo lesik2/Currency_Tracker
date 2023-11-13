@@ -54,6 +54,7 @@ export const theme = {
   },
   zIndex: {
     modal: 1000,
+    elasticSearch: 1000,
   },
   breakPoints: {},
 };

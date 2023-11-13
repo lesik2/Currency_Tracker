@@ -24,7 +24,7 @@ export const themeSlice = createSlice({
       const hours = date.getUTCHours();
       const minutes = date.getMinutes();
       let time: string;
-      if (hours >= Times.change) {
+      if (hours >= Times.break) {
         time = Times.evening;
       } else {
         time = Times.morning;

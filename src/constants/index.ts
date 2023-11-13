@@ -24,6 +24,8 @@ export const STATIC_INFO = {
   QUOTES: 'Quotes',
   DROP_DOWN: 'Select currency',
   ERROR_MESSAGE: 'Input should be a number (e.g. 12)',
+  INPUT_PLACEHOLDER: 'Сurrency search...',
+  FORM_SEARCH: 'Search currency in the bank',
 };
 export const REGULAR_EXPRESSIONS = {
   validateInput: /^[0-9]*[.,]?[0-9]+$/,
@@ -75,7 +77,7 @@ export const STOCKS: ICurrencyCard[] = [
 export const Times = {
   morning: 'PM',
   evening: 'AM',
-  change: 12,
+  break: 12,
 };
 export const CODE_CURRENCY: Record<string, ICode> = {
   USD: {

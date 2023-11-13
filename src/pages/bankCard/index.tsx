@@ -1,5 +1,10 @@
+import { SearchForm } from '../../components/SearchForm/index.tsx';
+import { Wrapper } from './styled.ts';
+
 export function BankCard() {
   return (
-    <h1>Bank Card</h1>
+    <Wrapper>
+      <SearchForm />
+    </Wrapper>
   );
 }

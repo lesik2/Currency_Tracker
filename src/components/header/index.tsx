@@ -14,7 +14,7 @@ import {
 } from './styled.ts';
 
 export function Header() {
-  const [active, setActive] = useState('Home');
+  const [active, setActive] = useState('');
   const handleClick = (event: React.MouseEvent) => {
     const nameOfLink = event.currentTarget.getAttribute('data-name');
     if (nameOfLink) {
