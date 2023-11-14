@@ -10,11 +10,11 @@ export class ElasticSearch extends React.Component<IElasticSearch> {
   }
 
   handleClick(event: React.MouseEvent) {
-    const { setShow, setSearch, setValue } = this.props;
+    const { setShow, handleChange, setValue } = this.props;
     setShow(false);
     const value = event.currentTarget.textContent;
     if (value) {
-      setSearch(value);
+      handleChange(value);
       setValue(value);
     }
   }

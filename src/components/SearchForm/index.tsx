@@ -14,7 +14,7 @@ import {
 
 export { useDebounce } from '../../hooks/useDebounce.ts';
 
-export function SearchForm({ setSearch }:ISearchForm) {
+export function SearchForm({ handleChange }:ISearchForm) {
   const [list, setList] = useState<ICurrencySearch[]>([]);
   const [show, setShow] = useState(false);
   const [value, setValue] = useState('');
@@ -47,7 +47,7 @@ export function SearchForm({ setSearch }:ISearchForm) {
         <SearchButton>
           <Icon alt="search image" src={searchIcon} />
         </SearchButton>
-        {show && <ElasticSearch setSearch={setSearch} list={list} setShow={setShow} setValue={setValue} />}
+        {show && <ElasticSearch handleChange={handleChange} list={list} setShow={setShow} setValue={setValue} />}
       </WrapperInput>
     </Wrapper>
   );

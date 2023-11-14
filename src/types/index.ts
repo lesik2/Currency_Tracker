@@ -22,13 +22,13 @@ export interface IModalContext {
   code: string;
 }
 export interface ISearchForm {
-  setSearch: React.Dispatch<React.SetStateAction<string>>;
+  handleChange: (value: string) => void;
 }
 export interface IElasticSearch {
   list: ICurrencySearch[];
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
   setValue: React.Dispatch<React.SetStateAction<string>>;
-  setSearch: React.Dispatch<React.SetStateAction<string>>;
+  handleChange: (value: string) => void;
 }
 export interface IResultCurrencySearch {
   currencies: ICurrencySearch[];
