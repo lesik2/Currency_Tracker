@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import australianDollarIcon from '../assets/images/australianDollarIcon.svg';
 import bitcoinIcon from '../assets/images/bitcoinIcon.svg';
 import bovespalIcon from '../assets/images/bovespaIcon.svg';
@@ -125,5 +126,17 @@ export const CODE_CURRENCY: Record<string, ICode> = {
     icon: CURRENCY_ICONS.bovespalIcon,
   },
 };
-// eslint-disable-next-line max-len
 export const CODES_NAMES = ['USD', 'EUR', 'JPY', 'KRW', 'ARS', 'LRD', 'AUD', 'CAD', 'BTC'];
+export const CURRENCY_NAMES = [
+  'Commercial Dollar',
+  'IFIX',
+  'Bovespa Index',
+  'Bitcoin',
+  'Canadian Dollar',
+  'Australian Dollar',
+  'Libra',
+  'Argentine Pesco',
+  'Yuan',
+  'Yen',
+  'Euro',
+];

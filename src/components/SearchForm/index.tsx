@@ -25,6 +25,7 @@ export function SearchForm({ handleChange }:ISearchForm) {
   });
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    handleChange(value);
   };
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);

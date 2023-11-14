@@ -33,6 +33,15 @@ export interface IElasticSearch {
 export interface IResultCurrencySearch {
   currencies: ICurrencySearch[];
 }
+export interface IBank {
+  id: number;
+  name: string;
+  latitude: number;
+  longitude: number;
+}
+export interface IResultBanks {
+  banks: IBank[];
+}
 export interface ICurrencySearch {
   nameOfCurrency: string;
   id: number;
