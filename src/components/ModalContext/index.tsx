@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { CODES_NAMES, REGULAR_EXPRESSIONS, STATIC_INFO } from '../../constants/index.ts';
-import { useDebounce } from '../../hooks/debounce.ts';
+import { useDebounce } from '../../hooks/useDebounce.ts';
 import { useConvertCurrencyQuery } from '../../services/currencyService.ts';
 import { IModalContext } from '../../types/index.ts';
 import { ROUND_UP_CURRENCY } from '../../utils/index.ts';

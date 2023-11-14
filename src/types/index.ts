@@ -21,10 +21,14 @@ export interface IModalContext {
   nameCard: string;
   code: string;
 }
+export interface ISearchForm {
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+}
 export interface IElasticSearch {
   list: ICurrencySearch[];
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
   setValue: React.Dispatch<React.SetStateAction<string>>;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
 }
 export interface IResultCurrencySearch {
   currencies: ICurrencySearch[];

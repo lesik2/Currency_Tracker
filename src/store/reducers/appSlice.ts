@@ -23,12 +23,7 @@ export const themeSlice = createSlice({
       const date = new Date(action.payload);
       const hours = date.getUTCHours();
       const minutes = date.getMinutes();
-      let time: string;
-      if (hours >= Times.break) {
-        time = Times.evening;
-      } else {
-        time = Times.morning;
-      }
+      const time = hours >= Times.break ? Times.evening : Times.morning;
       state.timeOfUpdate = `${hours % 12}:${minutes} ${time}`;
     },
   },

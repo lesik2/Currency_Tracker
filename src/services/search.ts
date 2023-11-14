@@ -5,7 +5,7 @@ import { IResultCurrencySearch } from '../types/index.ts';
 export const searchAPI = createApi({
   reducerPath: 'elasticSearchAPI',
   refetchOnFocus: true,
-  baseQuery: fetchBaseQuery({ baseUrl: 'elasticSearch.json' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'search.json' }),
   endpoints: (build) => ({
     fetchCurrenciesNames: build.query<IResultCurrencySearch, string>({
       query: () => ({

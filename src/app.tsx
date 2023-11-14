@@ -10,7 +10,7 @@ import { DateUpdate } from './components/DateUpdate/index.tsx';
 import { Footer } from './components/Footer/index.tsx';
 import { Header } from './components/Header/index.tsx';
 import GlobalStyle from './globalStyles.ts';
-import { useTheme } from './hooks/theme.ts';
+import { useTheme } from './hooks/useTheme.ts';
 
 export function App() {
   const theme = useTheme();

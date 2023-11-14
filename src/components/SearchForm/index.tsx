@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import searchIcon from '../../assets/images/searchIcon.svg';
 import { STATIC_INFO } from '../../constants/index.ts';
-import { useDebounce } from '../../hooks/debounce.ts';
+import { useDebounce } from '../../hooks/useDebounce.ts';
 import { useFetchCurrenciesNamesQuery } from '../../services/search.ts';
-import { ICurrencySearch } from '../../types/index.ts';
+import { ICurrencySearch, ISearchForm } from '../../types/index.ts';
 import { ElasticSearch } from '../ElasticSearch/index.tsx';
 import {
   Icon, Input, SearchButton, Title,
@@ -12,8 +12,9 @@ import {
   WrapperInput,
 } from './styled.ts';
 
-export { useDebounce } from '../../hooks/debounce.ts';
-export function SearchForm() {
+export { useDebounce } from '../../hooks/useDebounce.ts';
+
+export function SearchForm({ setSearch }:ISearchForm) {
   const [list, setList] = useState<ICurrencySearch[]>([]);
   const [show, setShow] = useState(false);
   const [value, setValue] = useState('');
@@ -33,7 +34,7 @@ export function SearchForm() {
     const newList = data?.currencies.filter((item) => item.nameOfCurrency.toLowerCase().includes(debounced.toLowerCase()));
     if (newList) {
       setList(newList);
-      setShow(debounced.length >= 2 && newList.length > 0);
+      setShow(debounced.length >= 2 && newList.length > 0 && newList[0].nameOfCurrency !== debounced);
     }
   }, [data, debounced]);
   return (
@@ -46,7 +47,7 @@ export function SearchForm() {
         <SearchButton>
           <Icon alt="search image" src={searchIcon} />
         </SearchButton>
-        {show && <ElasticSearch list={list} setShow={setShow} setValue={setValue} />}
+        {show && <ElasticSearch setSearch={setSearch} list={list} setShow={setShow} setValue={setValue} />}
       </WrapperInput>
     </Wrapper>
   );

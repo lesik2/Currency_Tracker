@@ -1,18 +1,34 @@
+import React from 'react';
+
 import { IElasticSearch } from '../../types/index.ts';
 import { List, Wrapper } from './styled.ts';
 
-export function ElasticSearch({ list, setShow, setValue }:IElasticSearch) {
-  const handleClick = () => {
+export class ElasticSearch extends React.Component<IElasticSearch> {
+  constructor(props: IElasticSearch) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event: React.MouseEvent) {
+    const { setShow, setSearch, setValue } = this.props;
     setShow(false);
-    setValue('');
-  };
-  return (
-    <Wrapper>
-      {list.map((item) => (
-        <List onClick={handleClick} key={item.id}>
-          {item.nameOfCurrency}
-        </List>
-      ))}
-    </Wrapper>
-  );
+    const value = event.currentTarget.textContent;
+    if (value) {
+      setSearch(value);
+      setValue(value);
+    }
+  }
+
+  override render() {
+    const { list } = this.props;
+    return (
+      <Wrapper>
+        {list.map((item) => (
+          <List onClick={this.handleClick} key={item.id}>
+            {item.nameOfCurrency}
+          </List>
+        ))}
+      </Wrapper>
+    );
+  }
 }
