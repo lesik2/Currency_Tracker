@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { MapComponent } from '../../components/Map/index.tsx';
 import { SearchForm } from '../../components/SearchForm/index.tsx';
 import { Wrapper } from './styled.ts';
 
@@ -24,10 +25,10 @@ export class BankCard extends React.Component<IBankCard, BankCardState> {
 
   override render() {
     const { search } = this.state;
-    console.log(search);
     return (
       <Wrapper>
         <SearchForm handleChange={this.handleChange} />
+        <MapComponent value={search} />
       </Wrapper>
     );
   }
