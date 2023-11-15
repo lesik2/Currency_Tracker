@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
-import { LINKS_NAMES, PATHS } from '../../app/index.tsx';
+import { LINKS_NAMES, PATHS, PATHS_FOR_LINK_NAMES } from '../../app/index.tsx';
 import Label from '../../assets/images/label.svg';
 import { STATIC_INFO } from '../../constants/index.ts';
 import { ToggleTheme } from '../ToggleTheme/index.tsx';
@@ -14,7 +14,8 @@ import {
 } from './styled.ts';
 
 export function Header() {
-  const [active, setActive] = useState('');
+  const location = useLocation();
+  const [active, setActive] = useState(PATHS_FOR_LINK_NAMES[location.pathname] || '');
   const handleClick = (event: React.MouseEvent) => {
     const nameOfLink = event.currentTarget.getAttribute('data-name');
     if (nameOfLink) {
