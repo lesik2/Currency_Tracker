@@ -16,7 +16,7 @@ export const PopUpWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px 15px 5px 15px;
+  padding: 2px 10px 2px 10px;
   border-radius: 10px;
 `;
 export const PopUpTitle = styled.h2`

@@ -39,7 +39,7 @@ export function MapComponent({ value }: IMap) {
   const handleZoom = (event: ViewStateChangeEvent) => {
     setViewState(event.viewState);
   };
-  const [selected, setSelected] = useState<IBank|null>();
+  const [selected, setSelected] = useState<IBank|null>(null);
   const handleClick = (bank: IBank) => {
     setSelected(bank);
   };
@@ -75,11 +75,12 @@ export function MapComponent({ value }: IMap) {
             </MarkerBtn>
           </Marker>
         ))}
-        {selected ? (
+        {selected && (
           <Popup
             latitude={selected.latitude}
             longitude={selected.longitude}
             onClose={handleClose}
+            closeOnClick={false}
           >
             <PopUpWrapper>
               <PopUpTitle>
@@ -87,7 +88,7 @@ export function MapComponent({ value }: IMap) {
               </PopUpTitle>
             </PopUpWrapper>
           </Popup>
-        ) : null}
+        )}
       </ReactMapGL>
       {notFound && (
       <NotFoundMessage>
