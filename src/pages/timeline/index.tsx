@@ -1,5 +1,7 @@
+import { TimeLineSection } from './styled.ts';
+
 export function Timeline() {
   return (
-    <h1>Timeline</h1>
+    <TimeLineSection />
   );
 }

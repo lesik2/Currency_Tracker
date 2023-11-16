@@ -21,6 +21,31 @@ export interface IModalContext {
   nameCard: string;
   code: string;
 }
+export interface ISearchForm {
+  handleChange: (value: string) => void;
+}
+export interface IElasticSearch {
+  list: ICurrencySearch[];
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
+  handleChange: (value: string) => void;
+}
+export interface IResultCurrencySearch {
+  currencies: ICurrencySearch[];
+}
+export interface IBank {
+  id: number;
+  name: string;
+  latitude: number;
+  longitude: number;
+}
+export interface IResultBanks {
+  banks: IBank[];
+}
+export interface ICurrencySearch {
+  nameOfCurrency: string;
+  id: number;
+}
 export interface IDropDown {
   lists: string[];
   value: string;
@@ -42,4 +67,11 @@ export interface IConvertCurrencies {
   value: string;
   base_currency: string;
   currencies: string;
+}
+export interface ICandle {
+  x: number;
+  o: number;
+  h: number;
+  l: number;
+  c: number;
 }

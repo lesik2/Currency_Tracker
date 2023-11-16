@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import australianDollarIcon from '../assets/images/australianDollarIcon.svg';
 import bitcoinIcon from '../assets/images/bitcoinIcon.svg';
 import bovespalIcon from '../assets/images/bovespaIcon.svg';
@@ -9,7 +10,8 @@ import libraIcon from '../assets/images/libraIcon.svg';
 import pesoArgentinoIcon from '../assets/images/pesoArgentinoIcon.svg';
 import wonIcon from '../assets/images/wonIcon.svg';
 import yenIcon from '../assets/images/yenIcon.svg';
-import { ICode, ICurrencyCard } from '../types/index.ts';
+import { ICandle, ICode, ICurrencyCard } from '../types/index.ts';
+import { generateCandles } from '../utils/index.ts';
 
 export const STATIC_INFO = {
   NAME_COMPANY: 'Modsen Currency',
@@ -24,6 +26,8 @@ export const STATIC_INFO = {
   QUOTES: 'Quotes',
   DROP_DOWN: 'Select currency',
   ERROR_MESSAGE: 'Input should be a number (e.g. 12)',
+  INPUT_PLACEHOLDER: 'Сurrency search...',
+  FORM_SEARCH: 'Search currency in the bank',
 };
 export const REGULAR_EXPRESSIONS = {
   validateInput: /^[0-9]*[.,]?[0-9]+$/,
@@ -75,7 +79,7 @@ export const STOCKS: ICurrencyCard[] = [
 export const Times = {
   morning: 'PM',
   evening: 'AM',
-  change: 12,
+  break: 12,
 };
 export const CODE_CURRENCY: Record<string, ICode> = {
   USD: {
@@ -123,5 +127,24 @@ export const CODE_CURRENCY: Record<string, ICode> = {
     icon: CURRENCY_ICONS.bovespalIcon,
   },
 };
-// eslint-disable-next-line max-len
 export const CODES_NAMES = ['USD', 'EUR', 'JPY', 'KRW', 'ARS', 'LRD', 'AUD', 'CAD', 'BTC'];
+export const CURRENCY_NAMES = [
+  'Commercial Dollar',
+  'IFIX',
+  'Bovespa Index',
+  'Bitcoin',
+  'Canadian Dollar',
+  'Australian Dollar',
+  'Libra',
+  'Argentine Pesco',
+  'Yuan',
+  'Yen',
+  'Euro',
+];
+
+const startDate = '2023-06-23T10:15:59Z';
+const amountOfDays = 31;
+
+const candles: ICandle[] = generateCandles(startDate, amountOfDays);
+export default candles;
+console.log(candles);

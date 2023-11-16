@@ -21,9 +21,7 @@ export const LinkText = styled.p<{ $isActive?: boolean }>`
   background-color: ${(props) => props.$isActive && props.theme.colors.darkWhite};
   font-weight: ${(props) => props.theme.fontWeight.light};
   line-height: 41px;
-  transition:
-    color 0.3s,
-    background-color 0.3s;
+  transition: background-color 0.2s;
   border-radius: 60px;
   &:hover {
     background-color: ${(props) => props.theme.colors.darkWhite};

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 import { CODES_NAMES, REGULAR_EXPRESSIONS, STATIC_INFO } from '../../constants/index.ts';
-import { useDebounce } from '../../hooks/debounce.ts';
+import { useDebounce } from '../../hooks/useDebounce.ts';
 import { useConvertCurrencyQuery } from '../../services/currencyService.ts';
 import { IModalContext } from '../../types/index.ts';
-import { ROUND_UP_CURRENCY } from '../../utils/index.ts';
+import { roundUpCurrency } from '../../utils/index.ts';
 import { DropDown } from '../DropDown/index.tsx';
 import {
   CurrencyAmount,
@@ -50,7 +50,7 @@ export function ModalContext({ nameCard, code }:IModalContext) {
         <Result>
           {data
               && REGULAR_EXPRESSIONS.validateInput.test(debounced)
-              && ROUND_UP_CURRENCY(data[0].value * parseFloat(debounced))}
+              && roundUpCurrency(data[0].value * parseFloat(debounced))}
         </Result>
       </WrapperInputs>
       <DropDown lists={CODES_NAMES} value={value} setValue={setValue} />

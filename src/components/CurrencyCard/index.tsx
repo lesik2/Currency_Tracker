@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { CODE_CURRENCY, DOLLAR_SYMBOL, PERCENTAGE_SYMBOL } from '../../constants/index.ts';
 import { ICurrencyCard } from '../../types/index.ts';
-import { ROUND_UP_CURRENCY } from '../../utils/index.ts';
+import { roundUpCurrency } from '../../utils/index.ts';
 import { Modal } from '../Modal/index.tsx';
 import { ModalContext } from '../ModalContext/index.tsx';
 import {
@@ -13,7 +13,7 @@ import {
 export function CurrencyCard({
   code, value, isStock = false,
 }:ICurrencyCard) {
-  const subtitle = isStock ? `${value}${PERCENTAGE_SYMBOL}` : `${DOLLAR_SYMBOL} ${ROUND_UP_CURRENCY(value)}`;
+  const subtitle = isStock ? `${value}${PERCENTAGE_SYMBOL}` : `${DOLLAR_SYMBOL} ${roundUpCurrency(value)}`;
   const [isOpen, setIsOpen] = useState(false);
   const handleOpen = () => {
     setIsOpen(!isOpen);

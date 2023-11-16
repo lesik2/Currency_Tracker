@@ -1,3 +1,5 @@
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 

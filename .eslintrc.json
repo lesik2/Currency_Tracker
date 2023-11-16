@@ -38,7 +38,7 @@
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "no-use-before-define": "off",
-    "max-len": ["warn", { "code": 120 }],
+    "max-len": ["warn", { "code": 140 }],
     "react/no-array-index-key": "error",
     "linebreak-style": 0,
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
