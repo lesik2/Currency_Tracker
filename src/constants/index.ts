@@ -10,7 +10,8 @@ import libraIcon from '../assets/images/libraIcon.svg';
 import pesoArgentinoIcon from '../assets/images/pesoArgentinoIcon.svg';
 import wonIcon from '../assets/images/wonIcon.svg';
 import yenIcon from '../assets/images/yenIcon.svg';
-import { ICode, ICurrencyCard } from '../types/index.ts';
+import { ICandle, ICode, ICurrencyCard } from '../types/index.ts';
+import { generateCandles } from '../utils/index.ts';
 
 export const STATIC_INFO = {
   NAME_COMPANY: 'Modsen Currency',
@@ -140,3 +141,10 @@ export const CURRENCY_NAMES = [
   'Yen',
   'Euro',
 ];
+
+const startDate = '2023-06-23T10:15:59Z';
+const amountOfDays = 31;
+
+const candles: ICandle[] = generateCandles(startDate, amountOfDays);
+export default candles;
+console.log(candles);
