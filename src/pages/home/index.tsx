@@ -1,11 +1,8 @@
-import { useEffect } from 'react';
-
 import { CurrencyCard } from '../../components/CurrencyCard/index.tsx';
 import { Loader } from '../../components/InfinityLoader/index.tsx';
 import { STATIC_INFO, STOCKS } from '../../constants/index.ts';
-import { useAppDispatch } from '../../hooks/redux.ts';
+import { useDate } from '../../hooks/useDate.ts';
 import { useFetchLatestCurrenciesQuery } from '../../services/currencyService.ts';
-import { setTimeOfUpdate } from '../../store/reducers/appSlice.ts';
 import { ICurrency } from '../../types/index.ts';
 import { getParametersForCurrencies } from '../../utils/index.ts';
 import {
@@ -15,12 +12,7 @@ import {
 export function Home() {
   const { data, isLoading } = useFetchLatestCurrenciesQuery(getParametersForCurrencies());
   const cards:ICurrency[]| undefined = data && Object.values(data?.data);
-  const dispatch = useAppDispatch();
-  useEffect(() => {
-    if (data) {
-      dispatch(setTimeOfUpdate(data.meta.last_updated_at));
-    }
-  }, [data, dispatch]);
+  useDate(data);
   return (
     <HomeWrapper>
       <Wrapper>

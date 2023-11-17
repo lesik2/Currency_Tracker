@@ -1,4 +1,6 @@
 /* eslint-disable max-len */
+import { FinancialDataPoint } from 'chart.js';
+
 import australianDollarIcon from '../assets/images/australianDollarIcon.svg';
 import bitcoinIcon from '../assets/images/bitcoinIcon.svg';
 import bovespalIcon from '../assets/images/bovespaIcon.svg';
@@ -10,7 +12,7 @@ import libraIcon from '../assets/images/libraIcon.svg';
 import pesoArgentinoIcon from '../assets/images/pesoArgentinoIcon.svg';
 import wonIcon from '../assets/images/wonIcon.svg';
 import yenIcon from '../assets/images/yenIcon.svg';
-import { ICandle, ICode, ICurrencyCard } from '../types/index.ts';
+import { ICode, ICurrencyCard } from '../types/index.ts';
 import { generateCandles } from '../utils/index.ts';
 
 export const STATIC_INFO = {
@@ -145,6 +147,4 @@ export const CURRENCY_NAMES = [
 const startDate = '2023-06-23T10:15:59Z';
 const amountOfDays = 31;
 
-const candles: ICandle[] = generateCandles(startDate, amountOfDays);
-export default candles;
-console.log(candles);
+export const candles: FinancialDataPoint[] = generateCandles(startDate, amountOfDays);

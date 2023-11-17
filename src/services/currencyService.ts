@@ -11,7 +11,7 @@ export const currencyAPI = createApi({
       query: (param: string) => ({
         url: `/latest${param}`,
         headers: {
-          apikey: 'cur_live_qtVRTmyv41q8m8VGWZkq5ZZNWQylMV2pJEklnvub',
+          apikey: 'cur_live_fU57CdYnihFtt3WuwWRsYPi7ioJop8OG8uwvNblA',
         },
       }),
     }),
@@ -19,7 +19,7 @@ export const currencyAPI = createApi({
       query: (param: IConvertCurrencies) => ({
         url: '/latest',
         headers: {
-          apikey: 'cur_live_qtVRTmyv41q8m8VGWZkq5ZZNWQylMV2pJEklnvub',
+          apikey: 'cur_live_fU57CdYnihFtt3WuwWRsYPi7ioJop8OG8uwvNblA',
         },
         params: {
           value: param.value,
@@ -31,9 +31,4 @@ export const currencyAPI = createApi({
     }),
   }),
 });
-export const {
-  useFetchLatestCurrenciesQuery,
-  useLazyFetchLatestCurrenciesQuery,
-  useConvertCurrencyQuery,
-  useLazyConvertCurrencyQuery,
-} = currencyAPI;
+export const { useFetchLatestCurrenciesQuery, useConvertCurrencyQuery } = currencyAPI;

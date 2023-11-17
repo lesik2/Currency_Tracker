@@ -68,10 +68,3 @@ export interface IConvertCurrencies {
   base_currency: string;
   currencies: string;
 }
-export interface ICandle {
-  x: number;
-  o: number;
-  h: number;
-  l: number;
-  c: number;
-}

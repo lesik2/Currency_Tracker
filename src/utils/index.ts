@@ -1,5 +1,7 @@
+import { FinancialDataPoint } from 'chart.js';
+
 import { CODES_NAMES } from '../constants/index.ts';
-import { IBank, ICandle } from '../types/index.ts';
+import { IBank } from '../types/index.ts';
 
 const ADDITIONAL_PARAMS = 'currencies[]=';
 export const getParametersForCurrencies = () => {
@@ -23,14 +25,14 @@ export const generateRandomBanks = (banks: IBank[]) => {
 
   return randomBanks;
 };
-export const generateCandles = (startDate: string, amountOfDays: number) => {
-  const dataPoints: ICandle[] = [];
+export const generateCandles = (startDate: string, amountDataPoints: number) => {
+  const dataPoints: FinancialDataPoint[] = [];
   const lowest = 2.5;
   const highest = 9.4;
 
   const currentDate = new Date(startDate);
 
-  for (let i = 0; i < amountOfDays; i += 1) {
+  for (let i = 0; i < amountDataPoints; i += 1) {
     const open = getRandomValue(lowest, highest);
     const close = getRandomValue(lowest, highest);
     const high = Math.max(open, close, getRandomValue(open, highest));
