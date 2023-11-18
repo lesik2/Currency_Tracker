@@ -15,11 +15,18 @@ import {
 
 export function ModalContext({ nameCard, code }:IModalContext) {
   const [value, setValue] = useState(CODES_NAMES[0]);
+
   const [amount, setAmount] = useState('1');
+
+
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(event.target.value);
   };
+
+
   const debounced = useDebounce(amount);
+
+
   const { data } = useConvertCurrencyQuery(
     { value: debounced, base_currency: code, currencies: value },
     {
@@ -27,6 +34,7 @@ export function ModalContext({ nameCard, code }:IModalContext) {
       refetchOnFocus: true,
     },
   );
+
   return (
     <Wrapper>
       <Title>

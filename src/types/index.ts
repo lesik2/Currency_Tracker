@@ -68,3 +68,23 @@ export interface IConvertCurrencies {
   base_currency: string;
   currencies: string;
 }
+export interface ITheme {
+  colors: {
+    secondary: string;
+    darkWhite: string;
+    gray: string;
+    footerGray: string;
+    primary: string;
+    primaryGradient: string;
+    secondaryGradient: string;
+    lightBlack: string;
+    cardGray: string;
+    modalWrapper: string;
+    dropDown: string;
+    hover: string;
+    inputText: string;
+    inputBack: string;
+    error: string;
+    loader: string;
+  };
+}

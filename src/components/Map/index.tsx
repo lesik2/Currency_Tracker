@@ -36,10 +36,11 @@ export function MapComponent({ value }: IMap) {
   const [listOfMarkers, setListOfMarkers] = useState<IBank[]>([]);
   const [viewState, setViewState] = useState<ViewState>(initialCoordinatesMap);
   const [notFound, setNotFound] = useState(false);
+  const [selected, setSelected] = useState<IBank|null>(null);
   const handleZoom = (event: ViewStateChangeEvent) => {
     setViewState(event.viewState);
   };
-  const [selected, setSelected] = useState<IBank|null>(null);
+
   const handleClick = (bank: IBank) => {
     setSelected(bank);
   };

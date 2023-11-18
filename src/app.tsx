@@ -1,3 +1,4 @@
+
 import {
   BrowserRouter,
   Route,
@@ -14,6 +15,7 @@ import { useDate } from './hooks/useDate.ts';
 import { useTheme } from './hooks/useTheme.ts';
 import { useFetchLatestCurrenciesQuery } from './services/currencyService.ts';
 import { getParametersForCurrencies } from './utils/index.ts';
+
 
 export function App() {
   const theme = useTheme();

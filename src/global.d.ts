@@ -34,3 +34,5 @@ declare module '*.mp3' {
 }
 declare module '*.woff';
 declare module '*.ttf';
+
+declare module 'chartjs-adapter-luxon';
