@@ -145,6 +145,4 @@ export const CURRENCY_NAMES = [
 const startDate = '2023-06-23T10:15:59Z';
 const amountOfDays = 31;
 
-const candles: ICandle[] = generateCandles(startDate, amountOfDays);
-export default candles;
-console.log(candles);
+export const candles: ICandle[] = generateCandles(startDate, amountOfDays);
