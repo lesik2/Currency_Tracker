@@ -39,6 +39,7 @@ export const lightTheme = {
     inputBack: '#e6e6e6',
     error: '#ff0000',
     loader: '#00CE2C',
+    chartGrid: '#D9D9D9',
   },
 };
 export const darkTheme = {
@@ -60,5 +61,6 @@ export const darkTheme = {
     inputBack: '#1B2028',
     error: '#ff0000',
     loader: '#00CE2C',
+    chartGrid: 'rgba(255, 255, 255, 0.10)',
   },
 };

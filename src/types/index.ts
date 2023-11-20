@@ -68,7 +68,7 @@ export interface IConvertCurrencies {
   base_currency: string;
   currencies: string;
 }
-export interface ICandle {
+export interface ICandleChart {
   x: number;
   o: number;
   h: number;

@@ -1,27 +1,33 @@
 import 'chartjs-chart-financial';
 
+import { useMemo, useState } from 'react';
 import { Chart } from 'react-chartjs-2';
 
-import { candles } from '../../constants/index.ts';
-import { Wrapper } from './styled.ts';
+import { COLORS, getRandomData } from '../../constants/chart.ts';
+import { ICandleChart } from '../../types/index.ts';
+import { useThemeChart } from './hooks/useThemeChart.ts';
+import { Wrapper, WrapperChart } from './styled.ts';
 
 export function ChartComponent() {
-  const data = {
+  const options = useThemeChart();
+  const [barCount] = useState(31);
+  const barData: ICandleChart[] = useMemo(() => getRandomData(undefined, barCount), [barCount]);
+  const dataForChart = {
     datasets: [
       {
-        label: 'CHRT - Chart.js Corporation',
-        data: candles,
-        color: {
-          up: 'rgba(80, 160, 115, 1)',
-          down: 'rgba(215, 85, 65, 1)',
-          unchanged: 'rgba(90, 90, 90, 1)',
-        },
+        label: 'Chart.js',
+        data: barData,
+        color: COLORS,
+        borderColor: COLORS as object,
+        borderWidth: 2,
       },
     ],
   };
   return (
     <Wrapper>
-      <Chart data={data} type="candlestick" />
+      <WrapperChart>
+        <Chart data={dataForChart} type="candlestick" options={options} />
+      </WrapperChart>
     </Wrapper>
   );
 }

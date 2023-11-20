@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const WrapperChart = styled.div`
   width: 1047px;
-  height: 456px;
+`;
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
