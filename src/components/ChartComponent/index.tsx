@@ -8,7 +8,11 @@ import { ICandleChart } from '../../types/index.ts';
 import { useThemeChart } from './hooks/useThemeChart.ts';
 import { Wrapper, WrapperChart } from './styled.ts';
 
-export function ChartComponent() {
+export interface IChartComponent{
+  netlifyAll: (data: boolean)=>void;
+}
+export function ChartComponent({ netlifyAll }:IChartComponent) {
+  console.log(netlifyAll);
   const options = useThemeChart();
   const [barCount] = useState(31);
   const barData: ICandleChart[] = useMemo(() => getRandomData(undefined, barCount), [barCount]);
