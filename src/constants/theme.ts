@@ -20,7 +20,7 @@ export const theme = {
   },
   breakPoints: {},
 };
-export const lightTheme = {
+export const lightTheme: ITheme = {
   ...theme,
   colors: {
     secondary: '#030304',
@@ -42,7 +42,7 @@ export const lightTheme = {
     chartGrid: '#D9D9D9',
   },
 };
-export const darkTheme = {
+export const darkTheme: ITheme = {
   ...theme,
   colors: {
     secondary: '#FFF',
@@ -51,7 +51,8 @@ export const darkTheme = {
     footerGray: '#898989',
     primary: '#030304',
     primaryGradient: 'linear-gradient(90deg, #00CE2C 0.18%, #AEDF23 49.3%, #A3DC00 99.88%)',
-    secondaryGradient: 'linear-gradient(45deg, #030304 22%, rgba(36, 121, 64, 0.4) 45%,#030304 89%)',
+    secondaryGradient:
+      'linear-gradient(45deg, #030304 22%, rgba(36, 121, 64, 0.4) 45%,#030304 89%)',
     lightBlack: '#202025',
     cardGray: '#474747',
     modalWrapper: 'rgba(0, 0, 0, 0.7)',
@@ -64,3 +65,43 @@ export const darkTheme = {
     chartGrid: 'rgba(255, 255, 255, 0.10)',
   },
 };
+export interface ITheme {
+  fontFamily: {
+    serif: string[];
+  };
+  fonts: {
+    bold: string;
+    regular: string;
+    light: string;
+  };
+  fontWeight: {
+    light: string;
+    normal: string;
+    regular: string;
+    medium: string;
+  };
+  zIndex: {
+    modal: number;
+    elasticSearch: number;
+  };
+  breakPoints: object;
+  colors: {
+    secondary: string;
+    darkWhite: string;
+    gray: string;
+    footerGray: string;
+    primary: string;
+    primaryGradient: string;
+    secondaryGradient: string;
+    lightBlack: string;
+    cardGray: string;
+    modalWrapper: string;
+    dropDown: string;
+    hover: string;
+    inputText: string;
+    inputBack: string;
+    error: string;
+    loader: string;
+    chartGrid: string;
+  };
+}
