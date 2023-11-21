@@ -4,7 +4,7 @@ export const TimeLineSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0px 120px 0px 190px;
+  padding: 0px 120px 0px 120px;
   margin-bottom: 200px;
   position: relative;
   overflow: hidden;
