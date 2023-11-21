@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import ReactMapGL, {
   Marker,
+  NavigationControl,
   Popup, ViewState, ViewStateChangeEvent,
 } from 'react-map-gl';
 
@@ -95,6 +96,7 @@ export function MapComponent({ value }: IMap) {
             </PopUpWrapper>
           </Popup>
         )}
+        <NavigationControl />
       </ReactMapGL>
       {notFound && (
       <NotFoundMessage>
