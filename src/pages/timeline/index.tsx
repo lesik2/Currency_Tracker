@@ -30,7 +30,6 @@ export class Timeline extends React.Component<ITimeLine, TimeLineState> {
   }
 
   notifyAll(data: boolean) {
-    console.log(data);
     this.observer.setData(data);
   }
 

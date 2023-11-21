@@ -36,22 +36,27 @@ export function MapComponent({ value }: IMap) {
   const [listOfMarkers, setListOfMarkers] = useState<IBank[]>([]);
   const [viewState, setViewState] = useState<ViewState>(initialCoordinatesMap);
   const [notFound, setNotFound] = useState(false);
+  const [selected, setSelected] = useState<IBank|null>(null);
+
   const handleZoom = (event: ViewStateChangeEvent) => {
     setViewState(event.viewState);
   };
-  const [selected, setSelected] = useState<IBank|null>(null);
+
   const handleClick = (bank: IBank) => {
     setSelected(bank);
   };
+
   const handleClose = () => {
     setSelected(null);
   };
+
   useEffect(() => {
     if (data) {
       const banks = CURRENCY_NAMES.includes(value) ? generateRandomBanks(data.banks) : data.banks;
       setListOfMarkers(banks);
     }
   }, [data, value]);
+
   useEffect(() => {
     if (!CURRENCY_NAMES.includes(value) && value !== '') {
       setNotFound(true);
@@ -59,6 +64,7 @@ export function MapComponent({ value }: IMap) {
       return () => clearTimeout(id);
     }
   }, [value]);
+
   return (
     <MapSection>
       <ReactMapGL

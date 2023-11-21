@@ -51,7 +51,18 @@ export interface IDropDown {
   value: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
 }
-export type TYPE_CODES = 'USD' | 'EUR' | 'JPY' | 'KRW' | 'ARS' | 'LRD' | 'AUD' | 'CAD' | 'BTC' | 'IFIX' | 'BOVI';
+export type TYPE_CODES =
+  | 'USD'
+  | 'EUR'
+  | 'JPY'
+  | 'KRW'
+  | 'ARS'
+  | 'LRD'
+  | 'AUD'
+  | 'CAD'
+  | 'BTC'
+  | 'IFIX'
+  | 'BOVI';
 export interface ICurrencyCard {
   code: TYPE_CODES;
   value: number;
@@ -74,4 +85,10 @@ export interface ICandleChart {
   h: number;
   l: number;
   c: number;
+}
+export interface IBar {
+  o: string;
+  h: string;
+  l: string;
+  c: string;
 }

@@ -40,6 +40,7 @@ export const lightTheme: ITheme = {
     error: '#ff0000',
     loader: '#00CE2C',
     chartGrid: '#D9D9D9',
+    hoverBtn: '#D9D9D9',
   },
 };
 export const darkTheme: ITheme = {
@@ -63,6 +64,7 @@ export const darkTheme: ITheme = {
     error: '#ff0000',
     loader: '#00CE2C',
     chartGrid: 'rgba(255, 255, 255, 0.10)',
+    hoverBtn: '#474747',
   },
 };
 export interface ITheme {
@@ -103,5 +105,6 @@ export interface ITheme {
     error: string;
     loader: string;
     chartGrid: string;
+    hoverBtn: string;
   };
 }
