@@ -6,7 +6,7 @@ import { Chart } from 'react-chartjs-2';
 import { COLORS, getRandomData } from '../../constants/chart.ts';
 import { ICandleChart } from '../../types/index.ts';
 import { useThemeChart } from './hooks/useThemeChart.ts';
-import { Wrapper, WrapperChart } from './styled.ts';
+import { WrapperChart } from './styled.ts';
 
 export interface IChartComponent{
   netlifyAll: (data: boolean)=>void;
@@ -28,10 +28,8 @@ export function ChartComponent({ netlifyAll }:IChartComponent) {
     ],
   };
   return (
-    <Wrapper>
-      <WrapperChart>
-        <Chart data={dataForChart} type="candlestick" options={options} />
-      </WrapperChart>
-    </Wrapper>
+    <WrapperChart>
+      <Chart data={dataForChart} type="candlestick" options={options} />
+    </WrapperChart>
   );
 }

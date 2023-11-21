@@ -7,6 +7,7 @@ import {
 import React from 'react';
 
 import { ChartComponent } from '../../components/ChartComponent/index.tsx';
+import { CurrencyPicker } from '../../components/CurrencyPicker/index.tsx';
 import { SnackBar } from '../../components/SnackBar/index.tsx';
 import { Observer } from '../../model/observer.ts';
 import { TimeLineSection } from './styled.ts';
@@ -35,6 +36,7 @@ export class Timeline extends React.Component<ITimeLine, TimeLineState> {
   override render() {
     return (
       <TimeLineSection>
+        <CurrencyPicker />
         <ChartComponent netlifyAll={this.netlifyAll} />
         <SnackBar observer={this.observer} />
       </TimeLineSection>

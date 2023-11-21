@@ -7,9 +7,7 @@ import {
   Icon, ItemList, List, SelectedValue, Wrapper,
 } from './styled.ts';
 
-export function DropDown({
-  lists, value, setValue,
-}:IDropDown) {
+export function DropDown({ lists, value, setValue }:IDropDown) {
   const [active, setActive] = useState(false);
   const handleClick = () => {
     setActive(!active);
