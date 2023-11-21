@@ -6,4 +6,6 @@ export const TimeLineSection = styled.section`
   justify-content: center;
   padding: 0px 120px 0px 190px;
   margin-bottom: 200px;
+  position: relative;
+  overflow: hidden;
 `;

@@ -24,7 +24,7 @@ export const IconCurrency = styled.img`
 `;
 export const NameOfCurrencyText = styled.h3`
   font-size: 35px;
-  color: ${(props) => props.theme.colors.hover};
+  color: ${(props) => props.theme.colors.secondary};
   font-style: normal;
   font-weight: ${(props) => props.theme.fontWeight.normal};
   line-height: 49px;
@@ -33,4 +33,6 @@ export const NameOfCurrencyText = styled.h3`
 export const CodeOfCurrencyText = styled.p`
   font-size: 16px;
   color: ${(props) => props.theme.colors.secondary};
+  font-weight: ${(props) => props.theme.fontWeight.medium};
+  font-style: normal;
 `;

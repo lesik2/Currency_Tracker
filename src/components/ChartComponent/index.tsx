@@ -9,10 +9,13 @@ import { useThemeChart } from './hooks/useThemeChart.ts';
 import { WrapperChart } from './styled.ts';
 
 export interface IChartComponent{
-  netlifyAll: (data: boolean)=>void;
+  notifyAll: (data: boolean)=>void;
 }
-export function ChartComponent({ netlifyAll }:IChartComponent) {
-  console.log(netlifyAll);
+export function ChartComponent({ notifyAll }:IChartComponent) {
+  const handleClick = () => {
+    notifyAll(true);
+  };
+
   const options = useThemeChart();
   const [barCount] = useState(31);
   const barData: ICandleChart[] = useMemo(() => getRandomData(undefined, barCount), [barCount]);
@@ -28,7 +31,7 @@ export function ChartComponent({ netlifyAll }:IChartComponent) {
     ],
   };
   return (
-    <WrapperChart>
+    <WrapperChart onClick={handleClick}>
       <Chart data={dataForChart} type="candlestick" options={options} />
     </WrapperChart>
   );

@@ -26,10 +26,11 @@ export class Timeline extends React.Component<ITimeLine, TimeLineState> {
   constructor(props:ITimeLine) {
     super(props);
     this.observer = new Observer();
-    this.netlifyAll = this.netlifyAll.bind(this);
+    this.notifyAll = this.notifyAll.bind(this);
   }
 
-  netlifyAll(data: boolean) {
+  notifyAll(data: boolean) {
+    console.log(data);
     this.observer.setData(data);
   }
 
@@ -37,7 +38,7 @@ export class Timeline extends React.Component<ITimeLine, TimeLineState> {
     return (
       <TimeLineSection>
         <CurrencyPicker />
-        <ChartComponent netlifyAll={this.netlifyAll} />
+        <ChartComponent notifyAll={this.notifyAll} />
         <SnackBar observer={this.observer} />
       </TimeLineSection>
     );
