@@ -11,7 +11,7 @@ const initialState: AppState = {
   isLightTheme: JSON.parse(localStorage.getItem('theme') ?? 'false'),
   timeOfUpdate: '',
 };
-export const themeSlice = createSlice({
+export const appSlice = createSlice({
   name: 'app',
   initialState,
   reducers: {
@@ -28,5 +28,5 @@ export const themeSlice = createSlice({
     },
   },
 });
-export const { changeTheme, setTimeOfUpdate } = themeSlice.actions;
-export default themeSlice.reducer;
+export const { changeTheme, setTimeOfUpdate } = appSlice.actions;
+export default appSlice.reducer;

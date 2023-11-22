@@ -1,8 +1,8 @@
 import 'styled-components';
 
-import { theme } from './constants/theme.ts';
+import { ITheme } from './constants/theme.ts';
 
-type CustomTheme = typeof theme;
+type CustomTheme = ITheme;
 
 declare module 'styled-components' {
   export interface DefaultTheme extends CustomTheme {}

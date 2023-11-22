@@ -41,7 +41,7 @@ export function CurrencyCard({
       <Modal
         onClose={handleClose}
       >
-        <ModalContext code={code} nameCard={CODE_CURRENCY[code].name} />
+        <ModalContext valueOfBase={value} nameCard={CODE_CURRENCY[code].name} />
       </Modal>
       )}
     </>

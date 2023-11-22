@@ -19,7 +19,7 @@ export interface IModal {
 }
 export interface IModalContext {
   nameCard: string;
-  code: string;
+  valueOfBase: number;
 }
 export interface ISearchForm {
   handleChange: (value: string) => void;
@@ -49,9 +49,20 @@ export interface ICurrencySearch {
 export interface IDropDown {
   lists: string[];
   value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  setValue: React.Dispatch<React.SetStateAction<TYPE_CODES>>;
 }
-export type TYPE_CODES = 'USD' | 'EUR' | 'JPY' | 'KRW' | 'ARS' | 'LRD' | 'AUD' | 'CAD' | 'BTC' | 'IFIX' | 'BOVI';
+export type TYPE_CODES =
+  | 'USD'
+  | 'EUR'
+  | 'JPY'
+  | 'KRW'
+  | 'ARS'
+  | 'LRD'
+  | 'AUD'
+  | 'CAD'
+  | 'BTC'
+  | 'IFIX'
+  | 'BOVI';
 export interface ICurrencyCard {
   code: TYPE_CODES;
   value: number;
@@ -68,10 +79,16 @@ export interface IConvertCurrencies {
   base_currency: string;
   currencies: string;
 }
-export interface ICandle {
+export interface ICandleChart {
   x: number;
   o: number;
   h: number;
   l: number;
   c: number;
+}
+export interface IBar {
+  o: string;
+  h: string;
+  l: string;
+  c: string;
 }

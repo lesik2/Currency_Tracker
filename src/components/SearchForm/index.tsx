@@ -31,7 +31,6 @@ export function SearchForm({ handleChange }:ISearchForm) {
     setValue(event.target.value);
   };
   useEffect(() => {
-    // eslint-disable-next-line max-len
     const newList = data?.currencies.filter((item) => item.nameOfCurrency.toLowerCase().includes(debounced.toLowerCase()));
     if (newList) {
       setList(newList);
