@@ -22,7 +22,7 @@ export const Wrapper = styled.div<{ $isVisible?: boolean }>`
   display: ${(props) => (props.$isVisible ? 'flex' : 'none')};
   width: 450px;
   position: absolute;
-  bottom: 50px;
+  top: 33%;
   right: 30px;
   animation: ${show} 0.3s ease-out 1;
   flex-direction: column;

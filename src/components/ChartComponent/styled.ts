@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 `;
 export const WrapperChart = styled.div`
@@ -15,6 +15,7 @@ export const ChartBtn = styled.button`
   padding: 7px 5px 7px 5px;
   border-radius: 10px;
   align-self: flex-start;
+
   margin: 0px 0px 50px 40px;
   border: ${(props) => props.theme.colors.cardGray};
   outline: none;

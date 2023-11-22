@@ -11,7 +11,7 @@ export const currencyAPI = createApi({
       query: (param: string) => ({
         url: `/latest${param}`,
         headers: {
-          apikey: 'cur_live_qtVRTmyv41q8m8VGWZkq5ZZNWQylMV2pJEklnvub',
+          apikey: 'cur_live_CC8BfcQDPOX1OOPPyB9vWn0r8DWWrPnorBOzZM4b',
         },
       }),
     }),

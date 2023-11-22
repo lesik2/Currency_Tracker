@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import arrowIcon from '../../assets/images/arrow.svg';
 import { CODE_CURRENCY } from '../../constants/index.ts';
-import { IDropDown } from '../../types/index.ts';
+import { IDropDown, TYPE_CODES } from '../../types/index.ts';
 import {
   Icon, ItemList, List, SelectedValue, Wrapper,
 } from './styled.ts';
@@ -15,7 +15,7 @@ export function DropDown({ lists, value, setValue }:IDropDown) {
   const handleSelect = (event: React.MouseEvent) => {
     const code = event.currentTarget.getAttribute('data-code');
     if (code) {
-      setValue(code);
+      setValue(code as TYPE_CODES);
       setActive(!active);
     }
   };

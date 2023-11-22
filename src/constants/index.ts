@@ -10,7 +10,7 @@ import libraIcon from '../assets/images/libraIcon.svg';
 import pesoArgentinoIcon from '../assets/images/pesoArgentinoIcon.svg';
 import wonIcon from '../assets/images/wonIcon.svg';
 import yenIcon from '../assets/images/yenIcon.svg';
-import { ICode, ICurrencyCard } from '../types/index.ts';
+import { ICode, ICurrencyCard, TYPE_CODES } from '../types/index.ts';
 
 export const STATIC_INFO = {
   NAME_COMPANY: 'Modsen Currency',
@@ -126,7 +126,17 @@ export const CODE_CURRENCY: Record<string, ICode> = {
     icon: CURRENCY_ICONS.bovespalIcon,
   },
 };
-export const CODES_NAMES = ['USD', 'EUR', 'JPY', 'KRW', 'ARS', 'LRD', 'AUD', 'CAD', 'BTC'];
+export const CODES_NAMES: TYPE_CODES[] = [
+  'USD',
+  'EUR',
+  'JPY',
+  'KRW',
+  'ARS',
+  'LRD',
+  'AUD',
+  'CAD',
+  'BTC',
+];
 export const CURRENCY_NAMES = [
   'Commercial Dollar',
   'IFIX',

@@ -19,7 +19,7 @@ export interface IModal {
 }
 export interface IModalContext {
   nameCard: string;
-  code: string;
+  valueOfBase: number;
 }
 export interface ISearchForm {
   handleChange: (value: string) => void;
@@ -49,7 +49,7 @@ export interface ICurrencySearch {
 export interface IDropDown {
   lists: string[];
   value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  setValue: React.Dispatch<React.SetStateAction<TYPE_CODES>>;
 }
 export type TYPE_CODES =
   | 'USD'
