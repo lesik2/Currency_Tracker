@@ -25,8 +25,10 @@ export function Header() {
     const nameOfLink = event.currentTarget.getAttribute('data-name');
     if (nameOfLink) {
       setActive(nameOfLink);
+      setIsOpen(false);
     }
   };
+
   return (
     <HeaderWrapper>
       <Wrapper>

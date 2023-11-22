@@ -36,7 +36,7 @@ export function CurrencyCard({
           </CardSubTitle>
         </WrapperTitles>
       </WrapperCard>
-      {isOpen
+      {isOpen && !isStock
       && (
       <Modal
         onClose={handleClose}

@@ -8,6 +8,21 @@ export const Wrapper = styled.div`
 `;
 export const WrapperChart = styled.div`
   width: 1105px;
+  @media (max-width: ${(props) => props.theme.breakPoints.laptop}px) {
+    width: 970px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.laptopS}px) {
+    width: 690px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    width: 550px;
+  }
+  @media (max-width: 560px) {
+    width: 405px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    width: 305px;
+  }
 `;
 export const ChartBtn = styled.button`
   width: 140px;
@@ -23,5 +38,17 @@ export const ChartBtn = styled.button`
   transition: background-color 0.2s;
   &:hover {
     background-color: ${(props) => props.theme.colors.hoverBtn};
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.laptop}px) {
+    margin-left: 50px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    align-self: center;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    margin: 0px 0px 20px 0px;
+    padding: 3px;
+    font-size: 13px;
+    width: 110px;
   }
 `;
