@@ -15,8 +15,7 @@ export const ChartBtn = styled.button`
   padding: 7px 5px 7px 5px;
   border-radius: 10px;
   align-self: flex-start;
-
-  margin: 0px 0px 50px 40px;
+  margin: 0px 0px 50px 0px;
   border: ${(props) => props.theme.colors.cardGray};
   outline: none;
   color: ${(props) => props.theme.colors.secondary};

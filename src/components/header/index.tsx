@@ -4,8 +4,11 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { LINKS_NAMES, PATHS, PATHS_FOR_LINK_NAMES } from '../../app/index.tsx';
 import Label from '../../assets/images/label.svg';
 import { STATIC_INFO } from '../../constants/index.ts';
+import { BurgerMenu } from '../BurgerMenu/index.tsx';
+import Menu from '../Menu/index.tsx';
 import { ToggleTheme } from '../ToggleTheme/index.tsx';
 import {
+  BurgerWrapper,
   HeaderImage,
   HeaderText,
   HeaderWrapper,
@@ -16,6 +19,8 @@ import {
 export function Header() {
   const location = useLocation();
   const [active, setActive] = useState(PATHS_FOR_LINK_NAMES[location.pathname] || '');
+  const [isOpen, setIsOpen] = useState(false);
+
   const handleClick = (event: React.MouseEvent) => {
     const nameOfLink = event.currentTarget.getAttribute('data-name');
     if (nameOfLink) {
@@ -25,17 +30,22 @@ export function Header() {
   return (
     <HeaderWrapper>
       <Wrapper>
-        <HeaderImage alt="label chart" src={Label} />
-        <Navigation>
-          {PATHS.map((path, index) => (
-            <NavLink key={path} to={path}>
-              <LinkText data-name={LINKS_NAMES[index]} $isActive={active === LINKS_NAMES[index]} onClick={handleClick}>
-                {LINKS_NAMES[index]}
-              </LinkText>
-            </NavLink>
-          ))}
-        </Navigation>
-        <ToggleTheme />
+        <BurgerWrapper>
+          <HeaderImage alt="label chart" src={Label} />
+          <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+        </BurgerWrapper>
+        <Menu isOpen={isOpen} setIsOpen={setIsOpen}>
+          <Navigation>
+            {PATHS.map((path, index) => (
+              <NavLink key={path} to={path}>
+                <LinkText data-name={LINKS_NAMES[index]} $isActive={active === LINKS_NAMES[index]} onClick={handleClick}>
+                  {LINKS_NAMES[index]}
+                </LinkText>
+              </NavLink>
+            ))}
+          </Navigation>
+          <ToggleTheme />
+        </Menu>
       </Wrapper>
       <WrapperLabel>
         <WrapperInfo>

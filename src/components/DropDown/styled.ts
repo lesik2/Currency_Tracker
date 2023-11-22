@@ -6,6 +6,12 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 360px;
   position: relative;
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+      width: 300px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    width: 270px;
+  }
 `;
 export const SelectedValue = styled.button`
   color: ${(props) => props.theme.colors.secondary};
@@ -23,6 +29,12 @@ export const SelectedValue = styled.button`
   height: 45px;
   width: 100%;
   cursor: pointer;
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+      font-size: 22px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    font-size: 19px;
+  }
 `;
 
 export const List = styled.div<{ $active?: boolean }>`
@@ -46,6 +58,10 @@ export const ItemList = styled.p`
   transition: background-color 0.2s;
   &:hover {
     background-color: ${(props) => props.theme.colors.hover};
+    
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    font-size: 17px;
   }
 `;
 export const Icon = styled.img<{ $active?: boolean }>`
@@ -54,4 +70,8 @@ export const Icon = styled.img<{ $active?: boolean }>`
   transition: transform 0.2s;
   transform: ${(props) => (props.$active ? 'rotate(0deg)' : 'rotate(90deg)')};
   margin-top: 6px;
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    width: 15px;
+    height: 12px;
+  }
 `;

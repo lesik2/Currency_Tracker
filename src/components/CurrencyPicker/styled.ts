@@ -4,9 +4,10 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 155px;
+  align-self: flex-start;
   align-items: flex-start;
   margin-bottom: 76px;
-  margin-left: 30px;
+
 `;
 export const CardWrapper = styled.div`
   display: flex;

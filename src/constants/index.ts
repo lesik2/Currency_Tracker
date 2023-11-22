@@ -76,8 +76,8 @@ export const STOCKS: ICurrencyCard[] = [
   },
 ];
 export const Times = {
-  morning: 'PM',
-  evening: 'AM',
+  morning: 'AM',
+  evening: 'PM',
   break: 12,
 };
 export const CODE_CURRENCY: Record<string, ICode> = {

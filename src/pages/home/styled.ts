@@ -6,6 +6,10 @@ export const HomeWrapper = styled.section`
   align-items: center;
   width: 100%;
   gap: 86px;
+  padding: 0px 5px 0px 5px;
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    gap: 33px;
+  }
 `;
 export const Title = styled.h3`
   margin: 0;
@@ -24,6 +28,26 @@ export const Title = styled.h3`
     width: 520px;
     background: ${(props) => props.theme.colors.cardGray};
   }
+  @media (max-width: ${(props) => props.theme.breakPoints.laptop}px) {
+      &::after {
+        width: 450px;
+      }
+      margin-left: 15px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.laptopS}px) {
+    &::after {
+        width: 350px;
+      }
+      font-size: 22px;
+      margin-left: 15px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    &::after {
+        width: 310px;
+      }
+      font-size: 19px;
+      margin-left: 0px;
+  }
 `;
 export const Wrapper = styled.div`
   display: flex;
@@ -31,6 +55,9 @@ export const Wrapper = styled.div`
   align-items: flex-start;
   gap: 50px;
   width: 1224px;
+  @media (max-width: ${(props) => props.theme.breakPoints.laptop}px) {
+      width: 100%;
+  }
 `;
 
 export const CardsWrapper = styled.div`
@@ -40,4 +67,15 @@ export const CardsWrapper = styled.div`
   justify-items: center;
   row-gap: 56px;
   width: 100%;
+  @media (max-width: ${(props) => props.theme.breakPoints.laptop}px) {
+      column-gap: 80px;
+      grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.laptopS}px) {
+      column-gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    row-gap: 20px;
+  }
 `;

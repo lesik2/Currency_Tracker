@@ -4,8 +4,9 @@ export const TimeLineSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0px 120px 0px 180px;
+  align-items: flex-start;
   margin-bottom: 200px;
+  padding: 0px 150px 0px 150px;
   position: relative;
   overflow: hidden;
 `;
