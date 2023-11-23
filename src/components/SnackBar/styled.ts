@@ -36,7 +36,7 @@ export const Wrapper = styled.div<{ $isVisible?: boolean }>`
   }
   @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
     width: 300px;
-    right: 10px;
+    right: 5px;
     gap: 10px;
   }
 `;
