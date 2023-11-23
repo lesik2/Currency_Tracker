@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Content, Wrapper } from './styled.ts';
+import { Content, Wrapper } from './styled';
 
 export interface IMenu {
   children: React.ReactNode;

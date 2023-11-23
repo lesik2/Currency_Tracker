@@ -8,14 +8,14 @@ import ReactMapGL, {
 } from 'react-map-gl';
 
 import marker from '../../assets/images/marker.svg';
-import { CURRENCY_NAMES } from '../../constants/index.ts';
-import { useFetchBanksQuery } from '../../services/banks.ts';
-import { IBank } from '../../types/index.ts';
-import { generateRandomBanks } from '../../utils/index.ts';
+import { CURRENCY_NAMES } from '../../constants/index';
+import { useFetchBanksQuery } from '../../services/banks';
+import { IBank } from '../../types/index';
+import { generateRandomBanks } from '../../utils/index';
 import {
   Icon, MapSection, MarkerBtn, NotFoundMessage,
   PopUpTitle, PopUpWrapper,
-} from './styled.ts';
+} from './styled';
 
 export interface IMap{
   value: string;

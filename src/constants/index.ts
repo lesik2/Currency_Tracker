@@ -15,7 +15,7 @@ import telegramIcon from '../assets/images/telegramIcon.svg';
 import twitterIcon from '../assets/images/twitterIcon.svg';
 import wonIcon from '../assets/images/wonIcon.svg';
 import yenIcon from '../assets/images/yenIcon.svg';
-import { ICode, ICurrencyCard, TYPE_CODES } from '../types/index.ts';
+import { ICode, ICurrencyCard, TYPE_CODES } from '../types/index';
 
 export const STATIC_INFO = {
   NAME_COMPANY: 'Modsen Currency',

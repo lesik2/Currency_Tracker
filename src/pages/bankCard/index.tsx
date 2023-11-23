@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { MapComponent } from '../../components/Map/index.tsx';
-import { SearchForm } from '../../components/SearchForm/index.tsx';
-import { Wrapper } from './styled.ts';
+import { MapComponent } from '../../components/Map/index';
+import { SearchForm } from '../../components/SearchForm/index';
+import { Wrapper } from './styled';
 
 export interface IBankCard{
 

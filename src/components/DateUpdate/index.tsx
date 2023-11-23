@@ -1,9 +1,9 @@
 import circleAnimation from '../../assets/images/circleAnimation.svg';
-import { STATIC_INFO } from '../../constants/index.ts';
-import { useAppSelector } from '../../hooks/redux.ts';
+import { STATIC_INFO } from '../../constants/index';
+import { useAppSelector } from '../../hooks/redux';
 import {
   DateImage, DateWrapper, TextDate, Wrapper,
-} from './styled.ts';
+} from './styled';
 
 export function DateUpdate() {
   const time = useAppSelector((state) => state.appReducer.timeOfUpdate);

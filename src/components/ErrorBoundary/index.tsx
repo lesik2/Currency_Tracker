@@ -3,7 +3,7 @@ import { Component, ErrorInfo, ReactNode } from 'react';
 import errorIcon from '../../assets/images/error.svg';
 import {
   Error, ErrorMessage, Image, Wrapper,
-} from './styled.ts';
+} from './styled';
 
 interface Props {
     // eslint-disable-next-line react/require-default-props

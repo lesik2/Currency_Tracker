@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { IResultBanks } from '../types/index.ts';
+import { IResultBanks } from '../types/index';
 
 export const banksAPI = createApi({
   reducerPath: 'banksAPI',

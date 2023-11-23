@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
-import { CODE_CURRENCY, DOLLAR_SYMBOL, PERCENTAGE_SYMBOL } from '../../constants/index.ts';
-import { ICurrencyCard } from '../../types/index.ts';
-import { roundUpCurrency } from '../../utils/index.ts';
-import { Modal } from '../Modal/index.tsx';
-import { ModalContext } from '../ModalContext/index.tsx';
+import { CODE_CURRENCY, DOLLAR_SYMBOL, PERCENTAGE_SYMBOL } from '../../constants/index';
+import { ICurrencyCard } from '../../types/index';
+import { roundUpCurrency } from '../../utils/index';
+import { Modal } from '../Modal/index';
+import { ModalContext } from '../ModalContext/index';
 import {
   CardIcon, CardSubTitle, CardTitle, WrapperCard,
   WrapperTitles,
-} from './styled.ts';
+} from './styled';
 
 export function CurrencyCard({
   code, value, isStock = false,

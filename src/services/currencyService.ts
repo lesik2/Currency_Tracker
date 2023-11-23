@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { IConvertCurrencies, ICurrency, IResultCurrencies } from '../types/index.ts';
+import { IConvertCurrencies, ICurrency, IResultCurrencies } from '../types/index';
 
 export const currencyAPI = createApi({
   reducerPath: 'currencyAPI',

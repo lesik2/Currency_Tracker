@@ -1,11 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 
-import { banksAPI } from '../services/banks.ts';
-import { currencyAPI } from '../services/currencyService.ts';
-import { searchAPI } from '../services/search.ts';
-import appReducer from './reducers/appSlice.ts';
-import currenciesReducer from './reducers/currenciesSlice.ts';
+import { banksAPI } from '../services/banks';
+import { currencyAPI } from '../services/currencyService';
+import { searchAPI } from '../services/search';
+import appReducer from './reducers/appSlice';
+import currenciesReducer from './reducers/currenciesSlice';
 
 const rootReducer = combineReducers({
   [currencyAPI.reducerPath]: currencyAPI.reducer,

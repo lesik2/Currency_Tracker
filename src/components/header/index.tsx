@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-import { LINKS_NAMES, PATHS, PATHS_FOR_LINK_NAMES } from '../../app/index.tsx';
+import { LINKS_NAMES, PATHS, PATHS_FOR_LINK_NAMES } from '../../app/index';
 import Label from '../../assets/images/label.svg';
-import { STATIC_INFO } from '../../constants/index.ts';
-import { BurgerMenu } from '../BurgerMenu/index.tsx';
-import Menu from '../Menu/index.tsx';
-import { ToggleTheme } from '../ToggleTheme/index.tsx';
+import { STATIC_INFO } from '../../constants/index';
+import { BurgerMenu } from '../BurgerMenu/index';
+import Menu from '../Menu/index';
+import { ToggleTheme } from '../ToggleTheme/index';
 import {
   BurgerWrapper,
   HeaderImage,
@@ -14,7 +14,7 @@ import {
   HeaderWrapper,
   LabelImage,
   LinkText, MainTitle, Navigation, SecondTitle, Wrapper, WrapperInfo, WrapperLabel, WrapperTitles,
-} from './styled.ts';
+} from './styled';
 
 export function Header() {
   const location = useLocation();

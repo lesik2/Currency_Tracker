@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Line, Wrapper } from './styled.ts';
+import { Line, Wrapper } from './styled';
 
 export interface IBurgerMenu {
   isOpen: boolean;

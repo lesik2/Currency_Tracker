@@ -1,5 +1,5 @@
 import Label from '../../assets/images/label.svg';
-import { FOOTER_INFO, STATIC_INFO } from '../../constants/index.ts';
+import { FOOTER_INFO, STATIC_INFO } from '../../constants/index';
 import {
   FooterInfo,
   FooterInfoText,
@@ -7,7 +7,7 @@ import {
   FooterInfoWrapper,
   FooterText,
   FooterWrapper, LogoDescription, LogoFooter, LogoText, LogoWrapper, Wrapper,
-} from './styled.ts';
+} from './styled';
 
 export function Footer() {
   return (
