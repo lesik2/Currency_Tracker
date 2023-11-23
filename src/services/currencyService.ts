@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { IConvertCurrencies, ICurrency, IResultCurrencies } from '../types/index';
+import { IResultCurrencies } from '../types/index';
 
 export const currencyAPI = createApi({
   reducerPath: 'currencyAPI',
@@ -15,25 +15,9 @@ export const currencyAPI = createApi({
         },
       }),
     }),
-    convertCurrency: build.query<ICurrency[], IConvertCurrencies>({
-      query: (param: IConvertCurrencies) => ({
-        url: '/latest',
-        headers: {
-          apikey: 'cur_live_qtVRTmyv41q8m8VGWZkq5ZZNWQylMV2pJEklnvub',
-        },
-        params: {
-          value: param.value,
-          base_currency: param.base_currency,
-          'currencies[]': param.currencies,
-        },
-      }),
-      transformResponse: (response: IResultCurrencies) => Object.values(response.data),
-    }),
   }),
 });
 export const {
   useFetchLatestCurrenciesQuery,
   useLazyFetchLatestCurrenciesQuery,
-  useConvertCurrencyQuery,
-  useLazyConvertCurrencyQuery,
 } = currencyAPI;

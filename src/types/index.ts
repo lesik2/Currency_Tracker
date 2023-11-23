@@ -74,11 +74,6 @@ export interface IResultCurrencies {
     [currencyCode: string]: ICurrency;
   };
 }
-export interface IConvertCurrencies {
-  value: string;
-  base_currency: string;
-  currencies: string;
-}
 export interface ICandleChart {
   x: number;
   o: number;

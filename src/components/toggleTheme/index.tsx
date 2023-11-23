@@ -17,7 +17,7 @@ export function ToggleTheme() {
     <Wrapper>
       <ToggleThemeInput onChange={handleOnChange} checked={isDarkTheme} type="checkbox" id={`${id}-themeInput`} />
       <ToggleThemeLabel className="theme-label" htmlFor={`${id}-themeInput`}>
-        <ThemeBowl className="theme-bowl" />
+        <ThemeBowl data-cy="bowl-theme" className="theme-bowl" />
       </ToggleThemeLabel>
     </Wrapper>
   );

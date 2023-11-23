@@ -10,7 +10,7 @@ import {
 export function Home() {
   const cards:ICurrency[] = useAppSelector((state) => state.currenciesReducer.currencies);
   return (
-    <HomeWrapper>
+    <HomeWrapper data-cy="home-page">
       <Wrapper>
         <Title>
           {STATIC_INFO.STOCKS}

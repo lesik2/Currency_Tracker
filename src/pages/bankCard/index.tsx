@@ -26,7 +26,7 @@ export class BankCard extends React.Component<IBankCard, BankCardState> {
   override render() {
     const { search } = this.state;
     return (
-      <Wrapper>
+      <Wrapper data-cy="bankcard">
         <SearchForm handleChange={this.handleChange} />
         <MapComponent value={search} />
       </Wrapper>

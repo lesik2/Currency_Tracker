@@ -6,7 +6,7 @@ import {
 
 export function Contact() {
   return (
-    <ContactSection>
+    <ContactSection data-cy="contact">
       <Title>
         {STATIC_INFO.CONTACT_COMPANY}
       </Title>

@@ -35,7 +35,7 @@ export class Timeline extends React.Component<ITimeLine, TimeLineState> {
 
   override render() {
     return (
-      <TimeLineSection>
+      <TimeLineSection data-cy="timeline">
         <CurrencyPicker />
         <ChartComponent notifyAll={this.notifyAll} />
         <SnackBar observer={this.observer} />
