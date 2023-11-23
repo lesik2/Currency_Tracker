@@ -30,6 +30,8 @@ const GlobalStyle = createGlobalStyle`
       width: 100%;
       transition: background-color 0.2s;
       background-color: ${(props) => props.theme.colors.primary};
+      position: relative;
+  
     }
     img,
     video,

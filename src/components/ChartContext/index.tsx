@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-import { getRandomData } from '../../constants/chart.ts';
-import { IBar, ICandleChart } from '../../types/index.ts';
-import { BarInput } from '../BarInput/index.tsx';
+import { getRandomData } from '../../constants/chart';
+import { IBar, ICandleChart } from '../../types/index';
+import { BarInput } from '../BarInput/index';
 import {
   ChartBtn, Wrapper, WrapperBtn, WrapperInputs,
-} from './styled.ts';
+} from './styled';
 
 export interface IChartContext{
   barData: IBar[];

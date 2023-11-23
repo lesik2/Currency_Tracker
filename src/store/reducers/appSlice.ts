@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { Times } from '../../constants/index.ts';
+import { Times } from '../../constants/index';
 
 export interface AppState {
   isLightTheme: boolean;

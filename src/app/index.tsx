@@ -1,9 +1,9 @@
-import { NotFound } from '../components/NotFound/index.tsx';
-import { BankCard } from '../pages/BankCard/index.tsx';
-import { Contact } from '../pages/Contact/index.tsx';
-import { Home } from '../pages/Home/index.tsx';
-import { Timeline } from '../pages/Timeline/index.tsx';
-import { IPaths } from '../types/index.ts';
+import { NotFound } from '../components/NotFound/index';
+import { BankCard } from '../pages/BankCard/index';
+import { Contact } from '../pages/Contact/index';
+import { Home } from '../pages/Home/index';
+import { Timeline } from '../pages/Timeline/index';
+import { IPaths } from '../types/index';
 
 export const LINKS_NAMES = ['Home', 'Timeline', 'Bank card', 'Contato'];
 const PATHS_NAMES = {

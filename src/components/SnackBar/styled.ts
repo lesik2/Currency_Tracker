@@ -31,6 +31,14 @@ export const Wrapper = styled.div<{ $isVisible?: boolean }>`
   gap: 15px;
   border: 2px ${(props) => props.theme.colors.cardGray} solid;
   background-color: ${(props) => props.theme.colors.lightBlack};
+  @media (max-width: ${(props) => props.theme.breakPoints.laptopS}px) {
+    width: 350px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    width: 300px;
+    right: 5px;
+    gap: 10px;
+  }
 `;
 export const MainInfo = styled.div`
   display: flex;
@@ -50,8 +58,24 @@ export const MainText = styled.h2`
   font-style: normal;
   font-weight: ${(props) => props.theme.fontWeight.normal};
   line-height: 49px;
+  @media (max-width: ${(props) => props.theme.breakPoints.laptopS}px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    font-size: 15px;
+    line-height: 16px;
+  }
 `;
 export const Icon = styled.img`
   width: 35px;
   height: 35px;
+  @media (max-width: ${(props) => props.theme.breakPoints.laptopS}px) {
+    width: 30px;
+    height: 30px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    width: 25px;
+    height: 25px;
+  }
 `;

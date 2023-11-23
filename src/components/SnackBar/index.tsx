@@ -1,10 +1,10 @@
 import React from 'react';
 
 import success from '../../assets/images/success.svg';
-import { IObserver, Observer } from '../../model/observer.ts';
+import { IObserver, Observer } from '../../model/observer';
 import {
   Icon, MainInfo, MainText, TimeShowing, Wrapper,
-} from './styled.ts';
+} from './styled';
 
 export interface ISnackBar{
   observer: Observer;

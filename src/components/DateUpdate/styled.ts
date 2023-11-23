@@ -10,6 +10,9 @@ export const DateWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 18px;
+  @media (max-width: ${(props) => props.theme.breakPoints.laptopS}px) {
+    font-size: 14px;
+  }
 `;
 export const TextDate = styled.h3`
   margin: 0;
@@ -18,8 +21,23 @@ export const TextDate = styled.h3`
   font-style: normal;
   font-weight: ${(props) => props.theme.fontWeight.light};
   line-height: 41px;
+  @media (max-width: ${(props) => props.theme.breakPoints.laptopS}px) {
+    font-size: 23px;
+    line-height: 23px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    font-size: 18px;
+  }
 `;
 export const DateImage = styled.img`
   width: 50px;
   height: 52px;
+  @media (max-width: ${(props) => props.theme.breakPoints.laptopS}px) {
+      width: 35px;
+      height: 37px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+      width: 28px;
+      height: 30px;
+  }
 `;

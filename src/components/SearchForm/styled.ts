@@ -28,6 +28,16 @@ export const Input = styled.input`
     border: 1px solid ${(props) => props.theme.colors.secondary};
     box-shadow: inset 0px 0px 2px ${(props) => props.theme.colors.secondary};
   }
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    width: 350px;
+    height: 55px;
+    font-size: 17px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+      width: 300px;
+      height: 50px;
+      font-size: 16px;
+  }
 `;
 export const Title = styled.h2`
   margin: 0;
@@ -36,6 +46,12 @@ export const Title = styled.h2`
   font-style: normal;
   font-weight: ${(props) => props.theme.fontWeight.normal};
   line-height: normal;
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+      font-size: 28px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+      font-size: 21px;
+  }
 `;
 export const SearchButton = styled.button`
   border: none;
@@ -51,8 +67,15 @@ export const SearchButton = styled.button`
   &:hover {
     transform: scale(1.2);
   }
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    top: 9px;
+  }
 `;
 export const Icon = styled.img`
   width: 24px;
   height: 24px;
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    width: 20px;
+    height: 20px;
+  }
 `;

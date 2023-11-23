@@ -6,17 +6,36 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 30px 30px 30px 30px;
+  padding: 30px;
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    padding: 20px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    padding: 10px;
+  }
 `;
 export const WrapperBtn = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    flex-direction: column;
+    gap: 15px;
+  }
 `;
 export const WrapperInputs = styled.div`
   overflow-y: scroll;
   scrollbar-width: thin;
   height: 550px;
+  @media (max-width: ${(props) => props.theme.breakPoints.laptop}px) {
+    height: 450px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    height: 400px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    height: 350px;
+  }
 `;
 export const ChartBtn = styled.button`
   width: 140px;
@@ -30,5 +49,12 @@ export const ChartBtn = styled.button`
   transition: background-color 0.2s;
   &:hover {
     background-color: ${(props) => props.theme.colors.hoverBtn};
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    padding: 5px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    width: 130px;
+    padding: 2px;
   }
 `;

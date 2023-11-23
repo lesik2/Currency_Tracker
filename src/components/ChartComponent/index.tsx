@@ -3,12 +3,12 @@ import 'chartjs-chart-financial';
 import { useState } from 'react';
 import { Chart } from 'react-chartjs-2';
 
-import { COLORS } from '../../constants/chart.ts';
-import { IBar, ICandleChart } from '../../types/index.ts';
-import { ChartContext } from '../ChartContext/index.tsx';
-import { Modal } from '../Modal/index.tsx';
-import { useThemeChart } from './hooks/useThemeChart.ts';
-import { ChartBtn, Wrapper, WrapperChart } from './styled.ts';
+import { COLORS } from '../../constants/chart';
+import { IBar, ICandleChart } from '../../types/index';
+import { ChartContext } from '../ChartContext/index';
+import { Modal } from '../Modal/index';
+import { useThemeChart } from './hooks/useThemeChart';
+import { ChartBtn, Wrapper, WrapperChart } from './styled';
 
 export interface IChartComponent{
   notifyAll: (data: boolean)=>void;

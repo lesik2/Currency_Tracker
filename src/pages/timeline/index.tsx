@@ -6,11 +6,11 @@ import {
 } from 'chartjs-chart-financial';
 import React from 'react';
 
-import { ChartComponent } from '../../components/ChartComponent/index.tsx';
-import { CurrencyPicker } from '../../components/CurrencyPicker/index.tsx';
-import { SnackBar } from '../../components/SnackBar/index.tsx';
-import { Observer } from '../../model/observer.ts';
-import { TimeLineSection } from './styled.ts';
+import { ChartComponent } from '../../components/ChartComponent/index';
+import { CurrencyPicker } from '../../components/CurrencyPicker/index';
+import { SnackBar } from '../../components/SnackBar/index';
+import { Observer } from '../../model/observer';
+import { TimeLineSection } from './styled';
 
 Chart.register(OhlcElement, OhlcController, CandlestickElement, CandlestickController);
 

@@ -17,8 +17,17 @@ export const theme = {
   zIndex: {
     modal: 1000,
     elasticSearch: 1000,
+    burgerMenu: 1000,
+    burgerMenuBack: 900,
+    burgerBtn: 2000,
   },
-  breakPoints: {},
+  breakPoints: {
+    laptop: 1250,
+    laptopS: 990,
+    tablet: 705,
+    mobileL: 560,
+    mobile: 415,
+  },
 };
 export const lightTheme: ITheme = {
   ...theme,
@@ -85,8 +94,17 @@ export interface ITheme {
   zIndex: {
     modal: number;
     elasticSearch: number;
+    burgerMenu: number;
+    burgerBtn: number;
+    burgerMenuBack: number;
   };
-  breakPoints: object;
+  breakPoints: {
+    laptop: number;
+    laptopS: number;
+    tablet: number;
+    mobile: number;
+    mobileL: number;
+  }
   colors: {
     secondary: string;
     darkWhite: string;

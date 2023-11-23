@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { IElasticSearch } from '../../types/index.ts';
-import { List, Wrapper } from './styled.ts';
+import { IElasticSearch } from '../../types/index';
+import { List, Wrapper } from './styled';
 
 export class ElasticSearch extends React.Component<IElasticSearch> {
   constructor(props: IElasticSearch) {

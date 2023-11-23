@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import { REGULAR_EXPRESSIONS } from '../../constants/index.ts';
-import { IBar } from '../../types/index.ts';
-import { CoordinateInput, ErrorMessage, Wrapper } from './styled.ts';
+import { REGULAR_EXPRESSIONS } from '../../constants/index';
+import { IBar } from '../../types/index';
+import { CoordinateInput, ErrorMessage, Wrapper } from './styled';
 
 export type Bar = 'o'|'c'|'l'|'h';
 export const BarCoordinates:Bar[] = ['o', 'c', 'l', 'h'];

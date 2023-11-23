@@ -7,6 +7,9 @@ export const Wrapper = styled.div`
   gap: 15px;
   position: relative;
   margin: 0px 0px 14px 0px;
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    gap: 8px;
+  }
 `;
 export const CoordinateInput = styled.input<{ $isError?: boolean }>`
   width: 100px;
@@ -28,6 +31,15 @@ export const CoordinateInput = styled.input<{ $isError?: boolean }>`
     box-shadow: inset 0px 0px 2px
       ${(props) => (props.$isError ? props.theme.colors.error : props.theme.colors.secondary)};
   }
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    width: 70px;
+    height: 25px;
+    padding: 5px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    width: 57px;
+    height: 22px;
+  }
 `;
 export const ErrorMessage = styled.p`
   position: absolute;
@@ -35,4 +47,8 @@ export const ErrorMessage = styled.p`
   font-size: 12px;
   left: 0px;
   color: ${(props) => props.theme.colors.secondary};
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    bottom: 22px;
+    font-size: 11px;
+  }
 `;

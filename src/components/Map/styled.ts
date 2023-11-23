@@ -5,6 +5,12 @@ export const MapSection = styled.section`
   height: 460px;
   margin-bottom: 200px;
   position: relative;
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    height: 350px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    height: 300px;
+  }
 `;
 export const MarkerBtn = styled.button`
   outline: none;

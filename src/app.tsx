@@ -5,15 +5,15 @@ import {
 } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import { ROUTES } from './app/index.tsx';
-import { DateUpdate } from './components/DateUpdate/index.tsx';
-import { Footer } from './components/Footer/index.tsx';
-import { Header } from './components/Header/index.tsx';
-import GlobalStyle from './globalStyles.ts';
-import { useCurrency } from './hooks/useCurrency.ts';
-import { useTheme } from './hooks/useTheme.ts';
-import { useFetchLatestCurrenciesQuery } from './services/currencyService.ts';
-import { getParametersForCurrencies } from './utils/index.ts';
+import { ROUTES } from './app/index';
+import { DateUpdate } from './components/DateUpdate/index';
+import { Footer } from './components/Footer/index';
+import { Header } from './components/Header/index';
+import GlobalStyle from './globalStyles';
+import { useCurrency } from './hooks/useCurrency';
+import { useTheme } from './hooks/useTheme';
+import { useFetchLatestCurrenciesQuery } from './services/currencyService';
+import { getParametersForCurrencies } from './utils/index';
 
 export function App() {
   const { data } = useFetchLatestCurrenciesQuery(getParametersForCurrencies(), {

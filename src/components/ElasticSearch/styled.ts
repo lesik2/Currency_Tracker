@@ -16,6 +16,13 @@ export const Wrapper = styled.ul<{ $show?: boolean }>`
   border: 1px solid ${(props) => props.theme.colors.footerGray};
   z-index: ${(props) => props.theme.zIndex.elasticSearch};
   margin: 0;
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    width: 350px;
+    padding: 10px 0px 7px 0px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+      width: 300px;
+  }
 `;
 
 export const List = styled.li`

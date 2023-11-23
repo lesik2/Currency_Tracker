@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 
-import { ICandleChart } from '../types/index.ts';
+import { ICandleChart } from '../types/index';
 
 export const COLORS = {
   up: 'rgba(80, 160, 115, 1)',
