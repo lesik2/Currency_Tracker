@@ -1,6 +1,41 @@
-function Contact() {
+import { CONTACTS, STATIC_INFO } from '../../constants/index';
+import {
+  ContactInfo,
+  ContactSection, Icon, MainContacts, NameOfContact, Title, WrapperContact, WrapperLinks,
+} from './styled';
+
+export function Contact() {
   return (
-    <h1>Contact</h1>
+    <ContactSection>
+      <Title>
+        {STATIC_INFO.CONTACT_COMPANY}
+      </Title>
+      <MainContacts>
+        <WrapperContact>
+          <NameOfContact>
+            E-mail:
+          </NameOfContact>
+          <ContactInfo>
+            {STATIC_INFO.EMAIL_COMPANY}
+          </ContactInfo>
+        </WrapperContact>
+        <WrapperContact>
+          <NameOfContact>
+            Phone:
+          </NameOfContact>
+          <ContactInfo>
+            {STATIC_INFO.PHONE_COMPANY}
+          </ContactInfo>
+        </WrapperContact>
+      </MainContacts>
+      <NameOfContact>
+        {STATIC_INFO.COMPANY_ADDRESS}
+      </NameOfContact>
+      <WrapperLinks>
+        {CONTACTS.map((contact) => (
+          <Icon alt={contact.name} key={contact.id} src={contact.icon} />
+        ))}
+      </WrapperLinks>
+    </ContactSection>
   );
 }
-export default Contact;

@@ -1,0 +1,49 @@
+{
+  "currencies":[
+    {
+      "nameOfCurrency": "Commercial Dollar",
+      "id": 1
+    },
+    {
+      "nameOfCurrency": "Euro",
+      "id": 2
+    },
+    {
+      "nameOfCurrency": "Yen",
+      "id": 3
+    },
+    {
+      "nameOfCurrency": "Yuan",
+      "id": 4
+    },
+    {
+      "nameOfCurrency": "Argentine Pesco",
+      "id": 5
+    },
+    {
+      "nameOfCurrency": "Libra",
+      "id": 6
+    },
+    {
+      "nameOfCurrency": "Australian Dollar",
+      "id": 7
+    },
+    {
+      "nameOfCurrency": "Canadian Dollar",
+      "id": 8
+    },
+    {
+      "nameOfCurrency": "Bitcoin",
+      "id": 9
+    },
+    {
+      "nameOfCurrency": "IFIX",
+      "id": 10
+    },
+    {
+      "nameOfCurrency": "Bovespa Index",
+      "id": 11
+    }
+  ]
+
+}
