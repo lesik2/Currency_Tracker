@@ -16,4 +16,7 @@ export const TimeLineSection = styled.section`
   @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
       padding: 0px 10px 0px 10px;
   }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+      padding: 0px 2px 0px 2px;
+  }
 `;

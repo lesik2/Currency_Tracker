@@ -35,7 +35,7 @@ export const WrapperCard = styled.div`
       padding: 13px;
       gap: 17px;
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
       border-radius: 10px;
     }
   }

@@ -25,6 +25,7 @@ export const theme = {
     laptop: 1250,
     laptopS: 990,
     tablet: 705,
+    mobileL: 560,
     mobile: 415,
   },
 };
@@ -102,6 +103,7 @@ export interface ITheme {
     laptopS: number;
     tablet: number;
     mobile: number;
+    mobileL: number;
   }
   colors: {
     secondary: string;

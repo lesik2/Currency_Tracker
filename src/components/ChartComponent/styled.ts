@@ -5,24 +5,14 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  width: 100%;
 `;
 export const WrapperChart = styled.div`
-  width: 1105px;
-  @media (max-width: ${(props) => props.theme.breakPoints.laptop}px) {
-    width: 970px;
-  }
-  @media (max-width: ${(props) => props.theme.breakPoints.laptopS}px) {
-    width: 690px;
-  }
+  width: 95%;
   @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
-    width: 550px;
+    width: 100%;
   }
-  @media (max-width: 560px) {
-    width: 405px;
-  }
-  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
-    width: 305px;
-  }
+
 `;
 export const ChartBtn = styled.button`
   width: 140px;
@@ -39,9 +29,7 @@ export const ChartBtn = styled.button`
   &:hover {
     background-color: ${(props) => props.theme.colors.hoverBtn};
   }
-  @media (max-width: ${(props) => props.theme.breakPoints.laptop}px) {
-    margin-left: 50px;
-  }
+
   @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
     align-self: center;
   }
