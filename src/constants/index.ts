@@ -5,9 +5,14 @@ import bovespalIcon from '../assets/images/bovespaIcon.svg';
 import canadianDollarIcon from '../assets/images/canadianDollarIcon.svg';
 import dollarIcon from '../assets/images/dollarIcon.svg';
 import euroIcon from '../assets/images/euroIcon.svg';
+import facebookIcon from '../assets/images/facebookIcon.svg';
 import ifixIcon from '../assets/images/ifix.svg';
+import instagramIcon from '../assets/images/instagramIcon.svg';
 import libraIcon from '../assets/images/libraIcon.svg';
+import linkedinIcon from '../assets/images/linkedin.svg';
 import pesoArgentinoIcon from '../assets/images/pesoArgentinoIcon.svg';
+import telegramIcon from '../assets/images/telegramIcon.svg';
+import twitterIcon from '../assets/images/twitterIcon.svg';
 import wonIcon from '../assets/images/wonIcon.svg';
 import yenIcon from '../assets/images/yenIcon.svg';
 import { ICode, ICurrencyCard, TYPE_CODES } from '../types/index.ts';
@@ -27,6 +32,10 @@ export const STATIC_INFO = {
   ERROR_MESSAGE: 'Input should be a number (e.g. 12)',
   INPUT_PLACEHOLDER: 'Сurrency search...',
   FORM_SEARCH: 'Search currency in the bank',
+  PHONE_COMPANY: '+44-789-987-6543',
+  EMAIL_COMPANY: 'currency.tracker@gmail.com',
+  CONTACT_COMPANY: 'Contact Us',
+  COMPANY_ADDRESS: '456 Oak Avenue, Gomel, 246001',
 };
 export const REGULAR_EXPRESSIONS = {
   validateInput: /^[0-9]*[.,]?[0-9]+$/,
@@ -149,4 +158,32 @@ export const CURRENCY_NAMES = [
   'Yuan',
   'Yen',
   'Euro',
+];
+export const CONTACTS = [
+  {
+    id: 1,
+    icon: facebookIcon,
+    name: 'facebook',
+  },
+  {
+    id: 2,
+    icon: instagramIcon,
+    name: 'instagram',
+  },
+  {
+    id: 3,
+    icon: linkedinIcon,
+    name: 'linkedin',
+  },
+  {
+    id: 4,
+    icon: twitterIcon,
+    name: 'twitter',
+  },
+  {
+    id: 5,
+    icon: telegramIcon,
+    name: 'telegram',
+  },
+
 ];
