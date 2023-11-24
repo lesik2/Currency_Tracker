@@ -29,7 +29,6 @@ export const initialCoordinatesMap = {
   },
 };
 
-const token = 'pk.eyJ1IjoidmlubnlwdWgiLCJhIjoiY2xveTFrM2x5MWs3cDJsczFjeWFocG53eCJ9.AfWV7gUo7NQa17w1ohSijA';
 export function MapComponent({ value }: IMap) {
   const { data } = useFetchBanksQuery(value);
   const [listOfMarkers, setListOfMarkers] = useState<IBank[]>([]);
@@ -71,7 +70,7 @@ export function MapComponent({ value }: IMap) {
         onMove={handleZoom}
         {...viewState}
         initialViewState={viewState}
-        mapboxAccessToken={token}
+        mapboxAccessToken={process.env.MAP_TOKEN ?? ''}
         mapStyle="mapbox://styles/mapbox/streets-v12"
       >
         {listOfMarkers.length > 0 && listOfMarkers.map((bank) => (

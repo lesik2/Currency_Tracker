@@ -5,7 +5,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "lib": ["DOM", "ESNext"],
-    "types": ["jest","cypress"],
+    "types": ["jest","cypress","webpack-env"],
     "jsx": "react-jsx",
     "noEmit": true,
     "isolatedModules": true,

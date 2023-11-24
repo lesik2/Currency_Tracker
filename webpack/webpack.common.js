@@ -3,6 +3,8 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const EslintPlugin = require('eslint-webpack-plugin');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 const filesThreshold = 8192;
@@ -85,5 +87,6 @@ module.exports = {
     new EslintPlugin({
       extensions: 'ts',
     }),
+    new Dotenv(),
   ],
 };
