@@ -27,7 +27,7 @@ export function ModalContext({ nameCard, valueOfBase }: IModalContext) {
     return 0;
   };
   return (
-    <Wrapper>
+    <Wrapper data-cy="modal-currency">
       <Title>
         {nameCard}
       </Title>
@@ -35,18 +35,19 @@ export function ModalContext({ nameCard, valueOfBase }: IModalContext) {
         <CurrencyAmountWrapper>
           {
                 !REGULAR_EXPRESSIONS.validateInput.test(amount) && (
-                <ErrorMessage>
+                <ErrorMessage data-cy="error-message-currency">
                   {STATIC_INFO.ERROR_MESSAGE}
                 </ErrorMessage>
                 )
               }
           <CurrencyAmount
+            data-cy="input-amount"
             $isError={!REGULAR_EXPRESSIONS.validateInput.test(amount)}
             value={amount}
             onChange={handleInput}
           />
         </CurrencyAmountWrapper>
-        <Result>
+        <Result data-cy="result-currency">
           {REGULAR_EXPRESSIONS.validateInput.test(amount) && convertCurrency()}
         </Result>
       </WrapperInputs>

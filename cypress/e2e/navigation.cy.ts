@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 describe('ToggleTheme Component', () => {
   it('default page is home and active link is home', () => {
     cy.visit('/');
@@ -8,10 +9,13 @@ describe('ToggleTheme Component', () => {
   it('change page after clicking on link', () => {
     cy.visit('/');
     cy.get('[data-name="Timeline"]').click();
+    cy.url().should('include', '/timeline');
     cy.get('[data-cy="timeline"]').should('exist');
     cy.get('[data-name="Bank card"]').click();
+    cy.url().should('include', '/bankcard');
     cy.get('[data-cy="bankcard"]').should('exist');
     cy.get('[data-name="Contato"]').click();
+    cy.url().should('include', '/contact');
     cy.get('[data-cy="contact"]').should('exist');
   });
   it('change style of clicking link', () => {

@@ -16,7 +16,7 @@ export function Modal({ onClose, children }: IModal) {
       <Wrapper>
         <Content>
           {children}
-          <Close onClick={onClose}>
+          <Close data-cy="cross-close" onClick={onClose}>
             <Image className="close-img" src={closeIcon} alt="close modal window" />
           </Close>
         </Content>

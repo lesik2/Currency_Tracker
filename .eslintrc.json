@@ -114,6 +114,7 @@
     "implicit-arrow-linebreak": 0,
     "no-console": ["error", { "allow": ["error"] }],
     "no-alert": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "linebreak-style": 0
   }
 }

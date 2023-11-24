@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 describe('ToggleTheme Component', () => {
   it('change state of checkbox(check/uncheck)', () => {
     cy.visit('/');

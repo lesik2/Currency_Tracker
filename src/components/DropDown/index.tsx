@@ -21,11 +21,11 @@ export function DropDown({ lists, value, setValue }: IDropDown) {
   };
   return (
     <Wrapper>
-      <SelectedValue onClick={handleClick}>
+      <SelectedValue data-cy="selected-currency" onClick={handleClick}>
         {CODE_CURRENCY[value].name}
         <Icon $active={active} alt="arrow" src={arrowIcon} />
       </SelectedValue>
-      <List $active={active}>
+      <List data-cy="variants-currency" $active={active}>
         {lists.map((code) => (
           <ItemList onClick={handleSelect} key={code} data-code={code}>
             {CODE_CURRENCY[code].name}

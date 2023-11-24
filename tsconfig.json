@@ -5,6 +5,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "lib": ["DOM", "ESNext"],
+    "types": ["jest","cypress"],
     "jsx": "react-jsx",
     "noEmit": true,
     "isolatedModules": true,

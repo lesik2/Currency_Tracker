@@ -15,7 +15,7 @@ export function Home() {
         <Title>
           {STATIC_INFO.STOCKS}
         </Title>
-        <CardsWrapper>
+        <CardsWrapper data-cy="cards-stocks-wrapper">
           {STOCKS.map((stoke) => (
             <CurrencyCard
               key={stoke.code}
@@ -31,7 +31,7 @@ export function Home() {
           {STATIC_INFO.QUOTES}
         </Title>
         {cards.length === 0 && <Loader />}
-        <CardsWrapper>
+        <CardsWrapper data-cy="cards-currency-wrapper">
           {cards && cards.map((card) => (
             <CurrencyCard key={card.code} code={card.code} value={card.value} />
           )) }
