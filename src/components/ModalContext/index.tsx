@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 
-import { CODES_NAMES, REGULAR_EXPRESSIONS, STATIC_INFO } from '../../constants/index';
-import { useAppSelector } from '../../hooks/redux';
-import { IModalContext, TYPE_CODES } from '../../types/index';
-import { roundUpCurrency } from '../../utils/index';
-import { DropDown } from '../DropDown/index';
 import {
   CurrencyAmount,
   CurrencyAmountWrapper,
   ErrorMessage, Result,
   Title, Wrapper, WrapperInputs,
 } from './styled';
+import { CODES_NAMES, REGULAR_EXPRESSIONS, STATIC_INFO } from '../../constants/index';
+import { useAppSelector } from '../../hooks/redux';
+import { IModalContext, TYPE_CODES } from '../../types/index';
+import { roundUpCurrency } from '../../utils/index';
+import { DropDown } from '../DropDown/index';
 
-export function ModalContext({ nameCard, valueOfBase }:IModalContext) {
+export function ModalContext({ nameCard, valueOfBase }: IModalContext) {
   const currencies = useAppSelector((state) => state.currenciesReducer.currencies);
   const [value, setValue] = useState<TYPE_CODES>(CODES_NAMES[0]);
   const [amount, setAmount] = useState('1');

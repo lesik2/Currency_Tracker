@@ -6,11 +6,11 @@ import {
 } from 'chartjs-chart-financial';
 import React from 'react';
 
+import { TimeLineSection } from './styled';
 import { ChartComponent } from '../../components/ChartComponent/index';
 import { CurrencyPicker } from '../../components/CurrencyPicker/index';
 import { SnackBar } from '../../components/SnackBar/index';
 import { Observer } from '../../model/observer';
-import { TimeLineSection } from './styled';
 
 Chart.register(OhlcElement, OhlcController, CandlestickElement, CandlestickController);
 
@@ -23,13 +23,13 @@ export interface TimeLineState {
 export class Timeline extends React.Component<ITimeLine, TimeLineState> {
   private observer: Observer;
 
-  constructor(props:ITimeLine) {
+  constructor(props: ITimeLine) {
     super(props);
     this.observer = new Observer();
     this.notifyAll = this.notifyAll.bind(this);
   }
 
-  notifyAll(data: boolean) {
+  notifyAll(data: boolean): void {
     this.observer.setData(data);
   }
 

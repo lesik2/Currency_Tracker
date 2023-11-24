@@ -9,6 +9,18 @@ export interface ICode {
   name: string;
   icon: string;
 }
+export type TYPE_CODES =
+  | 'USD'
+  | 'EUR'
+  | 'JPY'
+  | 'KRW'
+  | 'ARS'
+  | 'LRD'
+  | 'AUD'
+  | 'CAD'
+  | 'BTC'
+  | 'IFIX'
+  | 'BOVI';
 export interface ICurrency {
   code: TYPE_CODES;
   value: number;
@@ -23,6 +35,10 @@ export interface IModalContext {
 }
 export interface ISearchForm {
   handleChange: (value: string) => void;
+}
+export interface ICurrencySearch {
+  nameOfCurrency: string;
+  id: number;
 }
 export interface IElasticSearch {
   list: ICurrencySearch[];
@@ -42,27 +58,11 @@ export interface IBank {
 export interface IResultBanks {
   banks: IBank[];
 }
-export interface ICurrencySearch {
-  nameOfCurrency: string;
-  id: number;
-}
 export interface IDropDown {
   lists: string[];
   value: string;
   setValue: React.Dispatch<React.SetStateAction<TYPE_CODES>>;
 }
-export type TYPE_CODES =
-  | 'USD'
-  | 'EUR'
-  | 'JPY'
-  | 'KRW'
-  | 'ARS'
-  | 'LRD'
-  | 'AUD'
-  | 'CAD'
-  | 'BTC'
-  | 'IFIX'
-  | 'BOVI';
 export interface ICurrencyCard {
   code: TYPE_CODES;
   value: number;
@@ -86,4 +86,54 @@ export interface IBar {
   h: string;
   l: string;
   c: string;
+}
+export interface ITheme {
+  fontFamily: {
+    serif: string[];
+  };
+  fonts: {
+    bold: string;
+    regular: string;
+    light: string;
+  };
+  fontWeight: {
+    light: string;
+    normal: string;
+    regular: string;
+    medium: string;
+  };
+  zIndex: {
+    modal: number;
+    elasticSearch: number;
+    burgerMenu: number;
+    burgerBtn: number;
+    burgerMenuBack: number;
+  };
+  breakPoints: {
+    laptop: number;
+    laptopS: number;
+    tablet: number;
+    mobile: number;
+    mobileL: number;
+  }
+  colors: {
+    secondary: string;
+    darkWhite: string;
+    gray: string;
+    footerGray: string;
+    primary: string;
+    primaryGradient: string;
+    secondaryGradient: string;
+    lightBlack: string;
+    cardGray: string;
+    modalWrapper: string;
+    dropDown: string;
+    hover: string;
+    inputText: string;
+    inputBack: string;
+    error: string;
+    loader: string;
+    chartGrid: string;
+    hoverBtn: string;
+  };
 }

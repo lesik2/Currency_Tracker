@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-import arrowIcon from '../../assets/images/arrow.svg';
-import { CODE_CURRENCY } from '../../constants/index';
-import { IDropDown, TYPE_CODES } from '../../types/index';
 import {
   Icon, ItemList, List, SelectedValue, Wrapper,
 } from './styled';
+import arrowIcon from '../../assets/images/arrow.svg';
+import { CODE_CURRENCY } from '../../constants/index';
+import { IDropDown, TYPE_CODES } from '../../types/index';
 
-export function DropDown({ lists, value, setValue }:IDropDown) {
+export function DropDown({ lists, value, setValue }: IDropDown) {
   const [active, setActive] = useState(false);
   const handleClick = () => {
     setActive(!active);

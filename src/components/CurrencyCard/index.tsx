@@ -1,18 +1,18 @@
 import { useState } from 'react';
 
+import {
+  CardIcon, CardSubTitle, CardTitle, WrapperCard,
+  WrapperTitles,
+} from './styled';
 import { CODE_CURRENCY, DOLLAR_SYMBOL, PERCENTAGE_SYMBOL } from '../../constants/index';
 import { ICurrencyCard } from '../../types/index';
 import { roundUpCurrency } from '../../utils/index';
 import { Modal } from '../Modal/index';
 import { ModalContext } from '../ModalContext/index';
-import {
-  CardIcon, CardSubTitle, CardTitle, WrapperCard,
-  WrapperTitles,
-} from './styled';
 
 export function CurrencyCard({
   code, value, isStock = false,
-}:ICurrencyCard) {
+}: ICurrencyCard) {
   const subtitle = isStock ? `${value}${PERCENTAGE_SYMBOL}` : `${DOLLAR_SYMBOL} ${roundUpCurrency(value)}`;
   const [isOpen, setIsOpen] = useState(false);
   const handleOpen = () => {

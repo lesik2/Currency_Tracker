@@ -1,8 +1,8 @@
-import { CONTACTS, STATIC_INFO } from '../../constants/index';
 import {
   ContactInfo,
   ContactSection, Icon, MainContacts, NameOfContact, Title, WrapperContact, WrapperLinks,
 } from './styled';
+import { CONTACTS, STATIC_INFO } from '../../constants/index';
 
 export function Contact() {
   return (

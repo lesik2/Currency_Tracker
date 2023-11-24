@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import australianDollarIcon from '../assets/images/australianDollarIcon.svg';
 import bitcoinIcon from '../assets/images/bitcoinIcon.svg';
 import bovespalIcon from '../assets/images/bovespaIcon.svg';

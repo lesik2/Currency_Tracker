@@ -1,5 +1,3 @@
-import Label from '../../assets/images/label.svg';
-import { FOOTER_INFO, STATIC_INFO } from '../../constants/index';
 import {
   FooterInfo,
   FooterInfoText,
@@ -8,6 +6,8 @@ import {
   FooterText,
   FooterWrapper, LogoDescription, LogoFooter, LogoText, LogoWrapper, Wrapper,
 } from './styled';
+import Label from '../../assets/images/label.svg';
+import { FOOTER_INFO, STATIC_INFO } from '../../constants/index';
 
 export function Footer() {
   return (

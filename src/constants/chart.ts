@@ -29,6 +29,7 @@ function randomBar(date: DateTime, lastClose: number) {
   };
 }
 
+// eslint-disable-next-line max-len
 export function getRandomData(dateStr: string = initialDateStr, count: number = barCount): ICandleChart[] {
   let date = DateTime.fromRFC2822(dateStr);
   const data = [randomBar(date, 30)];

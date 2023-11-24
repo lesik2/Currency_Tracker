@@ -7,7 +7,7 @@ export interface IMenu {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
-export function Menu({ children, isOpen, setIsOpen }:IMenu) {
+export function Menu({ children, isOpen, setIsOpen }: IMenu) {
   const closeMenu = () => {
     setIsOpen(false);
   };

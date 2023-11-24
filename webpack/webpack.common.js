@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable import/no-extraneous-dependencies */
-const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const EslintPlugin = require('eslint-webpack-plugin');
+const path = require('path');
 
 const filesThreshold = 8192;
 

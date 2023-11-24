@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 
-import { getRandomData } from '../../constants/chart';
-import { IBar, ICandleChart } from '../../types/index';
-import { BarInput } from '../BarInput/index';
 import {
   ChartBtn, Wrapper, WrapperBtn, WrapperInputs,
 } from './styled';
+import { getRandomData } from '../../constants/chart';
+import { IBar, ICandleChart } from '../../types/index';
+import { BarInput } from '../BarInput/index';
 
 export interface IChartContext{
   barData: IBar[];
   setBarData: React.Dispatch<React.SetStateAction<IBar[]>>
-  notifyAll: (data: boolean)=>void;
+  notifyAll: (data: boolean) => void;
   setResult: React.Dispatch<React.SetStateAction<ICandleChart[]>>;
-  handleClose: ()=>void;
+  handleClose: () => void;
 }
 export function ChartContext({
   barData, setBarData, notifyAll, setResult, handleClose,
-}:IChartContext) {
+}: IChartContext) {
   const [isError, setIsError] = useState(false);
-  const handleChange = (value:string, index: number, key: keyof IBar) => {
+  const handleChange = (value: string, index: number, key: keyof IBar) => {
     setBarData(barData.map((bar, currentIndex) => {
       if (currentIndex === index) {
         return { ...bar, [key]: value };
@@ -27,7 +27,7 @@ export function ChartContext({
     }));
   };
   const handleCreateChart = () => {
-    const resultData:ICandleChart[] = [];
+    const resultData: ICandleChart[] = [];
     const initialDateStr = '01 Oct 2023 10:15 Z';
     let date = new Date(initialDateStr).getTime();
     for (let i = 0; i < barData.length; i += 1) {
@@ -68,8 +68,14 @@ export function ChartContext({
     <Wrapper>
       <WrapperInputs>
         {barData.map((bar, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-          <BarInput key={index} bar={bar} handleChange={handleChange} setIsError={setIsError} id={index} />
+          <BarInput
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
+            bar={bar}
+            handleChange={handleChange}
+            setIsError={setIsError}
+            id={index}
+          />
         ))}
       </WrapperInputs>
       <WrapperBtn>

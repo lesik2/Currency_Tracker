@@ -1,5 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable react/jsx-props-no-spreading */
 import { useEffect, useState } from 'react';
 import ReactMapGL, {
   Marker,
@@ -7,15 +5,15 @@ import ReactMapGL, {
   Popup, ViewState, ViewStateChangeEvent,
 } from 'react-map-gl';
 
+import {
+  Icon, MapSection, MarkerBtn, NotFoundMessage,
+  PopUpTitle, PopUpWrapper,
+} from './styled';
 import marker from '../../assets/images/marker.svg';
 import { CURRENCY_NAMES } from '../../constants/index';
 import { useFetchBanksQuery } from '../../services/banks';
 import { IBank } from '../../types/index';
 import { generateRandomBanks } from '../../utils/index';
-import {
-  Icon, MapSection, MarkerBtn, NotFoundMessage,
-  PopUpTitle, PopUpWrapper,
-} from './styled';
 
 export interface IMap{
   value: string;
@@ -58,6 +56,7 @@ export function MapComponent({ value }: IMap) {
     }
   }, [data, value]);
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     if (!CURRENCY_NAMES.includes(value) && value !== '') {
       setNotFound(true);

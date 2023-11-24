@@ -1,10 +1,10 @@
 import React from 'react';
 
-import success from '../../assets/images/success.svg';
-import { IObserver, Observer } from '../../model/observer';
 import {
   Icon, MainInfo, MainText, TimeShowing, Wrapper,
 } from './styled';
+import success from '../../assets/images/success.svg';
+import { IObserver, Observer } from '../../model/observer';
 
 export interface ISnackBar{
   observer: Observer;
@@ -15,7 +15,7 @@ export interface SnackBarState {
 export class SnackBar extends React.Component<ISnackBar, SnackBarState> implements IObserver {
   private timeoutId: ReturnType<typeof setTimeout> | undefined;
 
-  constructor(props:ISnackBar) {
+  constructor(props: ISnackBar) {
     super(props);
     this.state = {
       data: false,
@@ -23,12 +23,12 @@ export class SnackBar extends React.Component<ISnackBar, SnackBarState> implemen
     this.update = this.update.bind(this);
   }
 
-  override componentDidMount() {
+  override componentDidMount(): void {
     const { observer } = this.props;
     observer.addObserver(this);
   }
 
-  override componentDidUpdate(_prevProps: Readonly<ISnackBar>, prevState: Readonly<SnackBarState>): void {
+  override componentDidUpdate(_prevProps: Readonly<ISnackBar>, prevState: Readonly<SnackBarState>) {
     const { data } = this.state;
     if (data !== prevState.data) {
       if (this.timeoutId) {
@@ -42,7 +42,7 @@ export class SnackBar extends React.Component<ISnackBar, SnackBarState> implemen
     }
   }
 
-  override componentWillUnmount() {
+  override componentWillUnmount(): void {
     const { observer } = this.props;
     observer.removeObserver(this);
     if (this.timeoutId) {
@@ -51,7 +51,7 @@ export class SnackBar extends React.Component<ISnackBar, SnackBarState> implemen
     }
   }
 
-  update(data: boolean) {
+  update(data: boolean): void {
     this.setState({ data });
   }
 

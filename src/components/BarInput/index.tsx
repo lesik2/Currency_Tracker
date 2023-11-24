@@ -1,31 +1,23 @@
 import React, { useState } from 'react';
 
+import { CoordinateInput, ErrorMessage, Wrapper } from './styled';
 import { REGULAR_EXPRESSIONS } from '../../constants/index';
 import { IBar } from '../../types/index';
-import { CoordinateInput, ErrorMessage, Wrapper } from './styled';
 
 export type Bar = 'o'|'c'|'l'|'h';
-export const BarCoordinates:Bar[] = ['o', 'c', 'l', 'h'];
+export const BarCoordinates: Bar[] = ['o', 'c', 'l', 'h'];
 export interface IBarInput{
-  bar:IBar;
-  handleChange:(value:string, index: number, key: keyof IBar)=>void;
+  bar: IBar;
+  handleChange: (value: string, index: number, key: keyof IBar) => void;
   setIsError: React.Dispatch<React.SetStateAction<boolean>>;
   id: number;
 }
 export function BarInput({
   bar, handleChange, setIsError, id,
-}:IBarInput) {
+}: IBarInput) {
   const [error, setError] = useState(false);
-  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    const newBar = { ...bar, [name]: value };
-    if (name === 'o' || name === 'c' || name === 'l' || name === 'h') {
-      handleChange(value, id, name);
-    }
-    isError(newBar);
-  };
 
-  const isError = (newBar:IBar) => {
+  const isError = (newBar: IBar) => {
     const values = Object.values(newBar);
     for (let i = 0; i < values.length; i += 1) {
       if (!REGULAR_EXPRESSIONS.validateInput.test(values[i])) {
@@ -35,13 +27,22 @@ export function BarInput({
       }
     }
     const numbers = values.map((item) => parseFloat(item));
-    if (Math.max(...numbers) !== parseFloat(newBar.h) || Math.min(...numbers) !== parseFloat(newBar.l)) {
+    if (Math.max(...numbers) !== parseFloat(newBar.h) ||
+    Math.min(...numbers) !== parseFloat(newBar.l)) {
       setError(true);
       setIsError(true);
       return;
     }
     setError(false);
     setIsError(false);
+  };
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    const newBar = { ...bar, [name]: value };
+    if (name === 'o' || name === 'c' || name === 'l' || name === 'h') {
+      handleChange(value, id, name);
+    }
+    isError(newBar);
   };
 
   return (

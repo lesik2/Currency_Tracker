@@ -1,14 +1,14 @@
+import {
+  CardsWrapper, HomeWrapper, Title, Wrapper,
+} from './styled';
 import { CurrencyCard } from '../../components/CurrencyCard/index';
 import { Loader } from '../../components/InfinityLoader/index';
 import { STATIC_INFO, STOCKS } from '../../constants/index';
 import { useAppSelector } from '../../hooks/redux';
 import { ICurrency } from '../../types/index';
-import {
-  CardsWrapper, HomeWrapper, Title, Wrapper,
-} from './styled';
 
 export function Home() {
-  const cards:ICurrency[] = useAppSelector((state) => state.currenciesReducer.currencies);
+  const cards: ICurrency[] = useAppSelector((state) => state.currenciesReducer.currencies);
   return (
     <HomeWrapper data-cy="home-page">
       <Wrapper>

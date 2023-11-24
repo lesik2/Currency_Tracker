@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 
+import {
+  Icon, Input, SearchButton, Title,
+  Wrapper,
+  WrapperInput,
+} from './styled';
 import searchIcon from '../../assets/images/searchIcon.svg';
 import { STATIC_INFO } from '../../constants/index';
 import { useDebounce } from '../../hooks/useDebounce';
 import { useFetchCurrenciesNamesQuery } from '../../services/search';
 import { ICurrencySearch, ISearchForm } from '../../types/index';
 import { ElasticSearch } from '../ElasticSearch/index';
-import {
-  Icon, Input, SearchButton, Title,
-  Wrapper,
-  WrapperInput,
-} from './styled';
 
 export { useDebounce } from '../../hooks/useDebounce';
 
-export function SearchForm({ handleChange }:ISearchForm) {
+export function SearchForm({ handleChange }: ISearchForm) {
   const [list, setList] = useState<ICurrencySearch[]>([]);
   const [show, setShow] = useState(false);
   const [value, setValue] = useState('');
@@ -31,10 +31,13 @@ export function SearchForm({ handleChange }:ISearchForm) {
     setValue(event.target.value);
   };
   useEffect(() => {
-    const newList = data?.currencies.filter((item) => item.nameOfCurrency.toLowerCase().includes(debounced.toLowerCase()));
+    const newList = data?.currencies.filter((item) =>
+      item.nameOfCurrency.toLowerCase().includes(debounced.toLowerCase()));
     if (newList) {
       setList(newList);
-      setShow(debounced.length >= 2 && newList.length > 0 && newList[0].nameOfCurrency !== debounced);
+      setShow(debounced.length >= 2 &&
+        newList.length > 0 &&
+        newList[0].nameOfCurrency !== debounced);
     }
   }, [data, debounced]);
   return (
@@ -47,7 +50,14 @@ export function SearchForm({ handleChange }:ISearchForm) {
         <SearchButton>
           <Icon alt="search image" src={searchIcon} />
         </SearchButton>
-        {show && <ElasticSearch handleChange={handleChange} list={list} setShow={setShow} setValue={setValue} />}
+        {show && (
+        <ElasticSearch
+          handleChange={handleChange}
+          list={list}
+          setShow={setShow}
+          setValue={setValue}
+        />
+        )}
       </WrapperInput>
     </Wrapper>
   );

@@ -30,7 +30,12 @@ export function App() {
         <main>
           <Routes>
             {ROUTES.map((route) => (
-              <Route key={route.path} index={route.index || false} path={route.path} element={route.component} />
+              <Route
+                key={route.path}
+                index={route.index || false}
+                path={route.path}
+                element={route.component}
+              />
             ))}
           </Routes>
         </main>

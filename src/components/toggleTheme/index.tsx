@@ -1,10 +1,10 @@
 import { useId } from 'react';
 
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { changeTheme } from '../../store/reducers/appSlice';
 import {
   ThemeBowl, ToggleThemeInput, ToggleThemeLabel, Wrapper,
 } from './styled';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { changeTheme } from '../../store/reducers/appSlice';
 
 export function ToggleTheme() {
   const id = useId();
