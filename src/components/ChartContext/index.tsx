@@ -65,8 +65,8 @@ export function ChartContext({
     return false;
   };
   return (
-    <Wrapper>
-      <WrapperInputs>
+    <Wrapper data-cy="chart-model">
+      <WrapperInputs data-cy="chart-inputs">
         {barData.map((bar, index) => (
           <BarInput
             // eslint-disable-next-line react/no-array-index-key

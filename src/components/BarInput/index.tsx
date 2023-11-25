@@ -44,11 +44,11 @@ export function BarInput({
     }
     isError(newBar);
   };
-
   return (
     <Wrapper>
       {BarCoordinates.map((item) => (
         <CoordinateInput
+          data-cy="bar-input"
           $isError={bar[item].length !== 0 && !REGULAR_EXPRESSIONS.validateInput.test(bar[item])}
           placeholder={item}
           key={item}

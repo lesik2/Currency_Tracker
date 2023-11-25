@@ -47,6 +47,7 @@
       "@models/*": ["src/models/*"],
       "@components/*": ["src/components/*"],
       "@customTypes/*": ["src/types/*"],
+      "@utils/*": ["src/utils/*"],
     },
   },
 

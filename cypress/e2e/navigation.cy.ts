@@ -1,13 +1,14 @@
 /// <reference types="cypress" />
-describe('ToggleTheme Component', () => {
-  it('default page is home and active link is home', () => {
+describe('navigation', () => {
+  beforeEach(() => {
     cy.visit('/');
+  });
+  it('default page is home and active link is home', () => {
     cy.get('[data-cy="home-page"]').should('exist');
     cy.get('[data-name="Home"]').should('have.css', 'background-color', 'rgb(217, 217, 217)');
     cy.get('[data-name="Home"]').should('have.css', 'color', 'rgb(3, 3, 4)');
   });
   it('change page after clicking on link', () => {
-    cy.visit('/');
     cy.get('[data-name="Timeline"]').click();
     cy.url().should('include', '/timeline');
     cy.get('[data-cy="timeline"]').should('exist');
@@ -19,7 +20,6 @@ describe('ToggleTheme Component', () => {
     cy.get('[data-cy="contact"]').should('exist');
   });
   it('change style of clicking link', () => {
-    cy.visit('/');
     cy.get('[data-name="Home"]').should('have.css', 'background-color', 'rgb(217, 217, 217)');
     cy.get('[data-name="Home"]').should('have.css', 'color', 'rgb(3, 3, 4)');
     cy.get('[data-name="Timeline"]').click();

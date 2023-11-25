@@ -58,7 +58,7 @@ export class SnackBar extends React.Component<ISnackBar, SnackBarState> implemen
   override render() {
     const { data } = this.state;
     return (
-      <Wrapper $isVisible={data}>
+      <Wrapper data-cy="snack-bar" $isVisible={data}>
         <MainInfo>
           <Icon src={success} alt="success icon" />
           <MainText>

@@ -43,7 +43,7 @@ export function ChartComponent({ notifyAll }: IChartComponent) {
   };
   return (
     <Wrapper>
-      <ChartBtn onClick={handleOpen}>
+      <ChartBtn data-cy="button-chart" onClick={handleOpen}>
         Open modal
       </ChartBtn>
       <WrapperChart>

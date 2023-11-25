@@ -1,13 +1,14 @@
 /// <reference types="cypress" />
 
-describe('filmsContainer component', () => {
-  it('Home page should show 9 cards with currency and 2 with stocks', () => {
+describe('currencyConverter', () => {
+  beforeEach(() => {
     cy.visit('/');
+  });
+  it('Home page should show 9 cards with currency and 2 with stocks', () => {
     cy.get('[data-cy="cards-currency-wrapper"]>[data-cy="currency-card"]').should('have.length', 9);
     cy.get('[data-cy="cards-stocks-wrapper"]>[data-cy="currency-card"]').should('have.length', 2);
   });
   it('should show modal after clicking on currency card and close after clicking on cross', () => {
-    cy.visit('/');
     cy.get('[data-cy="cards-currency-wrapper"]').children().each(($el) => {
       cy.wrap($el).click();
       cy.get('[data-cy="modal-currency"]').should('exist');
@@ -16,7 +17,6 @@ describe('filmsContainer component', () => {
     });
   });
   it('should show modal with valid data', () => {
-    cy.visit('/');
     cy.get('[data-cy="cards-currency-wrapper"]').children().contains('Euro').click();
     cy.get('[data-cy="modal-currency"]').contains('Euro');
     cy.get('[data-cy="cross-close"]').click();
@@ -24,7 +24,6 @@ describe('filmsContainer component', () => {
     cy.get('[data-cy="modal-currency"]').contains('Yuan');
   });
   it('should show error message after invalid data typing in hide result', () => {
-    cy.visit('/');
     cy.get('[data-cy="cards-currency-wrapper"]').children().contains('Euro').click();
     cy.get('[data-cy="input-amount"]').should('have.value', 1);
     cy.get('[data-cy="input-amount"]').type('.');
@@ -38,7 +37,6 @@ describe('filmsContainer component', () => {
     cy.get('[data-cy="result-currency"]').should('be.empty');
   });
   it('should change currency to convert', () => {
-    cy.visit('/');
     cy.get('[data-cy="cards-currency-wrapper"]').children().contains('Euro').click();
     cy.get('[data-cy="selected-currency"]').contains('Commercial Dollar');
     cy.get('[data-cy="selected-currency"]').click();
