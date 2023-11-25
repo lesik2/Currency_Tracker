@@ -1,5 +1,5 @@
-import { CODES_NAMES } from '../constants/index';
-import { IBank } from '../types/index';
+import { CODES_NAMES } from '@constants/index';
+import { IBank } from '@customTypes/index';
 
 const ADDITIONAL_PARAMS = 'currencies[]=';
 export const getParametersForCurrencies = (): string => {

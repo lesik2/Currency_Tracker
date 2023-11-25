@@ -1,6 +1,4 @@
-export interface IObserver {
-  update(data: boolean): void;
-}
+import { IObserver } from '@customTypes/index';
 
 export class Observer {
   private data: boolean;

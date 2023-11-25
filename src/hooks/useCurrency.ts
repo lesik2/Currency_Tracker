@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
+import { setTimeOfUpdate } from '@store/reducers/appSlice';
+import { setCurrencies } from '@store/reducers/currenciesSlice';
+import { ICurrency, IResultCurrencies } from '@customTypes/index';
 import { useAppDispatch } from './redux';
-import { setTimeOfUpdate } from '../store/reducers/appSlice';
-import { setCurrencies } from '../store/reducers/currenciesSlice';
-import { ICurrency, IResultCurrencies } from '../types/index';
 
 export function useCurrency(data: IResultCurrencies | undefined) {
   const dispatch = useAppDispatch();

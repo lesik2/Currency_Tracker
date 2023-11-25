@@ -1,9 +1,9 @@
 import { Component, ErrorInfo, ReactNode } from 'react';
 
+import errorIcon from '@assets/images/error.svg';
 import {
   Error, ErrorMessage, Image, Wrapper,
 } from './styled';
-import errorIcon from '../../assets/images/error.svg';
 
 interface Props {
     children?: ReactNode;

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
+import { CODE_CURRENCY, CODES_NAMES } from '@constants/index';
 import {
   CardWrapper, CodeOfCurrencyText, IconCurrency, InfoWrapper, NameOfCurrencyText, Wrapper,
 } from './styled';
-import { CODE_CURRENCY, CODES_NAMES } from '../../constants/index';
 import { DropDown } from '../DropDown/index';
 
 export function CurrencyPicker() {

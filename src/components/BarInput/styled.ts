@@ -51,4 +51,7 @@ export const ErrorMessage = styled.p`
     bottom: 22px;
     font-size: 11px;
   }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) { 
+    font-size: 10px;
+  }
 `;

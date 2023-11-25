@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
+import { LINKS_NAMES, PATHS, PATHS_FOR_LINK_NAMES } from '@app/index';
+import Label from '@assets/images/label.svg';
+import { STATIC_INFO } from '@constants/index';
 import {
   BurgerWrapper,
   HeaderImage,
@@ -9,9 +12,6 @@ import {
   LabelImage,
   LinkText, MainTitle, Navigation, SecondTitle, Wrapper, WrapperInfo, WrapperLabel, WrapperTitles,
 } from './styled';
-import { LINKS_NAMES, PATHS, PATHS_FOR_LINK_NAMES } from '../../app/index';
-import Label from '../../assets/images/label.svg';
-import { STATIC_INFO } from '../../constants/index';
 import { BurgerMenu } from '../BurgerMenu/index';
 import Menu from '../Menu/index';
 import { ToggleTheme } from '../ToggleTheme/index';

@@ -39,9 +39,9 @@ describe('chart', () => {
     cy.get('[data-cy="button-chart"]').click();
     cy.get('[data-cy="bar-input"]').first().type('dres23');
     cy.get('[data-cy="bar-input"]').first().should('have.css', 'border-color', 'rgb(255, 0, 0)');
-    // cy.get('[data-cy="chart-modal"]').contains('The coordinates should be numbers l(min) h(max)');
+    cy.get('[data-cy="chart-modal"]').contains('The coordinates should be numbers l(min) h(max)');
   });
-  it('should disable "create chart" button when exist inputs without value', () => {
+  it('should disable "create chart" button when have inputs without value', () => {
     cy.get('[data-cy="button-chart"]').click();
     cy.contains('Create chart').should('have.attr', 'disabled');
   });

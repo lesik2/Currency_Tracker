@@ -1,22 +1,11 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 
+import { REGULAR_EXPRESSIONS, STATIC_INFO, BarCoordinates } from '@constants/index';
+import { IBar, IBarInput } from '@customTypes/index';
 import { CoordinateInput, ErrorMessage, Wrapper } from './styled';
-import { REGULAR_EXPRESSIONS } from '../../constants/index';
-import { IBar } from '../../types/index';
 
-export type Bar = 'o'|'c'|'l'|'h';
-export const BarCoordinates: Bar[] = ['o', 'c', 'l', 'h'];
-export interface IBarInput{
-  bar: IBar;
-  handleChange: (value: string, index: number, key: keyof IBar) => void;
-  setIsError: React.Dispatch<React.SetStateAction<boolean>>;
-  id: number;
-}
-export function BarInput({
-  bar, handleChange, setIsError, id,
-}: IBarInput) {
+export const BarInput = memo(({ bar, handleChange, setIsError, id }: IBarInput) => {
   const [error, setError] = useState(false);
-
   const isError = (newBar: IBar) => {
     const values = Object.values(newBar);
     for (let i = 0; i < values.length; i += 1) {
@@ -60,9 +49,9 @@ export function BarInput({
       {error
       && (
       <ErrorMessage>
-        The coordinates should be numbers l(min) h(max)
+        {STATIC_INFO.ERROR_MESSAGE_BAR}
       </ErrorMessage>
       )}
     </Wrapper>
   );
-}
+});

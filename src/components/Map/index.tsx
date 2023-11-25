@@ -5,15 +5,15 @@ import ReactMapGL, {
   Popup, ViewState, ViewStateChangeEvent,
 } from 'react-map-gl';
 
+import marker from '@assets/images/marker.svg';
+import { CURRENCY_NAMES } from '@constants/index';
+import { useFetchBanksQuery } from '@services/banks';
+import { IBank } from '@customTypes/index';
+import { generateRandomBanks } from '@utils/index';
 import {
   Icon, MapSection, MarkerBtn, NotFoundMessage,
   PopUpTitle, PopUpWrapper,
 } from './styled';
-import marker from '../../assets/images/marker.svg';
-import { CURRENCY_NAMES } from '../../constants/index';
-import { useFetchBanksQuery } from '../../services/banks';
-import { IBank } from '../../types/index';
-import { generateRandomBanks } from '../../utils/index';
 
 export interface IMap{
   value: string;

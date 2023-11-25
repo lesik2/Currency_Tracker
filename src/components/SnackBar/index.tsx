@@ -1,17 +1,12 @@
 import React from 'react';
 
+import { IObserver, ISnackBar, SnackBarState } from '@customTypes/index';
+import success from '@assets/images/success.svg';
+import { STATIC_INFO } from '@constants/index';
 import {
   Icon, MainInfo, MainText, TimeShowing, Wrapper,
 } from './styled';
-import success from '../../assets/images/success.svg';
-import { IObserver, Observer } from '../../model/observer';
 
-export interface ISnackBar{
-  observer: Observer;
-}
-export interface SnackBarState {
-  data: boolean;
-}
 export class SnackBar extends React.Component<ISnackBar, SnackBarState> implements IObserver {
   private timeoutId: ReturnType<typeof setTimeout> | undefined;
 
@@ -62,7 +57,7 @@ export class SnackBar extends React.Component<ISnackBar, SnackBarState> implemen
         <MainInfo>
           <Icon src={success} alt="success icon" />
           <MainText>
-            The chart was built successfully
+            {STATIC_INFO.SNACK_BAR_MESSAGE}
           </MainText>
         </MainInfo>
         <TimeShowing />

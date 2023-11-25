@@ -3,33 +3,32 @@ import 'chartjs-chart-financial';
 import { useState } from 'react';
 import { Chart } from 'react-chartjs-2';
 
+import { IBar, ICandleChart, IChartComponent } from '@customTypes/index';
+import { COLORS, BAR_COUNT } from '@constants/chart';
+import { STATIC_INFO } from '@constants/index';
 import { useThemeChart } from './hooks/useThemeChart';
 import { ChartBtn, Wrapper, WrapperChart } from './styled';
-import { COLORS } from '../../constants/chart';
-import { IBar, ICandleChart } from '../../types/index';
 import { ChartContext } from '../ChartContext/index';
 import { Modal } from '../Modal/index';
 
-export interface IChartComponent{
-  notifyAll: (data: boolean) => void;
-}
-export function ChartComponent({ notifyAll }: IChartComponent) {
-  const barCount = 31;
+export function ChartComponent({ addToObserver }: IChartComponent) {
   const [result, setResult] = useState<ICandleChart[]>([]);
-  const [barData, setBarData] = useState<IBar[]>(new Array(barCount).fill({
+  const [barData, setBarData] = useState<IBar[]>(new Array(BAR_COUNT).fill({
     o: '',
     h: '',
     l: '',
     c: '',
   }));
   const [isOpen, setIsOpen] = useState(false);
+  const options = useThemeChart();
+
   const handleOpen = () => {
     setIsOpen(!isOpen);
   };
   const handleClose = () => {
     setIsOpen(!isOpen);
   };
-  const options = useThemeChart();
+
   const dataForChart = {
     datasets: [
       {
@@ -44,7 +43,7 @@ export function ChartComponent({ notifyAll }: IChartComponent) {
   return (
     <Wrapper>
       <ChartBtn data-cy="button-chart" onClick={handleOpen}>
-        Open modal
+        {STATIC_INFO.BUTTON_CHART}
       </ChartBtn>
       <WrapperChart>
         <Chart data={dataForChart} type="candlestick" options={options} />
@@ -55,7 +54,7 @@ export function ChartComponent({ notifyAll }: IChartComponent) {
           barData={barData}
           setBarData={setBarData}
           setResult={setResult}
-          notifyAll={notifyAll}
+          addToObserver={addToObserver}
           handleClose={handleClose}
         />
       </Modal>

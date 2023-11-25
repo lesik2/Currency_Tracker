@@ -44,10 +44,11 @@
       "@store/*": ["src/store/*"],
       "@assets/*": ["src/assets/*"],
       "@constants/*": ["src/constants/*"],
-      "@models/*": ["src/models/*"],
+      "@model/*": ["src/model/*"],
       "@components/*": ["src/components/*"],
       "@customTypes/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],
+      "@app/*": ["src/app/*"],
     },
   },
 

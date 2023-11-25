@@ -1,4 +1,5 @@
 import React from 'react';
+import { Observer } from '@model/observer';
 
 export interface IPaths {
   path?: string;
@@ -136,4 +137,36 @@ export interface ITheme {
     chartGrid: string;
     hoverBtn: string;
   };
+}
+export interface ITimeLine{
+
+}
+export interface TimeLineState {
+  search: string;
+}
+export interface IObserver {
+  update(data: boolean): void;
+}
+export interface IChartComponent{
+  addToObserver: (data: boolean) => void;
+}
+export interface IChartContext{
+  barData: IBar[];
+  setBarData: React.Dispatch<React.SetStateAction<IBar[]>>
+  addToObserver: (data: boolean) => void;
+  setResult: React.Dispatch<React.SetStateAction<ICandleChart[]>>;
+  handleClose: () => void;
+}
+export type Bar = 'o'|'c'|'l'|'h';
+export interface IBarInput{
+  bar: IBar;
+  handleChange: (value: string, index: number, key: keyof IBar) => void;
+  setIsError: React.Dispatch<React.SetStateAction<boolean>>;
+  id: number;
+}
+export interface ISnackBar{
+  observer: Observer;
+}
+export interface SnackBarState {
+  data: boolean;
 }

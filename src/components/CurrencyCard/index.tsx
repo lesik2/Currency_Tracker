@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
+import { CODE_CURRENCY, DOLLAR_SYMBOL, PERCENTAGE_SYMBOL } from '@constants/index';
+import { ICurrencyCard } from '@customTypes/index';
+import { roundUpCurrency } from '@utils/index';
 import {
   CardIcon, CardSubTitle, CardTitle, WrapperCard,
   WrapperTitles,
 } from './styled';
-import { CODE_CURRENCY, DOLLAR_SYMBOL, PERCENTAGE_SYMBOL } from '../../constants/index';
-import { ICurrencyCard } from '../../types/index';
-import { roundUpCurrency } from '../../utils/index';
 import { Modal } from '../Modal/index';
 import { ModalContext } from '../ModalContext/index';
 

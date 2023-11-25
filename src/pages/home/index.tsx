@@ -1,11 +1,11 @@
+import { CurrencyCard } from '@components/CurrencyCard/index';
+import { Loader } from '@components/InfinityLoader/index';
+import { STATIC_INFO, STOCKS } from '@constants/index';
+import { useAppSelector } from '@hooks/redux';
+import { ICurrency } from '@customTypes/index';
 import {
   CardsWrapper, HomeWrapper, Title, Wrapper,
 } from './styled';
-import { CurrencyCard } from '../../components/CurrencyCard/index';
-import { Loader } from '../../components/InfinityLoader/index';
-import { STATIC_INFO, STOCKS } from '../../constants/index';
-import { useAppSelector } from '../../hooks/redux';
-import { ICurrency } from '../../types/index';
 
 export function Home() {
   const cards: ICurrency[] = useAppSelector((state) => state.currenciesReducer.currencies);

@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
+import searchIcon from '@assets/images/searchIcon.svg';
+import { STATIC_INFO } from '@constants/index';
+import { useDebounce } from '@hooks/useDebounce';
+import { useFetchCurrenciesNamesQuery } from '@services/search';
+import { ICurrencySearch, ISearchForm } from '@customTypes/index';
 import {
   Icon, Input, SearchButton, Title,
   Wrapper,
   WrapperInput,
 } from './styled';
-import searchIcon from '../../assets/images/searchIcon.svg';
-import { STATIC_INFO } from '../../constants/index';
-import { useDebounce } from '../../hooks/useDebounce';
-import { useFetchCurrenciesNamesQuery } from '../../services/search';
-import { ICurrencySearch, ISearchForm } from '../../types/index';
 import { ElasticSearch } from '../ElasticSearch/index';
 
-export { useDebounce } from '../../hooks/useDebounce';
+export { useDebounce } from '@hooks/useDebounce';
 
 export function SearchForm({ handleChange }: ISearchForm) {
   const [list, setList] = useState<ICurrencySearch[]>([]);

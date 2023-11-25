@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { MapComponent } from '@components/Map/index';
+import { SearchForm } from '@components/SearchForm/index';
 import { Wrapper } from './styled';
-import { MapComponent } from '../../components/Map/index';
-import { SearchForm } from '../../components/SearchForm/index';
 
 export interface IBankCard{
 
