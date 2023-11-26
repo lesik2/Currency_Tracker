@@ -21,7 +21,7 @@ export function DropDown({ lists, value, setValue }: IDropDown) {
   };
   return (
     <Wrapper>
-      <SelectedValue data-cy="selected-currency" onClick={handleClick}>
+      <SelectedValue data-cy="selected-currency" data-testid="selected-currency" onClick={handleClick}>
         {CODE_CURRENCY[value].name}
         <Icon $active={active} alt="arrow" src={arrowIcon} />
       </SelectedValue>

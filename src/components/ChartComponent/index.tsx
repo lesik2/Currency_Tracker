@@ -41,8 +41,8 @@ export function ChartComponent({ addToObserver }: IChartComponent) {
     ],
   };
   return (
-    <Wrapper>
-      <ChartBtn data-cy="button-chart" onClick={handleOpen}>
+    <Wrapper data-testid="chart-component">
+      <ChartBtn data-cy="button-chart" data-testid="button-chart" onClick={handleOpen}>
         {STATIC_INFO.BUTTON_CHART}
       </ChartBtn>
       <WrapperChart>

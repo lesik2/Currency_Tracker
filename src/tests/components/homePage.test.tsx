@@ -1,6 +1,6 @@
 import { Home } from '@pages/Home/index';
 import { CODES_NAMES } from '@constants/index';
-import { cleanup, render } from '../test.utils';
+import { cleanup, render, screen } from '../test.utils';
 
 afterEach(() => {
   cleanup();
@@ -26,10 +26,10 @@ describe('Home page', () => {
     expect(component.getByTestId('home-page')).toBeInTheDocument();
   });
   test('should show Loader if number of cards = 0', () => {
-    const component = render(
+    render(
       <Home />,
     );
-    expect(component.getByTestId('infinity-loader')).toBeInTheDocument();
+    expect(screen.getByTestId('infinity-loader')).toBeInTheDocument();
   });
   test('should render 2 cards', () => {
     const component = render(<Home />, { preloadedState: { currenciesReducer: mockData } });

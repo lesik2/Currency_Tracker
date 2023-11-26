@@ -59,7 +59,7 @@ export function ChartContext({
     })));
   };
   return (
-    <Wrapper data-cy="chart-model">
+    <Wrapper data-cy="chart-model" data-testid="chart-model">
       <WrapperInputs data-cy="chart-inputs">
         {barData.map((bar, index) => (
           <BarInput
