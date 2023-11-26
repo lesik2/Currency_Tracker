@@ -2,13 +2,14 @@ import * as Hooks from '@hooks/redux';
 import * as actions from '@store/reducers/appSlice';
 
 import userEvent from '@testing-library/user-event';
-import { ToggleTheme } from 'src/components/ToggleTheme/index';
+import { ToggleTheme } from '@components/ToggleTheme/index';
 
 import { cleanup, render, screen } from '../test.utils';
 
 const useDispatchMock = jest.spyOn(Hooks, 'useAppDispatch');
 afterEach(() => {
   cleanup();
+  jest.clearAllMocks();
 });
 describe('ToggleComponent', () => {
   test('should render ToggleTheme component', () => {

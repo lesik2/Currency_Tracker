@@ -10,7 +10,7 @@ import {
 export function Home() {
   const cards: ICurrency[] = useAppSelector((state) => state.currenciesReducer.currencies);
   return (
-    <HomeWrapper data-cy="home-page">
+    <HomeWrapper data-testid="home-page" data-cy="home-page">
       <Wrapper>
         <Title>
           {STATIC_INFO.STOCKS}
@@ -30,8 +30,8 @@ export function Home() {
         <Title>
           {STATIC_INFO.QUOTES}
         </Title>
-        {cards.length === 0 && <Loader />}
-        <CardsWrapper data-cy="cards-currency-wrapper">
+        {cards.length && <Loader />}
+        <CardsWrapper data-cy="cards-currency-wrapper" data-testid="cards-currency-wrapper">
           {cards && cards.map((card) => (
             <CurrencyCard key={card.code} code={card.code} value={card.value} />
           )) }

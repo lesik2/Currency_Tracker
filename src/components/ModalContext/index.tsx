@@ -27,7 +27,7 @@ export function ModalContext({ nameCard, valueOfBase }: IModalContext) {
     return 0;
   };
   return (
-    <Wrapper data-cy="modal-currency">
+    <Wrapper data-cy="modal-currency" data-testid="modal-currency">
       <Title>
         {nameCard}
       </Title>

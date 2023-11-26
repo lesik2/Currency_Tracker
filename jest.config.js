@@ -7,10 +7,15 @@ module.exports = {
     '@hooks/(.*)$': '<rootDir>/src/hooks/$1',
     '@store/(.*)$': '<rootDir>/src/store/$1',
     '@constants/(.*)$': '<rootDir>/src/constants/$1',
+    '@app/(.*)$': '<rootDir>/src/app/$1',
+    '@utils/(.*)$': '<rootDir>/src/utils/$1',
+    '@model/(.*)$': '<rootDir>/src/model/$1',
+    '@pages/(.*)$': '<rootDir>/src/pages/$1',
     '^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
           '<rootDir>/src/tests/mocks/fileMock.ts',
     '^.+\\.(css|less|scss|sass)$': '<rootDir>/src/tests/mocks/styleMock.ts',
     '(assets|models|services)': '<rootDir>/src/tests/mocks/fileMock.ts',
+    'chartjs-adapter-luxon': '<rootDir>/src/tests/mocks/fileMock.ts',
   },
   setupFilesAfterEnv: ['./src/tests/setupTests.ts'],
 

@@ -49,6 +49,7 @@
       "@customTypes/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],
       "@app/*": ["src/app/*"],
+      "@pages/*": ["src/pages/*"],
     },
   },
 

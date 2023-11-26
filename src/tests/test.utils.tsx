@@ -18,6 +18,7 @@ type CustomRenderOptions = {
 } & Omit<RenderOptions, 'wrapper'>;
 
 function render(ui: ReactElement, options?: CustomRenderOptions) {
+  const { preloadedState } = options || {};
   const store =
         options?.store ||
         configureStore({
@@ -25,6 +26,7 @@ function render(ui: ReactElement, options?: CustomRenderOptions) {
             appReducer,
             currenciesReducer,
           }),
+          preloadedState: preloadedState as object,
         });
 
   function Wrapper({ children }: { children: React.ReactNode }) {
