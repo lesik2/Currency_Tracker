@@ -4,7 +4,7 @@ describe('chart', () => {
     cy.visit('/');
     cy.get('[data-name="Timeline"]').click();
   });
-  it('should open modal with 31 inputs after clicking on button', () => {
+  it('should open modal with 124 inputs after clicking on button', () => {
     cy.get('[data-cy="button-chart"]').click();
     cy.get('[data-cy="chart-model"]').should('exist');
     cy.get('[data-cy="bar-input"]').should('have.length', '124');

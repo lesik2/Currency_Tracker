@@ -14,7 +14,7 @@ export function ToggleTheme() {
     dispatch(changeTheme());
   };
   return (
-    <Wrapper>
+    <Wrapper data-testid="toggle-theme">
       <ToggleThemeInput onChange={handleOnChange} checked={isDarkTheme} type="checkbox" id={`${id}-themeInput`} />
       <ToggleThemeLabel className="theme-label" htmlFor={`${id}-themeInput`}>
         <ThemeBowl data-cy="bowl-theme" className="theme-bowl" />

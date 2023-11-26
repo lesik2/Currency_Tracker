@@ -55,13 +55,13 @@ export function MapComponent({ value }: IMap) {
     }
   }, [data, value]);
 
-  // eslint-disable-next-line consistent-return
   useEffect(() => {
     if (!CURRENCY_NAMES.includes(value) && value !== '') {
       setNotFound(true);
       const id = setTimeout(() => setNotFound(false), 1000);
       return () => clearTimeout(id);
     }
+    return undefined;
   }, [value]);
 
   return (
