@@ -20,5 +20,6 @@ module.exports = {
       directory: assets,
       watch: true,
     },
+    port: 8080,
   },
 };

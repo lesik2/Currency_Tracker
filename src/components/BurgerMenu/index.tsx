@@ -7,7 +7,7 @@ export interface IBurgerMenu {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export function BurgerMenu({ isOpen, setIsOpen }:IBurgerMenu) {
+export function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
   const handleClick = () => {
     setIsOpen((prev) => !prev);
   };

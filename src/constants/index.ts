@@ -1,21 +1,20 @@
-/* eslint-disable max-len */
-import australianDollarIcon from '../assets/images/australianDollarIcon.svg';
-import bitcoinIcon from '../assets/images/bitcoinIcon.svg';
-import bovespalIcon from '../assets/images/bovespaIcon.svg';
-import canadianDollarIcon from '../assets/images/canadianDollarIcon.svg';
-import dollarIcon from '../assets/images/dollarIcon.svg';
-import euroIcon from '../assets/images/euroIcon.svg';
-import facebookIcon from '../assets/images/facebookIcon.svg';
-import ifixIcon from '../assets/images/ifix.svg';
-import instagramIcon from '../assets/images/instagramIcon.svg';
-import libraIcon from '../assets/images/libraIcon.svg';
-import linkedinIcon from '../assets/images/linkedin.svg';
-import pesoArgentinoIcon from '../assets/images/pesoArgentinoIcon.svg';
-import telegramIcon from '../assets/images/telegramIcon.svg';
-import twitterIcon from '../assets/images/twitterIcon.svg';
-import wonIcon from '../assets/images/wonIcon.svg';
-import yenIcon from '../assets/images/yenIcon.svg';
-import { ICode, ICurrencyCard, TYPE_CODES } from '../types/index';
+import australianDollarIcon from '@assets/images/australianDollarIcon.svg';
+import bitcoinIcon from '@assets/images/bitcoinIcon.svg';
+import bovespalIcon from '@assets/images/bovespaIcon.svg';
+import canadianDollarIcon from '@assets/images/canadianDollarIcon.svg';
+import dollarIcon from '@assets/images/dollarIcon.svg';
+import euroIcon from '@assets/images/euroIcon.svg';
+import facebookIcon from '@assets/images/facebookIcon.svg';
+import ifixIcon from '@assets/images/ifix.svg';
+import instagramIcon from '@assets/images/instagramIcon.svg';
+import libraIcon from '@assets/images/libraIcon.svg';
+import linkedinIcon from '@assets/images/linkedin.svg';
+import pesoArgentinoIcon from '@assets/images/pesoArgentinoIcon.svg';
+import telegramIcon from '@assets/images/telegramIcon.svg';
+import twitterIcon from '@assets/images/twitterIcon.svg';
+import wonIcon from '@assets/images/wonIcon.svg';
+import yenIcon from '@assets/images/yenIcon.svg';
+import { Bar, ICode, ICurrencyCard, TYPE_CODES } from '@customTypes/index';
 
 export const STATIC_INFO = {
   NAME_COMPANY: 'Modsen Currency',
@@ -36,6 +35,11 @@ export const STATIC_INFO = {
   EMAIL_COMPANY: 'currency.tracker@gmail.com',
   CONTACT_COMPANY: 'Contact Us',
   COMPANY_ADDRESS: '456 Oak Avenue, Gomel, 246001',
+  BUTTON_CHART: 'Open modal',
+  CREATE_CHART: 'Create chart',
+  RANDOM_DATA: 'Get random data',
+  ERROR_MESSAGE_BAR: 'The coordinates should be numbers l(min) h(max)',
+  SNACK_BAR_MESSAGE: 'The chart was built successfully',
 };
 export const REGULAR_EXPRESSIONS = {
   validateInput: /^[0-9]*[.,]?[0-9]+$/,
@@ -187,3 +191,4 @@ export const CONTACTS = [
   },
 
 ];
+export const BarCoordinates: Bar[] = ['o', 'c', 'l', 'h'];

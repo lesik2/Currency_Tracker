@@ -5,15 +5,15 @@ import {
 } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import { ROUTES } from './app/index';
-import { DateUpdate } from './components/DateUpdate/index';
-import { Footer } from './components/Footer/index';
-import { Header } from './components/Header/index';
+import { Header } from '@components/Header/index';
+import { DateUpdate } from '@components/DateUpdate/index';
+import { Footer } from '@components/Footer/index';
+import { useCurrency } from '@hooks/useCurrency';
+import { useTheme } from '@hooks/useTheme';
+import { useFetchLatestCurrenciesQuery } from '@services/currencyService';
+import { getParametersForCurrencies } from '@utils/index';
 import GlobalStyle from './globalStyles';
-import { useCurrency } from './hooks/useCurrency';
-import { useTheme } from './hooks/useTheme';
-import { useFetchLatestCurrenciesQuery } from './services/currencyService';
-import { getParametersForCurrencies } from './utils/index';
+import { ROUTES } from './app/index';
 
 export function App() {
   const { data } = useFetchLatestCurrenciesQuery(getParametersForCurrencies(), {
@@ -30,7 +30,12 @@ export function App() {
         <main>
           <Routes>
             {ROUTES.map((route) => (
-              <Route key={route.path} index={route.index || false} path={route.path} element={route.component} />
+              <Route
+                key={route.path}
+                index={route.index || false}
+                path={route.path}
+                element={route.component}
+              />
             ))}
           </Routes>
         </main>

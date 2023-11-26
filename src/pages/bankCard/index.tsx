@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { MapComponent } from '../../components/Map/index';
-import { SearchForm } from '../../components/SearchForm/index';
+import { MapComponent } from '@components/Map/index';
+import { SearchForm } from '@components/SearchForm/index';
 import { Wrapper } from './styled';
 
 export interface IBankCard{
@@ -11,7 +11,7 @@ export interface BankCardState {
   search: string;
 }
 export class BankCard extends React.Component<IBankCard, BankCardState> {
-  constructor(props:IBankCard) {
+  constructor(props: IBankCard) {
     super(props);
     this.state = {
       search: '',
@@ -26,7 +26,7 @@ export class BankCard extends React.Component<IBankCard, BankCardState> {
   override render() {
     const { search } = this.state;
     return (
-      <Wrapper>
+      <Wrapper data-cy="bankcard">
         <SearchForm handleChange={this.handleChange} />
         <MapComponent value={search} />
       </Wrapper>

@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 
-import { ICandleChart } from '../types/index';
+import { ICandleChart } from '@customTypes/index';
 
 export const COLORS = {
   up: 'rgba(80, 160, 115, 1)',
@@ -8,8 +8,8 @@ export const COLORS = {
   unchanged: 'rgba(90, 90, 90, 1)',
 };
 
-const barCount = 31;
-const initialDateStr = '01 Oct 2023 10:15 Z';
+export const BAR_COUNT = 31;
+export const INITIAL_DATA = '01 Oct 2023 10:15 Z';
 
 function randomNumber(min: number, max: number) {
   return Math.random() * (max - min) + min;
@@ -29,7 +29,8 @@ function randomBar(date: DateTime, lastClose: number) {
   };
 }
 
-export function getRandomData(dateStr: string = initialDateStr, count: number = barCount): ICandleChart[] {
+// eslint-disable-next-line max-len
+export function getRandomData(dateStr: string = INITIAL_DATA, count: number = BAR_COUNT): ICandleChart[] {
   let date = DateTime.fromRFC2822(dateStr);
   const data = [randomBar(date, 30)];
   while (data.length < count) {

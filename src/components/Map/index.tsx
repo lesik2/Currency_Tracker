@@ -1,5 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable react/jsx-props-no-spreading */
 import { useEffect, useState } from 'react';
 import ReactMapGL, {
   Marker,
@@ -7,11 +5,11 @@ import ReactMapGL, {
   Popup, ViewState, ViewStateChangeEvent,
 } from 'react-map-gl';
 
-import marker from '../../assets/images/marker.svg';
-import { CURRENCY_NAMES } from '../../constants/index';
-import { useFetchBanksQuery } from '../../services/banks';
-import { IBank } from '../../types/index';
-import { generateRandomBanks } from '../../utils/index';
+import marker from '@assets/images/marker.svg';
+import { CURRENCY_NAMES } from '@constants/index';
+import { useFetchBanksQuery } from '@services/banks';
+import { IBank } from '@customTypes/index';
+import { generateRandomBanks } from '@utils/index';
 import {
   Icon, MapSection, MarkerBtn, NotFoundMessage,
   PopUpTitle, PopUpWrapper,
@@ -31,7 +29,6 @@ export const initialCoordinatesMap = {
   },
 };
 
-const token = 'pk.eyJ1IjoidmlubnlwdWgiLCJhIjoiY2xveTFrM2x5MWs3cDJsczFjeWFocG53eCJ9.AfWV7gUo7NQa17w1ohSijA';
 export function MapComponent({ value }: IMap) {
   const { data } = useFetchBanksQuery(value);
   const [listOfMarkers, setListOfMarkers] = useState<IBank[]>([]);
@@ -64,6 +61,7 @@ export function MapComponent({ value }: IMap) {
       const id = setTimeout(() => setNotFound(false), 1000);
       return () => clearTimeout(id);
     }
+    return undefined;
   }, [value]);
 
   return (
@@ -72,7 +70,7 @@ export function MapComponent({ value }: IMap) {
         onMove={handleZoom}
         {...viewState}
         initialViewState={viewState}
-        mapboxAccessToken={token}
+        mapboxAccessToken={process.env.MAP_TOKEN ?? ''}
         mapStyle="mapbox://styles/mapbox/streets-v12"
       >
         {listOfMarkers.length > 0 && listOfMarkers.map((bank) => (

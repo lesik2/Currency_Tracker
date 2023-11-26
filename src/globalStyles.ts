@@ -1,8 +1,8 @@
-/* eslint-disable import/no-unresolved */
-import poppinsLight from '@assets/fonts/Poppins-Light.ttf';
-import poppinsRegular from '@assets/fonts/Poppins-Regular.ttf';
-import poppinsBold from '@assets/fonts/Poppins-SemiBold.ttf';
 import { createGlobalStyle } from 'styled-components';
+
+import poppinsLight from './assets/fonts/Poppins-Light.ttf';
+import poppinsRegular from './assets/fonts/Poppins-Regular.ttf';
+import poppinsBold from './assets/fonts/Poppins-SemiBold.ttf';
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
