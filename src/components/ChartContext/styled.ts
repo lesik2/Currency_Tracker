@@ -55,7 +55,6 @@ export const ChartBtn = styled.button`
     padding: 5px;
   }
   @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
-    width: 130px;
-    padding: 2px;
+    width: 135px;
   }
 `;

@@ -43,10 +43,10 @@ export const Title = styled.h3`
   }
   @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
     &::after {
-        width: 310px;
+        width: 300px;
       }
       font-size: 19px;
-      margin-left: 0px;
+      margin-left: 10px;
   }
 `;
 export const Wrapper = styled.div`

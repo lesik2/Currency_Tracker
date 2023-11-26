@@ -20,7 +20,6 @@ export function SearchForm({ handleChange }: ISearchForm) {
   const [value, setValue] = useState('');
   const debounced = useDebounce(value);
   const { data } = useFetchCurrenciesNamesQuery('', {
-    skip: debounced.length < 2,
     refetchOnFocus: true,
   });
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -35,7 +34,7 @@ export function SearchForm({ handleChange }: ISearchForm) {
       item.nameOfCurrency.toLowerCase().includes(debounced.toLowerCase()));
     if (newList) {
       setList(newList);
-      setShow(debounced.length >= 2 &&
+      setShow(debounced.length >= 1 &&
         newList.length > 0 &&
         newList[0].nameOfCurrency !== debounced);
     }

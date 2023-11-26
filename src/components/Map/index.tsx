@@ -54,7 +54,6 @@ export function MapComponent({ value }: IMap) {
       setListOfMarkers(banks);
     }
   }, [data, value]);
-
   useEffect(() => {
     if (!CURRENCY_NAMES.includes(value) && value !== '') {
       setNotFound(true);
