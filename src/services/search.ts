@@ -9,7 +9,7 @@ export const searchAPI = createApi({
   endpoints: (build) => ({
     fetchCurrenciesNames: build.query<IResultCurrencySearch, string>({
       query: () => ({
-        url: '/public/search.json',
+        url: './search.json',
       }),
     }),
   }),

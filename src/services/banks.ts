@@ -9,7 +9,7 @@ export const banksAPI = createApi({
   endpoints: (build) => ({
     fetchBanks: build.query<IResultBanks, string>({
       query: () => ({
-        url: '/public/banks.json',
+        url: './banks.json',
       }),
     }),
   }),
