@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import searchIcon from '@assets/images/searchIcon.svg';
-import { STATIC_INFO } from '@constants/index';
+import { STATIC_INFO, SEARCH_DATA } from '@constants/index';
 import { useDebounce } from '@hooks/useDebounce';
-import { useFetchCurrenciesNamesQuery } from '@services/search';
 import { ICurrencySearch, ISearchForm } from '@customTypes/index';
 import {
   Icon, Input, SearchButton, Title,
@@ -19,9 +18,6 @@ export function SearchForm({ handleChange }: ISearchForm) {
   const [show, setShow] = useState(false);
   const [value, setValue] = useState('');
   const debounced = useDebounce(value);
-  const { data } = useFetchCurrenciesNamesQuery('', {
-    refetchOnFocus: true,
-  });
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     handleChange(value);
@@ -30,7 +26,7 @@ export function SearchForm({ handleChange }: ISearchForm) {
     setValue(event.target.value);
   };
   useEffect(() => {
-    const newList = data?.currencies.filter((item) =>
+    const newList = SEARCH_DATA.currencies.filter((item) =>
       item.nameOfCurrency.toLowerCase().includes(debounced.toLowerCase()));
     if (newList) {
       setList(newList);
@@ -38,7 +34,7 @@ export function SearchForm({ handleChange }: ISearchForm) {
         newList.length > 0 &&
         newList[0].nameOfCurrency !== debounced);
     }
-  }, [data, debounced]);
+  }, [debounced]);
   return (
     <Wrapper onSubmit={handleSubmit}>
       <Title>

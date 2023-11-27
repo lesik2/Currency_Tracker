@@ -6,8 +6,7 @@ import ReactMapGL, {
 } from 'react-map-gl';
 
 import marker from '@assets/images/marker.svg';
-import { CURRENCY_NAMES } from '@constants/index';
-import { useFetchBanksQuery } from '@services/banks';
+import { CURRENCY_NAMES, BANKS_DATA } from '@constants/index';
 import { IBank } from '@customTypes/index';
 import { generateRandomBanks } from '@utils/index';
 import {
@@ -30,7 +29,6 @@ export const initialCoordinatesMap = {
 };
 
 export function MapComponent({ value }: IMap) {
-  const { data } = useFetchBanksQuery(value);
   const [listOfMarkers, setListOfMarkers] = useState<IBank[]>([]);
   const [viewState, setViewState] = useState<ViewState>(initialCoordinatesMap);
   const [notFound, setNotFound] = useState(false);
@@ -49,11 +47,10 @@ export function MapComponent({ value }: IMap) {
   };
 
   useEffect(() => {
-    if (data) {
-      const banks = CURRENCY_NAMES.includes(value) ? generateRandomBanks(data.banks) : data.banks;
-      setListOfMarkers(banks);
-    }
-  }, [data, value]);
+    const banks = CURRENCY_NAMES.includes(value) ?
+      generateRandomBanks(BANKS_DATA.banks) : BANKS_DATA.banks;
+    setListOfMarkers(banks);
+  }, [value]);
   useEffect(() => {
     if (!CURRENCY_NAMES.includes(value) && value !== '') {
       setNotFound(true);
