@@ -5,11 +5,11 @@ import { IResultBanks } from '@customTypes/index';
 export const banksAPI = createApi({
   reducerPath: 'banksAPI',
   refetchOnFocus: true,
-  baseQuery: fetchBaseQuery({ baseUrl: 'banks.json' }),
+  baseQuery: fetchBaseQuery({ baseUrl: '' }),
   endpoints: (build) => ({
     fetchBanks: build.query<IResultBanks, string>({
       query: () => ({
-        url: '',
+        url: '/public/banks.json',
       }),
     }),
   }),

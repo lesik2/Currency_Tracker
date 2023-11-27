@@ -5,11 +5,11 @@ import { IResultCurrencySearch } from '@customTypes/index';
 export const searchAPI = createApi({
   reducerPath: 'searchAPI',
   refetchOnFocus: true,
-  baseQuery: fetchBaseQuery({ baseUrl: 'search.json' }),
+  baseQuery: fetchBaseQuery({ baseUrl: '' }),
   endpoints: (build) => ({
     fetchCurrenciesNames: build.query<IResultCurrencySearch, string>({
       query: () => ({
-        url: '',
+        url: '/public/search.json',
       }),
     }),
   }),
