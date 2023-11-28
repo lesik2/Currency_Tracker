@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
-import { IBar, ICandleChart, IChartContext } from '@customTypes/chart';
-import { getRandomData, INITIAL_DATA } from '@constants/chart';
+import { IBar, IChartContext } from '@customTypes/chart';
+import { getRandomData, BarCoordinates } from '@constants/chart';
 import { STATIC_INFO } from '@constants/index';
 import {
   ChartBtn, Wrapper, WrapperBtn, WrapperInputs,
 } from './styled';
+import { covertDataForChart } from './ChartContext.helpers';
 import { BarInput } from '../BarInput/index';
 
 export function ChartContext({
@@ -26,7 +27,7 @@ export function ChartContext({
       return false;
     }
     for (let i = 0; i < barData.length; i += 1) {
-      if (barData[i].c === '' || barData[i].o === '' || barData[i].l === '' || barData[i].h === '') {
+      if (barData.some((item) => BarCoordinates.some((field) => item[field] === ''))) {
         return false;
       }
     }
@@ -35,18 +36,7 @@ export function ChartContext({
   };
   const handleCreateChart = () => {
     if (!isValidInput()) return;
-    const resultData: ICandleChart[] = [];
-    let date = new Date(INITIAL_DATA).getTime();
-    for (let i = 0; i < barData.length; i += 1) {
-      resultData.push({
-        x: date,
-        c: parseFloat(barData[i].c),
-        h: parseFloat(barData[i].h),
-        l: parseFloat(barData[i].l),
-        o: parseFloat(barData[i].o),
-      });
-      date += 86400000;
-    }
+    const resultData = covertDataForChart(barData);
     addToObserver(true);
     setResult(resultData);
     handleClose();
