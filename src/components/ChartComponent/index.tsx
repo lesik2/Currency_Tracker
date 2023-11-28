@@ -3,7 +3,7 @@ import 'chartjs-chart-financial';
 import { useState } from 'react';
 import { Chart } from 'react-chartjs-2';
 
-import { IBar, ICandleChart, IChartComponent } from '@customTypes/index';
+import { IBar, ICandleChart, IChartComponent } from '@customTypes/chart';
 import { COLORS, BAR_COUNT } from '@constants/chart';
 import { STATIC_INFO } from '@constants/index';
 import { useThemeChart } from './hooks/useThemeChart';

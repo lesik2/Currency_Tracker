@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { CODE_CURRENCY, DOLLAR_SYMBOL, PERCENTAGE_SYMBOL } from '@constants/index';
-import { ICurrencyCard } from '@customTypes/index';
-import { roundUpCurrency } from '@utils/index';
+import { CODE_CURRENCY, DOLLAR_SYMBOL, PERCENTAGE_SYMBOL } from '@constants/currency';
+import { ICurrencyCard } from '@customTypes/currency';
+import { roundUpCurrency } from '@utils/currency';
 import {
   CardIcon, CardSubTitle, CardTitle, WrapperCard,
   WrapperTitles,

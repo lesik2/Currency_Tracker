@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 import arrowIcon from '@assets/images/arrow.svg';
-import { CODE_CURRENCY } from '@constants/index';
-import { IDropDown, TYPE_CODES } from '@customTypes/index';
+import { CODE_CURRENCY } from '@constants/currency';
+import { IDropDown, TYPE_CODES } from '@customTypes/currency';
 import {
   Icon, ItemList, List, SelectedValue, Wrapper,
 } from './styled';

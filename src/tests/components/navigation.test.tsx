@@ -1,7 +1,7 @@
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import { NavigationComponent } from '@components/Navigation/index';
-import { LINKS_NAMES, PATHS_NAMES } from '@//app/routes';
+import { LINKS_NAMES, PATHS_NAMES } from '@constants/routes';
 import { cleanup, render, screen } from '../test.utils';
 
 jest.mock('chart.js/auto', () => ({
@@ -16,10 +16,9 @@ describe('navigation', () => {
     jest.clearAllMocks();
   });
   test('should render navigation component', () => {
-    const handleClick = jest.fn();
     const { getByTestId } = render(
       <BrowserRouter>
-        <NavigationComponent active={LINKS_NAMES[0]} handleClick={handleClick} />,
+        <NavigationComponent active={LINKS_NAMES[0]} />,
       </BrowserRouter>,
     );
     const navigationElement = getByTestId('navigation');
@@ -33,7 +32,7 @@ describe('navigation', () => {
     const handleClick = jest.fn();
     render(
       <BrowserRouter>
-        <NavigationComponent active={LINKS_NAMES[0]} handleClick={handleClick} />
+        <NavigationComponent active={LINKS_NAMES[0]} />
       </BrowserRouter>,
     );
     const link = screen.getByText('Home');
@@ -46,7 +45,7 @@ describe('navigation', () => {
   test('should navigate to the correct URL when a link is clicked', async () => {
     render(
       <BrowserRouter>
-        <NavigationComponent active={LINKS_NAMES[0]} handleClick={jest.fn()} />
+        <NavigationComponent active={LINKS_NAMES[0]} />
       </BrowserRouter>,
     );
     const timelineLink = screen.getByText('Timeline');

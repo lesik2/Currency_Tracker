@@ -1,8 +1,9 @@
 import { CurrencyCard } from '@components/CurrencyCard/index';
 import { Loader } from '@components/InfinityLoader/index';
-import { STATIC_INFO, STOCKS } from '@constants/index';
+import { STATIC_INFO } from '@constants/index';
 import { useAppSelector } from '@hooks/redux';
-import { ICurrency } from '@customTypes/index';
+import { ICurrency } from '@customTypes/currency';
+import { STOCKS } from '@constants/currency';
 import {
   CardsWrapper, HomeWrapper, Title, Wrapper,
 } from './styled';

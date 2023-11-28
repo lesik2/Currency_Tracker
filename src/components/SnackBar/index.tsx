@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { IObserver, ISnackBar, SnackBarState } from '@customTypes/index';
 import success from '@assets/images/success.svg';
 import { STATIC_INFO } from '@constants/index';
+import { IObserver, ISnackBar, SnackBarState } from '@customTypes/chart';
 import {
   Icon, MainInfo, MainText, TimeShowing, Wrapper,
 } from './styled';

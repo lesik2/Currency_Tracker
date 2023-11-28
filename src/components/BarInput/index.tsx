@@ -1,7 +1,8 @@
 import React, { memo, useState } from 'react';
 
-import { REGULAR_EXPRESSIONS, STATIC_INFO, BarCoordinates } from '@constants/index';
-import { IBar, IBarInput, Bar } from '@customTypes/index';
+import { REGULAR_EXPRESSIONS, STATIC_INFO } from '@constants/index';
+import { BarCoordinates } from '@constants/chart';
+import { IBar, IBarInput, Bar } from '@customTypes/chart';
 import { CoordinateInput, ErrorMessage, Wrapper } from './styled';
 
 export const BarInput = memo(({ bar, handleChange, setIsError, id }: IBarInput) => {

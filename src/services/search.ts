@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { IResultCurrencySearch } from '@customTypes/index';
+import { IResultCurrencySearch } from '@customTypes/bankCard';
 
 export const searchAPI = createApi({
   reducerPath: 'searchAPI',

@@ -1,4 +1,5 @@
-import { CONTACTS, STATIC_INFO } from '@constants/index';
+import { STATIC_INFO } from '@constants/index';
+import { CONTACTS } from '@constants/contact';
 import {
   ContactInfo,
   ContactSection, Icon, MainContacts, NameOfContact, Title, WrapperContact, WrapperLinks,

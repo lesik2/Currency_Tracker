@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 import searchIcon from '@assets/images/searchIcon.svg';
-import { STATIC_INFO, SEARCH_DATA } from '@constants/index';
+import { STATIC_INFO } from '@constants/index';
 import { useDebounce } from '@hooks/useDebounce';
-import { ICurrencySearch, ISearchForm } from '@customTypes/index';
+import { ICurrencySearch, ISearchForm } from '@customTypes/bankCard';
+import { SEARCH_DATA } from '@constants/serachData';
 import {
   Icon, Input, SearchButton, Title,
   Wrapper,

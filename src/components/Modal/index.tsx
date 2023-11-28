@@ -1,5 +1,5 @@
 import closeIcon from '@assets/images/close.svg';
-import { IModal } from '@customTypes/index';
+import { IModal } from '@customTypes/modal';
 import {
   Close, Content,
   Image,

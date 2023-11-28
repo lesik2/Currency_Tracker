@@ -3,7 +3,7 @@ import { BankCard } from '@pages/BankCard/index';
 import { Contact } from '@pages/Contact/index';
 import { Home } from '@pages/Home/index';
 import { Timeline } from '@pages/Timeline/index';
-import { IPaths } from '@customTypes/index';
+import { IPaths, TypePathForLinkNames } from '@customTypes/routing';
 
 export const LINKS_NAMES = ['Home', 'Timeline', 'Bank card', 'Contato'] as const;
 export const PATHS_NAMES = {
@@ -12,11 +12,7 @@ export const PATHS_NAMES = {
   bankCard: '/bankcard',
   contact: '/contact',
 } as const;
-export type TypePathsNames = typeof PATHS_NAMES[keyof typeof PATHS_NAMES]
-export type TypePathForLinkNames = Record<
-  TypePathsNames,
-  typeof LINKS_NAMES[number]
->
+
 export const PATHS_FOR_LINK_NAMES: TypePathForLinkNames = Object.values(PATHS_NAMES).reduce(
   (acc, path, index) => ({
     ...acc,

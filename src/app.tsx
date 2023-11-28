@@ -11,7 +11,7 @@ import { Footer } from '@components/Footer/index';
 import { useCurrency } from '@hooks/useCurrency';
 import { useTheme } from '@hooks/useTheme';
 import { useFetchLatestCurrenciesQuery } from '@services/currencyService';
-import { getParametersForCurrencies } from '@utils/index';
+import { getParametersForCurrencies } from '@utils/currency';
 import { ROUTES } from '@constants/routes';
 import GlobalStyle from './globalStyles';
 

@@ -10,7 +10,7 @@ import { ChartComponent } from '@components/ChartComponent/index';
 import { CurrencyPicker } from '@components/CurrencyPicker/index';
 import { SnackBar } from '@components/SnackBar/index';
 import { Observer } from '@model/observer';
-import { ITimeLine, TimeLineState } from '@customTypes/index';
+import { ITimeLine, TimeLineState } from '@customTypes/chart';
 import { TimeLineSection } from './styled';
 
 Chart.register(OhlcElement, OhlcController, CandlestickElement, CandlestickController);

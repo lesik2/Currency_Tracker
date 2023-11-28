@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 
-import { ICandleChart } from '@customTypes/index';
+import { ICandleChart, Bar } from '@customTypes/chart';
 
 export const COLORS: Record<string, string> = {
   up: 'rgba(80, 160, 115, 1)',
@@ -43,3 +43,4 @@ export function getRandomData(dateStr: string = INITIAL_DATA, count: number = BA
 
   return data;
 }
+export const BarCoordinates: Bar[] = ['o', 'c', 'l', 'h'];

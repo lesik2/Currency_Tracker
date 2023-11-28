@@ -6,9 +6,10 @@ import ReactMapGL, {
 } from 'react-map-gl';
 
 import marker from '@assets/images/marker.svg';
-import { CURRENCY_NAMES, BANKS_DATA } from '@constants/index';
-import { IBank } from '@customTypes/index';
-import { generateRandomBanks } from '@utils/index';
+import { BANKS_DATA } from '@constants/banksData';
+import { IBank } from '@customTypes/bankCard';
+import { generateRandomBanks } from '@utils/bankCard';
+import { CURRENCY_NAMES } from '@constants/currency';
 import {
   Icon, MapSection, MarkerBtn, NotFoundMessage,
   PopUpTitle, PopUpWrapper,

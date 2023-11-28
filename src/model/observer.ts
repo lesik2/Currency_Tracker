@@ -1,4 +1,4 @@
-import { IObserver } from '@customTypes/index';
+import { IObserver } from '@//types/bankCard';
 
 export class Observer {
   private data: boolean;

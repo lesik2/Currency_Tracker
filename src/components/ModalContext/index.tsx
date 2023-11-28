@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
-import { CODES_NAMES, REGULAR_EXPRESSIONS, STATIC_INFO } from '@constants/index';
+import { REGULAR_EXPRESSIONS, STATIC_INFO } from '@constants/index';
 import { useAppSelector } from '@hooks/redux';
-import { IModalContext, TYPE_CODES } from '@customTypes/index';
-import { roundUpCurrency } from '@utils/index';
+import { IModalContext } from '@customTypes/modal';
+import { roundUpCurrency } from '@utils/currency';
+import { TYPE_CODES } from '@customTypes/currency';
+import { CODES_NAMES } from '@constants/currency';
 import {
   CurrencyAmount,
   CurrencyAmountWrapper,

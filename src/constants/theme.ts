@@ -1,4 +1,4 @@
-import { ITheme } from '../types';
+import { ITheme } from '@customTypes/theme';
 
 export const theme = {
   fontFamily: {

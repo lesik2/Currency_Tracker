@@ -1,5 +1,5 @@
 import { Home } from '@pages/Home/index';
-import { CODES_NAMES } from '@constants/index';
+import { CODES_NAMES } from '@constants/currency';
 import { cleanup, render, screen } from '../test.utils';
 
 afterEach(() => {

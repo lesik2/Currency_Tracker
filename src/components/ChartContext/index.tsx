@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { IBar, ICandleChart, IChartContext } from '@customTypes/index';
+import { IBar, ICandleChart, IChartContext } from '@customTypes/chart';
 import { getRandomData, INITIAL_DATA } from '@constants/chart';
 import { STATIC_INFO } from '@constants/index';
 import {

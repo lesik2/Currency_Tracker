@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { CODE_CURRENCY, CODES_NAMES } from '@constants/index';
+import { CODE_CURRENCY, CODES_NAMES } from '@constants/currency';
 import {
   CardWrapper, CodeOfCurrencyText, IconCurrency, InfoWrapper, NameOfCurrencyText, Wrapper,
 } from './styled';

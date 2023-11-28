@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { setTimeOfUpdate } from '@store/reducers/appSlice';
 import { setCurrencies } from '@store/reducers/currenciesSlice';
-import { ICurrency, IResultCurrencies } from '@customTypes/index';
+import { ICurrency, IResultCurrencies } from '@//types/bankCard';
 import { useAppDispatch } from './redux';
 
 export function useCurrency(data: IResultCurrencies | undefined) {

@@ -1,6 +1,6 @@
 import { MouseEvent, Component } from 'react';
 
-import { IElasticSearch } from '@customTypes/index';
+import { IElasticSearch } from '@customTypes/bankCard';
 import { List, SearchList } from './styled';
 
 export class ElasticSearch extends Component<IElasticSearch> {
