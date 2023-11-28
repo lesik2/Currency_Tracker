@@ -1,5 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable react/jsx-props-no-spreading */
 import { useEffect, useState } from 'react';
 import ReactMapGL, {
   Marker,
@@ -7,11 +5,10 @@ import ReactMapGL, {
   Popup, ViewState, ViewStateChangeEvent,
 } from 'react-map-gl';
 
-import marker from '../../assets/images/marker.svg';
-import { CURRENCY_NAMES } from '../../constants/index';
-import { useFetchBanksQuery } from '../../services/banks';
-import { IBank } from '../../types/index';
-import { generateRandomBanks } from '../../utils/index';
+import marker from '@assets/images/marker.svg';
+import { CURRENCY_NAMES, BANKS_DATA } from '@constants/index';
+import { IBank } from '@customTypes/index';
+import { generateRandomBanks } from '@utils/index';
 import {
   Icon, MapSection, MarkerBtn, NotFoundMessage,
   PopUpTitle, PopUpWrapper,
@@ -31,9 +28,7 @@ export const initialCoordinatesMap = {
   },
 };
 
-const token = 'pk.eyJ1IjoidmlubnlwdWgiLCJhIjoiY2xveTFrM2x5MWs3cDJsczFjeWFocG53eCJ9.AfWV7gUo7NQa17w1ohSijA';
 export function MapComponent({ value }: IMap) {
-  const { data } = useFetchBanksQuery(value);
   const [listOfMarkers, setListOfMarkers] = useState<IBank[]>([]);
   const [viewState, setViewState] = useState<ViewState>(initialCoordinatesMap);
   const [notFound, setNotFound] = useState(false);
@@ -52,18 +47,17 @@ export function MapComponent({ value }: IMap) {
   };
 
   useEffect(() => {
-    if (data) {
-      const banks = CURRENCY_NAMES.includes(value) ? generateRandomBanks(data.banks) : data.banks;
-      setListOfMarkers(banks);
-    }
-  }, [data, value]);
-
+    const banks = CURRENCY_NAMES.includes(value) ?
+      generateRandomBanks(BANKS_DATA.banks) : BANKS_DATA.banks;
+    setListOfMarkers(banks);
+  }, [value]);
   useEffect(() => {
     if (!CURRENCY_NAMES.includes(value) && value !== '') {
       setNotFound(true);
       const id = setTimeout(() => setNotFound(false), 1000);
       return () => clearTimeout(id);
     }
+    return undefined;
   }, [value]);
 
   return (
@@ -72,7 +66,7 @@ export function MapComponent({ value }: IMap) {
         onMove={handleZoom}
         {...viewState}
         initialViewState={viewState}
-        mapboxAccessToken={token}
+        mapboxAccessToken={process.env.MAP_TOKEN ?? ''}
         mapStyle="mapbox://styles/mapbox/streets-v12"
       >
         {listOfMarkers.length > 0 && listOfMarkers.map((bank) => (

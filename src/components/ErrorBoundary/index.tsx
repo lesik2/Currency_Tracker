@@ -1,12 +1,11 @@
 import { Component, ErrorInfo, ReactNode } from 'react';
 
-import errorIcon from '../../assets/images/error.svg';
+import errorIcon from '@assets/images/error.svg';
 import {
   Error, ErrorMessage, Image, Wrapper,
 } from './styled';
 
 interface Props {
-    // eslint-disable-next-line react/require-default-props
     children?: ReactNode;
 }
 
@@ -16,7 +15,7 @@ interface State {
 }
 
 export class ErrorBoundary extends Component<Props, State> {
-  constructor(props:Props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       hasError: false,
@@ -28,7 +27,7 @@ export class ErrorBoundary extends Component<Props, State> {
     return { hasError: true, message: error.message };
   }
 
-  public override componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  public override componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
     // eslint-disable-next-line no-console
     console.log('Uncaught error:', error, errorInfo);
   }

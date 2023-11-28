@@ -2,47 +2,47 @@
   "currencies":[
     {
       "nameOfCurrency": "Commercial Dollar",
-      "id": 1
+      "id":21
     },
     {
       "nameOfCurrency": "Euro",
-      "id": 2
+      "id": 22
     },
     {
       "nameOfCurrency": "Yen",
-      "id": 3
+      "id": 23
     },
     {
       "nameOfCurrency": "Yuan",
-      "id": 4
+      "id": 24
     },
     {
       "nameOfCurrency": "Argentine Pesco",
-      "id": 5
+      "id": 25
     },
     {
       "nameOfCurrency": "Libra",
-      "id": 6
+      "id": 26
     },
     {
       "nameOfCurrency": "Australian Dollar",
-      "id": 7
+      "id": 27
     },
     {
       "nameOfCurrency": "Canadian Dollar",
-      "id": 8
+      "id": 28
     },
     {
       "nameOfCurrency": "Bitcoin",
-      "id": 9
+      "id": 29
     },
     {
       "nameOfCurrency": "IFIX",
-      "id": 10
+      "id": 30
     },
     {
       "nameOfCurrency": "Bovespa Index",
-      "id": 11
+      "id": 31
     }
   ]
 

@@ -1,21 +1,20 @@
-/* eslint-disable max-len */
-import australianDollarIcon from '../assets/images/australianDollarIcon.svg';
-import bitcoinIcon from '../assets/images/bitcoinIcon.svg';
-import bovespalIcon from '../assets/images/bovespaIcon.svg';
-import canadianDollarIcon from '../assets/images/canadianDollarIcon.svg';
-import dollarIcon from '../assets/images/dollarIcon.svg';
-import euroIcon from '../assets/images/euroIcon.svg';
-import facebookIcon from '../assets/images/facebookIcon.svg';
-import ifixIcon from '../assets/images/ifix.svg';
-import instagramIcon from '../assets/images/instagramIcon.svg';
-import libraIcon from '../assets/images/libraIcon.svg';
-import linkedinIcon from '../assets/images/linkedin.svg';
-import pesoArgentinoIcon from '../assets/images/pesoArgentinoIcon.svg';
-import telegramIcon from '../assets/images/telegramIcon.svg';
-import twitterIcon from '../assets/images/twitterIcon.svg';
-import wonIcon from '../assets/images/wonIcon.svg';
-import yenIcon from '../assets/images/yenIcon.svg';
-import { ICode, ICurrencyCard, TYPE_CODES } from '../types/index';
+import australianDollarIcon from '@assets/images/australianDollarIcon.svg';
+import bitcoinIcon from '@assets/images/bitcoinIcon.svg';
+import bovespalIcon from '@assets/images/bovespaIcon.svg';
+import canadianDollarIcon from '@assets/images/canadianDollarIcon.svg';
+import dollarIcon from '@assets/images/dollarIcon.svg';
+import euroIcon from '@assets/images/euroIcon.svg';
+import facebookIcon from '@assets/images/facebookIcon.svg';
+import ifixIcon from '@assets/images/ifix.svg';
+import instagramIcon from '@assets/images/instagramIcon.svg';
+import libraIcon from '@assets/images/libraIcon.svg';
+import linkedinIcon from '@assets/images/linkedin.svg';
+import pesoArgentinoIcon from '@assets/images/pesoArgentinoIcon.svg';
+import telegramIcon from '@assets/images/telegramIcon.svg';
+import twitterIcon from '@assets/images/twitterIcon.svg';
+import wonIcon from '@assets/images/wonIcon.svg';
+import yenIcon from '@assets/images/yenIcon.svg';
+import { Bar, ICode, ICurrencyCard, TYPE_CODES, IResultBanks, IResultCurrencySearch } from '@customTypes/index';
 
 export const STATIC_INFO = {
   NAME_COMPANY: 'Modsen Currency',
@@ -36,6 +35,11 @@ export const STATIC_INFO = {
   EMAIL_COMPANY: 'currency.tracker@gmail.com',
   CONTACT_COMPANY: 'Contact Us',
   COMPANY_ADDRESS: '456 Oak Avenue, Gomel, 246001',
+  BUTTON_CHART: 'Open modal',
+  CREATE_CHART: 'Create chart',
+  RANDOM_DATA: 'Get random data',
+  ERROR_MESSAGE_BAR: 'The coordinates should be numbers l(min) h(max)',
+  SNACK_BAR_MESSAGE: 'The chart was built successfully',
 };
 export const REGULAR_EXPRESSIONS = {
   validateInput: /^[0-9]*[.,]?[0-9]+$/,
@@ -187,3 +191,87 @@ export const CONTACTS = [
   },
 
 ];
+export const BarCoordinates: Bar[] = ['o', 'c', 'l', 'h'];
+export const BANKS_DATA: IResultBanks = {
+  banks: [
+    {
+      id: 1,
+      name: 'Беларусбанк',
+      latitude: 53.902159,
+      longitude: 27.561411,
+    },
+    {
+      id: 2,
+      name: 'Белагропромбанк',
+      latitude: 53.917927,
+      longitude: 27.564939,
+    },
+    {
+      id: 3,
+      name: 'БПС-Сбербанк',
+      latitude: 53.904741,
+      longitude: 27.551311,
+    },
+    {
+      id: 4,
+      name: 'Приорбанк',
+      latitude: 53.913612,
+      longitude: 27.562185,
+    },
+    {
+      id: 5,
+      name: 'БелВЭБ',
+      latitude: 53.894289,
+      longitude: 27.590720,
+    },
+  ],
+};
+export const SEARCH_DATA: IResultCurrencySearch = {
+  currencies: [
+    {
+      nameOfCurrency: 'Commercial Dollar',
+      id: 21,
+    },
+    {
+      nameOfCurrency: 'Euro',
+      id: 22,
+    },
+    {
+      nameOfCurrency: 'Yen',
+      id: 23,
+    },
+    {
+      nameOfCurrency: 'Yuan',
+      id: 24,
+    },
+    {
+      nameOfCurrency: 'Argentine Pesco',
+      id: 25,
+    },
+    {
+      nameOfCurrency: 'Libra',
+      id: 26,
+    },
+    {
+      nameOfCurrency: 'Australian Dollar',
+      id: 27,
+    },
+    {
+      nameOfCurrency: 'Canadian Dollar',
+      id: 28,
+    },
+    {
+      nameOfCurrency: 'Bitcoin',
+      id: 29,
+    },
+    {
+      nameOfCurrency: 'IFIX',
+      id: 30,
+    },
+    {
+      nameOfCurrency: 'Bovespa Index',
+      id: 31,
+    },
+  ],
+
+};

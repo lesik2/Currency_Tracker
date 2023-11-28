@@ -6,38 +6,33 @@ import {
 } from 'chartjs-chart-financial';
 import React from 'react';
 
-import { ChartComponent } from '../../components/ChartComponent/index';
-import { CurrencyPicker } from '../../components/CurrencyPicker/index';
-import { SnackBar } from '../../components/SnackBar/index';
-import { Observer } from '../../model/observer';
+import { ChartComponent } from '@components/ChartComponent/index';
+import { CurrencyPicker } from '@components/CurrencyPicker/index';
+import { SnackBar } from '@components/SnackBar/index';
+import { Observer } from '@model/observer';
+import { ITimeLine, TimeLineState } from '@customTypes/index';
 import { TimeLineSection } from './styled';
 
 Chart.register(OhlcElement, OhlcController, CandlestickElement, CandlestickController);
 
-export interface ITimeLine{
-
-}
-export interface TimeLineState {
-  search: string;
-}
 export class Timeline extends React.Component<ITimeLine, TimeLineState> {
   private observer: Observer;
 
-  constructor(props:ITimeLine) {
+  constructor(props: ITimeLine) {
     super(props);
     this.observer = new Observer();
-    this.notifyAll = this.notifyAll.bind(this);
+    this.addToObserver = this.addToObserver.bind(this);
   }
 
-  notifyAll(data: boolean) {
+  addToObserver(data: boolean): void {
     this.observer.setData(data);
   }
 
   override render() {
     return (
-      <TimeLineSection>
+      <TimeLineSection data-cy="timeline">
         <CurrencyPicker />
-        <ChartComponent notifyAll={this.notifyAll} />
+        <ChartComponent addToObserver={this.addToObserver} />
         <SnackBar observer={this.observer} />
       </TimeLineSection>
     );

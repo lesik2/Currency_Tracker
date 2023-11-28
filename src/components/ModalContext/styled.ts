@@ -5,7 +5,9 @@ export const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.primary};
   flex-direction: column;
   gap: 20px;
+  position: relative;
   padding: 30px 70px 30px 30px;
+  border: 1px solid ${(props) => props.theme.colors.footerGray};
   @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
       padding: 15px;
   }
@@ -33,12 +35,19 @@ export const Result = styled.h3`
   margin: 0;
   color: ${(props) => props.theme.colors.secondary};
   font-size: 25px;
+  position: absolute;
+  top: 120px;
+  right: 120px;
   font-weight: ${(props) => props.theme.fontWeight.light};
   @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
-      font-size: 22px;
-  }
-  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
       font-size: 18px;
+      top: 95px;
+      right: 40px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+      font-size: 16px;
+      top: 70px;
+      right: 30px;
   }
 `;
 export const WrapperInputs = styled.div`
@@ -55,6 +64,9 @@ export const ErrorMessage = styled.p`
   bottom: 52px;
   width: 270px;
   color: ${(props) => props.theme.colors.error};
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+      font-size: 16px;
+  }
 `;
 export const CurrencyAmount = styled.input<{ $isError?: boolean }>`
   width: 110px;

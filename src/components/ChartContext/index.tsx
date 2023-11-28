@@ -1,24 +1,18 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import { getRandomData } from '../../constants/chart';
-import { IBar, ICandleChart } from '../../types/index';
-import { BarInput } from '../BarInput/index';
+import { IBar, ICandleChart, IChartContext } from '@customTypes/index';
+import { getRandomData, INITIAL_DATA } from '@constants/chart';
+import { STATIC_INFO } from '@constants/index';
 import {
   ChartBtn, Wrapper, WrapperBtn, WrapperInputs,
 } from './styled';
+import { BarInput } from '../BarInput/index';
 
-export interface IChartContext{
-  barData: IBar[];
-  setBarData: React.Dispatch<React.SetStateAction<IBar[]>>
-  notifyAll: (data: boolean)=>void;
-  setResult: React.Dispatch<React.SetStateAction<ICandleChart[]>>;
-  handleClose: ()=>void;
-}
 export function ChartContext({
-  barData, setBarData, notifyAll, setResult, handleClose,
-}:IChartContext) {
+  barData, setBarData, addToObserver, setResult, handleClose,
+}: IChartContext) {
   const [isError, setIsError] = useState(false);
-  const handleChange = (value:string, index: number, key: keyof IBar) => {
+  const handleChange = (value: string, index: number, key: keyof IBar) => {
     setBarData(barData.map((bar, currentIndex) => {
       if (currentIndex === index) {
         return { ...bar, [key]: value };
@@ -26,10 +20,21 @@ export function ChartContext({
       return bar;
     }));
   };
+  const isValidInput = () => {
+    if (isError) {
+      return false;
+    }
+    for (let i = 0; i < barData.length; i += 1) {
+      if (barData[i].c === '' || barData[i].o === '' || barData[i].l === '' || barData[i].h === '') {
+        return false;
+      }
+    }
+    return true;
+  };
   const handleCreateChart = () => {
-    const resultData:ICandleChart[] = [];
-    const initialDateStr = '01 Oct 2023 10:15 Z';
-    let date = new Date(initialDateStr).getTime();
+    if (!isValidInput()) return;
+    const resultData: ICandleChart[] = [];
+    let date = new Date(INITIAL_DATA).getTime();
     for (let i = 0; i < barData.length; i += 1) {
       resultData.push({
         x: date,
@@ -40,7 +45,7 @@ export function ChartContext({
       });
       date += 86400000;
     }
-    notifyAll(true);
+    addToObserver(true);
     setResult(resultData);
     handleClose();
   };
@@ -53,31 +58,26 @@ export function ChartContext({
       c: data[index].c.toString(),
     })));
   };
-  const validateResult = () => {
-    if (isError) {
-      return true;
-    }
-    for (let i = 0; i < barData.length; i += 1) {
-      if (barData[i].c === '' || barData[i].o === '' || barData[i].l === '' || barData[i].h === '') {
-        return true;
-      }
-    }
-    return false;
-  };
   return (
-    <Wrapper>
-      <WrapperInputs>
+    <Wrapper data-cy="chart-model" data-testid="chart-model">
+      <WrapperInputs data-cy="chart-inputs">
         {barData.map((bar, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-          <BarInput key={index} bar={bar} handleChange={handleChange} setIsError={setIsError} id={index} />
+          <BarInput
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
+            bar={bar}
+            handleChange={handleChange}
+            setIsError={setIsError}
+            id={index}
+          />
         ))}
       </WrapperInputs>
       <WrapperBtn>
-        <ChartBtn onClick={handleCreateChart} disabled={validateResult()}>
-          Create chart
+        <ChartBtn onClick={handleCreateChart} disabled={!isValidInput()}>
+          {STATIC_INFO.CREATE_CHART}
         </ChartBtn>
         <ChartBtn onClick={handleGetRandomValues}>
-          Get random data
+          {STATIC_INFO.RANDOM_DATA}
         </ChartBtn>
       </WrapperBtn>
     </Wrapper>

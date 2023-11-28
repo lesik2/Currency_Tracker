@@ -1,6 +1,6 @@
-import circleAnimation from '../../assets/images/circleAnimation.svg';
-import { STATIC_INFO } from '../../constants/index';
-import { useAppSelector } from '../../hooks/redux';
+import circleAnimation from '@assets/images/circleAnimation.svg';
+import { STATIC_INFO } from '@constants/index';
+import { useAppSelector } from '@hooks/redux';
 import {
   DateImage, DateWrapper, TextDate, Wrapper,
 } from './styled';

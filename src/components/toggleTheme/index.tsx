@@ -1,7 +1,7 @@
 import { useId } from 'react';
 
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { changeTheme } from '../../store/reducers/appSlice';
+import { useAppDispatch, useAppSelector } from '@hooks/redux';
+import { changeTheme } from '@store/reducers/appSlice';
 import {
   ThemeBowl, ToggleThemeInput, ToggleThemeLabel, Wrapper,
 } from './styled';
@@ -14,10 +14,10 @@ export function ToggleTheme() {
     dispatch(changeTheme());
   };
   return (
-    <Wrapper>
+    <Wrapper data-testid="toggle-theme">
       <ToggleThemeInput onChange={handleOnChange} checked={isDarkTheme} type="checkbox" id={`${id}-themeInput`} />
       <ToggleThemeLabel className="theme-label" htmlFor={`${id}-themeInput`}>
-        <ThemeBowl className="theme-bowl" />
+        <ThemeBowl data-cy="bowl-theme" className="theme-bowl" />
       </ToggleThemeLabel>
     </Wrapper>
   );

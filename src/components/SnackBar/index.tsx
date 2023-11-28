@@ -1,21 +1,16 @@
 import React from 'react';
 
-import success from '../../assets/images/success.svg';
-import { IObserver, Observer } from '../../model/observer';
+import { IObserver, ISnackBar, SnackBarState } from '@customTypes/index';
+import success from '@assets/images/success.svg';
+import { STATIC_INFO } from '@constants/index';
 import {
   Icon, MainInfo, MainText, TimeShowing, Wrapper,
 } from './styled';
 
-export interface ISnackBar{
-  observer: Observer;
-}
-export interface SnackBarState {
-  data: boolean;
-}
 export class SnackBar extends React.Component<ISnackBar, SnackBarState> implements IObserver {
   private timeoutId: ReturnType<typeof setTimeout> | undefined;
 
-  constructor(props:ISnackBar) {
+  constructor(props: ISnackBar) {
     super(props);
     this.state = {
       data: false,
@@ -23,12 +18,12 @@ export class SnackBar extends React.Component<ISnackBar, SnackBarState> implemen
     this.update = this.update.bind(this);
   }
 
-  override componentDidMount() {
+  override componentDidMount(): void {
     const { observer } = this.props;
     observer.addObserver(this);
   }
 
-  override componentDidUpdate(_prevProps: Readonly<ISnackBar>, prevState: Readonly<SnackBarState>): void {
+  override componentDidUpdate(_prevProps: Readonly<ISnackBar>, prevState: Readonly<SnackBarState>) {
     const { data } = this.state;
     if (data !== prevState.data) {
       if (this.timeoutId) {
@@ -42,7 +37,7 @@ export class SnackBar extends React.Component<ISnackBar, SnackBarState> implemen
     }
   }
 
-  override componentWillUnmount() {
+  override componentWillUnmount(): void {
     const { observer } = this.props;
     observer.removeObserver(this);
     if (this.timeoutId) {
@@ -51,18 +46,18 @@ export class SnackBar extends React.Component<ISnackBar, SnackBarState> implemen
     }
   }
 
-  update(data: boolean) {
+  update(data: boolean): void {
     this.setState({ data });
   }
 
   override render() {
     const { data } = this.state;
     return (
-      <Wrapper $isVisible={data}>
+      <Wrapper data-cy="snack-bar" $isVisible={data}>
         <MainInfo>
           <Icon src={success} alt="success icon" />
           <MainText>
-            The chart was built successfully
+            {STATIC_INFO.SNACK_BAR_MESSAGE}
           </MainText>
         </MainInfo>
         <TimeShowing />

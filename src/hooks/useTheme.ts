@@ -1,4 +1,4 @@
-import { darkTheme, lightTheme } from '../constants/theme';
+import { darkTheme, lightTheme } from '@constants/theme';
 import { useAppSelector } from './redux';
 
 export function useTheme() {

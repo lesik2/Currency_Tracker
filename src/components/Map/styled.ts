@@ -40,4 +40,10 @@ export const NotFoundMessage = styled.p`
   top: -55px;
   left: 50%;
   transform: translateX(-50%);
+  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
+    font-size: 19px;
+  }
+  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
+    font-size: 16px;
+  }
 `;

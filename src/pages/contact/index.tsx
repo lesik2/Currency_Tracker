@@ -1,4 +1,4 @@
-import { CONTACTS, STATIC_INFO } from '../../constants/index';
+import { CONTACTS, STATIC_INFO } from '@constants/index';
 import {
   ContactInfo,
   ContactSection, Icon, MainContacts, NameOfContact, Title, WrapperContact, WrapperLinks,
@@ -6,7 +6,7 @@ import {
 
 export function Contact() {
   return (
-    <ContactSection>
+    <ContactSection data-cy="contact">
       <Title>
         {STATIC_INFO.CONTACT_COMPANY}
       </Title>

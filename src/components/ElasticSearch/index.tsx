@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IElasticSearch } from '../../types/index';
+import { IElasticSearch } from '@customTypes/index';
 import { List, Wrapper } from './styled';
 
 export class ElasticSearch extends React.Component<IElasticSearch> {
@@ -9,7 +9,7 @@ export class ElasticSearch extends React.Component<IElasticSearch> {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(event: React.MouseEvent) {
+  handleClick(event: React.MouseEvent): void {
     const { setShow, handleChange, setValue } = this.props;
     setShow(false);
     const value = event.currentTarget.textContent;

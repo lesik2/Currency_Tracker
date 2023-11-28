@@ -35,7 +35,6 @@ export const ChartBtn = styled.button`
   }
   @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
     margin: 0px 0px 20px 0px;
-    padding: 3px;
     font-size: 13px;
     width: 110px;
   }

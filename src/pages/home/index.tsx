@@ -1,21 +1,21 @@
-import { CurrencyCard } from '../../components/CurrencyCard/index';
-import { Loader } from '../../components/InfinityLoader/index';
-import { STATIC_INFO, STOCKS } from '../../constants/index';
-import { useAppSelector } from '../../hooks/redux';
-import { ICurrency } from '../../types/index';
+import { CurrencyCard } from '@components/CurrencyCard/index';
+import { Loader } from '@components/InfinityLoader/index';
+import { STATIC_INFO, STOCKS } from '@constants/index';
+import { useAppSelector } from '@hooks/redux';
+import { ICurrency } from '@customTypes/index';
 import {
   CardsWrapper, HomeWrapper, Title, Wrapper,
 } from './styled';
 
 export function Home() {
-  const cards:ICurrency[] = useAppSelector((state) => state.currenciesReducer.currencies);
+  const cards: ICurrency[] = useAppSelector((state) => state.currenciesReducer.currencies);
   return (
-    <HomeWrapper>
+    <HomeWrapper data-testid="home-page" data-cy="home-page">
       <Wrapper>
         <Title>
           {STATIC_INFO.STOCKS}
         </Title>
-        <CardsWrapper>
+        <CardsWrapper data-cy="cards-stocks-wrapper">
           {STOCKS.map((stoke) => (
             <CurrencyCard
               key={stoke.code}
@@ -31,7 +31,7 @@ export function Home() {
           {STATIC_INFO.QUOTES}
         </Title>
         {cards.length === 0 && <Loader />}
-        <CardsWrapper>
+        <CardsWrapper data-cy="cards-currency-wrapper" data-testid="cards-currency-wrapper">
           {cards && cards.map((card) => (
             <CurrencyCard key={card.code} code={card.code} value={card.value} />
           )) }

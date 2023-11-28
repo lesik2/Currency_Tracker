@@ -6,7 +6,7 @@ import { Timeline } from '../pages/Timeline/index';
 import { IPaths } from '../types/index';
 
 export const LINKS_NAMES = ['Home', 'Timeline', 'Bank card', 'Contato'];
-const PATHS_NAMES = {
+export const PATHS_NAMES = {
   home: '/',
   timeline: '/timeline',
   bankCard: '/bankcard',
