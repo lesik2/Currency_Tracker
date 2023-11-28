@@ -11,7 +11,6 @@ export function NavigationComponent({ active }: INavigationComponent) {
       {PATHS.map((path, index) => (
         <NavLink key={path} to={path}>
           <LinkText
-            data-name={LINKS_NAMES[index]}
             $isActive={active === LINKS_NAMES[index]}
           >
             {LINKS_NAMES[index]}

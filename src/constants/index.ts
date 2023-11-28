@@ -42,7 +42,7 @@ export const STATIC_INFO = {
   SNACK_BAR_MESSAGE: 'The chart was built successfully',
 };
 export const REGULAR_EXPRESSIONS = {
-  validateInput: /^[0-9]*[.,]?[0-9]+$/,
+  numberFormatPattern: /^[0-9]*[.,]?[0-9]+$/,
 };
 export const FOOTER_INFO = [
   {

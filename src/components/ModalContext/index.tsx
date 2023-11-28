@@ -36,7 +36,7 @@ export function ModalContext({ nameCard, valueOfBase }: IModalContext) {
       <WrapperInputs>
         <CurrencyAmountWrapper>
           {
-                !REGULAR_EXPRESSIONS.validateInput.test(amount) && (
+                !REGULAR_EXPRESSIONS.numberFormatPattern.test(amount) && (
                 <ErrorMessage data-cy="error-message-currency" data-testid="error-message-currency">
                   {STATIC_INFO.ERROR_MESSAGE}
                 </ErrorMessage>
@@ -45,13 +45,13 @@ export function ModalContext({ nameCard, valueOfBase }: IModalContext) {
           <CurrencyAmount
             data-cy="input-amount"
             data-testid="input-amount"
-            $isError={!REGULAR_EXPRESSIONS.validateInput.test(amount)}
+            $isError={!REGULAR_EXPRESSIONS.numberFormatPattern.test(amount)}
             value={amount}
             onChange={handleInput}
           />
         </CurrencyAmountWrapper>
         <Result data-cy="result-currency" data-testid="result-currency">
-          {REGULAR_EXPRESSIONS.validateInput.test(amount) && convertCurrency()}
+          {REGULAR_EXPRESSIONS.numberFormatPattern.test(amount) && convertCurrency()}
         </Result>
       </WrapperInputs>
       <DropDown lists={CODES_NAMES} value={value} setValue={setValue} data-testid="dropdown" />
