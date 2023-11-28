@@ -97,6 +97,7 @@ export const CODE_CURRENCY: Record<string, ICode> = {
   USD: {
     name: 'Commercial Dollar',
     icon: CURRENCY_ICONS.dollarIcon,
+
   },
   EUR: {
     name: 'Euro',

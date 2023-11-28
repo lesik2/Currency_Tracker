@@ -13,7 +13,7 @@ export function CurrencyPicker() {
     <Wrapper>
       <DropDown lists={CODES_NAMES} value={currency} setValue={setCurrency} />
       <CardWrapper>
-        <IconCurrency alt="image of currency" src={CODE_CURRENCY[currency].icon} />
+        <IconCurrency alt={CODE_CURRENCY[currency].name} src={CODE_CURRENCY[currency].icon} />
         <InfoWrapper>
           <NameOfCurrencyText>
             {CODE_CURRENCY[currency].name}

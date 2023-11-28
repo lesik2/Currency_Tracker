@@ -25,7 +25,7 @@ export function CurrencyCard({
   return (
     <>
       <WrapperCard onClick={handleOpen} data-cy="currency-card" data-testid="currency-card">
-        <CardIcon alt="currency image" src={CODE_CURRENCY[code].icon} />
+        <CardIcon alt={CODE_CURRENCY[code].name} src={CODE_CURRENCY[code].icon} />
         <WrapperTitles>
           <CardTitle>
             {

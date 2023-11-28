@@ -2,7 +2,7 @@ import { DateTime } from 'luxon';
 
 import { ICandleChart } from '@customTypes/index';
 
-export const COLORS = {
+export const COLORS: Record<string, string> = {
   up: 'rgba(80, 160, 115, 1)',
   down: 'rgba(215, 85, 65, 1)',
   unchanged: 'rgba(90, 90, 90, 1)',

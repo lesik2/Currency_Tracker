@@ -35,7 +35,7 @@ export function ChartComponent({ addToObserver }: IChartComponent) {
         label: 'Chart.js',
         data: result,
         color: COLORS,
-        borderColor: COLORS as object,
+        borderColor: COLORS,
         borderWidth: 2,
       },
     ],

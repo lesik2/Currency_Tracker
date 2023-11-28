@@ -48,7 +48,7 @@ export function useThemeChart() {
         display: false,
       },
     },
-  };
+  } as const;
 
   return options;
 }

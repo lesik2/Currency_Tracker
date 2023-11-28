@@ -1,5 +1,3 @@
-import ReactDOM from 'react-dom';
-
 import closeIcon from '@assets/images/close.svg';
 import { IModal } from '@customTypes/index';
 import {
@@ -7,12 +5,11 @@ import {
   Image,
   Wrapper,
 } from './styled';
+import { Portal } from '../Portal';
 
 export function Modal({ onClose, children }: IModal) {
-  const portal = document.getElementById('portal');
-
-  return portal
-    ? ReactDOM.createPortal(
+  return (
+    <Portal>
       <Wrapper>
         <Content>
           {children}
@@ -20,8 +17,8 @@ export function Modal({ onClose, children }: IModal) {
             <Image className="close-img" src={closeIcon} alt="close modal window" />
           </Close>
         </Content>
-      </Wrapper>,
-      portal,
-    )
-    : null;
+      </Wrapper>
+
+    </Portal>
+  );
 }
