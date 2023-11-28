@@ -34,10 +34,10 @@ export const Title = styled.h2`
 export const Result = styled.h3`
   margin: 0;
   color: ${(props) => props.theme.colors.secondary};
-  font-size: 25px;
+  font-size: 22px;
   position: absolute;
-  top: 120px;
-  right: 120px;
+  top: 125px;
+  right: 80px;
   font-weight: ${(props) => props.theme.fontWeight.light};
   @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
       font-size: 18px;
