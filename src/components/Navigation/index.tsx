@@ -12,6 +12,7 @@ export function NavigationComponent({ active }: INavigationComponent) {
         <NavLink key={path} to={path}>
           <LinkText
             $isActive={active === LINKS_NAMES[index]}
+            area-current={active ? 'page' : ''}
           >
             {LINKS_NAMES[index]}
           </LinkText>
