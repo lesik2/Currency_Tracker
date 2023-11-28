@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { PATHS_FOR_LINK_NAMES } from '@app/index';
+import { PATHS_FOR_LINK_NAMES } from '@//app/routes';
 import Label from '@assets/images/label.svg';
 import { STATIC_INFO } from '@constants/index';
 import {

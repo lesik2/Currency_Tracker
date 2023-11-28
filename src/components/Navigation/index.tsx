@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import React from 'react';
-import { LINKS_NAMES, PATHS } from '@app/index';
+import { LINKS_NAMES, PATHS } from '@//app/routes';
 import { LinkText, Navigation } from './styled';
 
 export interface INavigationComponent{

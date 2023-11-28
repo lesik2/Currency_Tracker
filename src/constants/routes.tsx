@@ -1,9 +1,9 @@
-import { NotFound } from '../components/NotFound/index';
-import { BankCard } from '../pages/BankCard/index';
-import { Contact } from '../pages/Contact/index';
-import { Home } from '../pages/Home/index';
-import { Timeline } from '../pages/Timeline/index';
-import { IPaths } from '../types/index';
+import { NotFound } from '@components/NotFound/index';
+import { BankCard } from '@pages/BankCard/index';
+import { Contact } from '@pages/Contact/index';
+import { Home } from '@pages/Home/index';
+import { Timeline } from '@pages/Timeline/index';
+import { IPaths } from '@customTypes/index';
 
 export const LINKS_NAMES = ['Home', 'Timeline', 'Bank card', 'Contato'];
 export const PATHS_NAMES = {
@@ -23,22 +23,26 @@ export const ROUTES: Readonly<IPaths[]> = [
   {
     path: PATHS_NAMES.home,
     index: true,
-    component: <Home />,
+    element: <Home />,
   },
   {
     path: PATHS_NAMES.bankCard,
-    component: <BankCard />,
+    index: false,
+    element: <BankCard />,
   },
   {
     path: PATHS_NAMES.contact,
-    component: <Contact />,
+    index: false,
+    element: <Contact />,
   },
   {
     path: PATHS_NAMES.timeline,
-    component: <Timeline />,
+    index: false,
+    element: <Timeline />,
   },
   {
     path: '*',
-    component: <NotFound />,
+    index: false,
+    element: <NotFound />,
   },
 ] as const;

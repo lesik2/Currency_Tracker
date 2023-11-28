@@ -12,8 +12,8 @@ import { useCurrency } from '@hooks/useCurrency';
 import { useTheme } from '@hooks/useTheme';
 import { useFetchLatestCurrenciesQuery } from '@services/currencyService';
 import { getParametersForCurrencies } from '@utils/index';
+import { ROUTES } from '@constants/routes';
 import GlobalStyle from './globalStyles';
-import { ROUTES } from './app/index';
 
 export function App() {
   const { data } = useFetchLatestCurrenciesQuery(getParametersForCurrencies(), {
@@ -33,9 +33,7 @@ export function App() {
             {ROUTES.map((route) => (
               <Route
                 key={route.path}
-                index={route.index || false}
-                path={route.path}
-                element={route.component}
+                {...route}
               />
             ))}
           </Routes>

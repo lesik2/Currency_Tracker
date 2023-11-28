@@ -2,9 +2,9 @@ import React from 'react';
 import { Observer } from '@model/observer';
 
 export interface IPaths {
-  path?: string;
-  index?: boolean;
-  component: React.ReactElement;
+  path: string;
+  index: boolean;
+  element: React.ReactElement;
 }
 export interface ICode {
   name: string;

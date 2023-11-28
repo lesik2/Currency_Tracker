@@ -1,7 +1,7 @@
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import { NavigationComponent } from '@components/Navigation/index';
-import { LINKS_NAMES, PATHS_NAMES } from '@app/index';
+import { LINKS_NAMES, PATHS_NAMES } from '@//app/routes';
 import { cleanup, render, screen } from '../test.utils';
 
 jest.mock('chart.js/auto', () => ({
