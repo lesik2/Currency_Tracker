@@ -20,6 +20,7 @@ function randomBar(date: DateTime, lastClose: number) {
   const close = +randomNumber(open * 0.95, open * 1.05).toFixed(2);
   const high = +randomNumber(Math.max(open, close), Math.max(open, close) * 1.1).toFixed(2);
   const low = +randomNumber(Math.min(open, close) * 0.9, Math.min(open, close)).toFixed(2);
+
   return {
     x: date.valueOf(),
     o: open,

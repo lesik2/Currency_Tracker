@@ -21,6 +21,7 @@ export function CurrencyCard({
   const handleClose = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <>
       <WrapperCard onClick={handleOpen} data-cy="currency-card" data-testid="currency-card">

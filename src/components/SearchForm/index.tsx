@@ -35,6 +35,7 @@ export function SearchForm({ handleChange }: ISearchForm) {
         newList[0].nameOfCurrency !== debounced);
     }
   }, [debounced]);
+
   return (
     <Wrapper onSubmit={handleSubmit}>
       <Title>

@@ -21,6 +21,7 @@ export function App() {
   });
   useCurrency(data);
   const theme = useTheme();
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />

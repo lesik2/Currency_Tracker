@@ -1,5 +1,5 @@
-import { ModalContext } from '@components/ModalContext/index';
 import { fireEvent } from '@testing-library/react';
+import { ModalContext } from '@components/ModalContext/index';
 import { cleanup, render, screen } from '../test.utils';
 
 afterEach(() => {

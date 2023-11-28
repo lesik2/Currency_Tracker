@@ -21,6 +21,7 @@ export class ElasticSearch extends React.Component<IElasticSearch> {
 
   override render() {
     const { list } = this.props;
+
     return (
       <Wrapper>
         {list.map((item) => (

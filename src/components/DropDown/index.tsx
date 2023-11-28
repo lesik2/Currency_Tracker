@@ -19,6 +19,7 @@ export function DropDown({ lists, value, setValue }: IDropDown) {
       setActive(!active);
     }
   };
+
   return (
     <Wrapper>
       <SelectedValue data-cy="selected-currency" data-testid="selected-currency" onClick={handleClick}>

@@ -8,6 +8,7 @@ import { DropDown } from '../DropDown/index';
 
 export function CurrencyPicker() {
   const [currency, setCurrency] = useState(CODES_NAMES[0]);
+
   return (
     <Wrapper>
       <DropDown lists={CODES_NAMES} value={currency} setValue={setCurrency} />

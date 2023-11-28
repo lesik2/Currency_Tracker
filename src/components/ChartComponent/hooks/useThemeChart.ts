@@ -49,5 +49,6 @@ export function useThemeChart() {
       },
     },
   };
+
   return options;
 }

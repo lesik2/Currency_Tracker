@@ -1,5 +1,5 @@
-import { ChartComponent } from '@components/ChartComponent/index';
 import { fireEvent } from '@testing-library/react';
+import { ChartComponent } from '@components/ChartComponent/index';
 import { cleanup, render, screen } from '../test.utils';
 
 afterEach(() => {

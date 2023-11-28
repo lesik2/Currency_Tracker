@@ -13,6 +13,7 @@ export function ToggleTheme() {
   const handleOnChange = () => {
     dispatch(changeTheme());
   };
+
   return (
     <Wrapper data-testid="toggle-theme">
       <ToggleThemeInput onChange={handleOnChange} checked={isDarkTheme} type="checkbox" id={`${id}-themeInput`} />

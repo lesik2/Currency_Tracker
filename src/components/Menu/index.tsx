@@ -14,6 +14,7 @@ export function Menu({ children, isOpen, setIsOpen }: IMenu) {
   const handleClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
+
   return (
     <Wrapper onClick={closeMenu} $isOpen={isOpen}>
       <Content onClick={handleClick} $isOpen={isOpen}>

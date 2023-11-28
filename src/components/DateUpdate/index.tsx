@@ -7,6 +7,7 @@ import {
 
 export function DateUpdate() {
   const time = useAppSelector((state) => state.appReducer.timeOfUpdate);
+
   return (
     <Wrapper>
       <DateWrapper>

@@ -17,6 +17,7 @@ export function ChartContext({
       if (currentIndex === index) {
         return { ...bar, [key]: value };
       }
+
       return bar;
     }));
   };
@@ -29,6 +30,7 @@ export function ChartContext({
         return false;
       }
     }
+
     return true;
   };
   const handleCreateChart = () => {
@@ -58,6 +60,7 @@ export function ChartContext({
       c: data[index].c.toString(),
     })));
   };
+
   return (
     <Wrapper data-cy="chart-model" data-testid="chart-model">
       <WrapperInputs data-cy="chart-inputs">

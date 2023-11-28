@@ -12,6 +12,7 @@ export const BarInput = memo(({ bar, handleChange, setIsError, id }: IBarInput) 
       if (!REGULAR_EXPRESSIONS.validateInput.test(values[i])) {
         setError(true);
         setIsError(true);
+
         return;
       }
     }
@@ -20,6 +21,7 @@ export const BarInput = memo(({ bar, handleChange, setIsError, id }: IBarInput) 
     Math.min(...numbers) !== parseFloat(newBar.l)) {
       setError(true);
       setIsError(true);
+
       return;
     }
     setError(false);
@@ -33,6 +35,7 @@ export const BarInput = memo(({ bar, handleChange, setIsError, id }: IBarInput) 
     }
     isError(newBar);
   };
+
   return (
     <Wrapper>
       {BarCoordinates.map((item) => (

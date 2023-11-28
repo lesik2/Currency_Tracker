@@ -9,6 +9,7 @@ import {
 
 export function Home() {
   const cards: ICurrency[] = useAppSelector((state) => state.currenciesReducer.currencies);
+
   return (
     <HomeWrapper data-testid="home-page" data-cy="home-page">
       <Wrapper>

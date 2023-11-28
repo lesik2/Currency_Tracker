@@ -24,8 +24,10 @@ export function ModalContext({ nameCard, valueOfBase }: IModalContext) {
     if (chosenCurrency) {
       return roundUpCurrency((parseFloat(amount) / valueOfBase) * chosenCurrency.value);
     }
+
     return 0;
   };
+
   return (
     <Wrapper data-cy="modal-currency" data-testid="modal-currency">
       <Title>

@@ -1,7 +1,7 @@
+import userEvent from '@testing-library/user-event';
 import * as Hooks from '@hooks/redux';
 import * as actions from '@store/reducers/appSlice';
 
-import userEvent from '@testing-library/user-event';
 import { ToggleTheme } from '@components/ToggleTheme/index';
 
 import { cleanup, render, screen } from '../test.utils';
