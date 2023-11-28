@@ -1,10 +1,10 @@
-import React from 'react';
+import { ReactElement, Dispatch, SetStateAction } from 'react';
 import { Observer } from '@model/observer';
 
 export interface IPaths {
   path: string;
   index: boolean;
-  element: React.ReactElement;
+  element: ReactElement;
 }
 export interface ICode {
   name: string;
@@ -28,7 +28,7 @@ export interface ICurrency {
 }
 export interface IModal {
   onClose: () => void;
-  children: React.ReactElement;
+  children: ReactElement;
 }
 export interface IModalContext {
   nameCard: string;
@@ -43,8 +43,8 @@ export interface ICurrencySearch {
 }
 export interface IElasticSearch {
   list: ICurrencySearch[];
-  setShow: React.Dispatch<React.SetStateAction<boolean>>;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  setShow: Dispatch<SetStateAction<boolean>>;
+  setValue: Dispatch<SetStateAction<string>>;
   handleChange: (value: string) => void;
 }
 export interface IResultCurrencySearch {
@@ -62,7 +62,7 @@ export interface IResultBanks {
 export interface IDropDown {
   lists: string[];
   value: string;
-  setValue: React.Dispatch<React.SetStateAction<TYPE_CODES>>;
+  setValue: Dispatch<SetStateAction<TYPE_CODES>>;
 }
 export interface ICurrencyCard {
   code: TYPE_CODES;
@@ -152,16 +152,16 @@ export interface IChartComponent{
 }
 export interface IChartContext{
   barData: IBar[];
-  setBarData: React.Dispatch<React.SetStateAction<IBar[]>>
+  setBarData: Dispatch<SetStateAction<IBar[]>>
   addToObserver: (data: boolean) => void;
-  setResult: React.Dispatch<React.SetStateAction<ICandleChart[]>>;
+  setResult: Dispatch<SetStateAction<ICandleChart[]>>;
   handleClose: () => void;
 }
 export type Bar = keyof IBar;
 export interface IBarInput{
   bar: IBar;
   handleChange: (value: string, index: number, key: Bar) => void;
-  setIsError: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsError: Dispatch<SetStateAction<boolean>>;
   id: number;
 }
 export interface ISnackBar{
