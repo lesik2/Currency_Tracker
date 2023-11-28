@@ -12,8 +12,9 @@ export const PATHS_NAMES = {
   bankCard: '/bankcard',
   contact: '/contact',
 } as const;
+export type TypePathsNames = typeof PATHS_NAMES[keyof typeof PATHS_NAMES]
 export type TypePathForLinkNames = Record<
-  typeof PATHS_NAMES[keyof typeof PATHS_NAMES],
+  TypePathsNames,
   typeof LINKS_NAMES[number]
 >
 export const PATHS_FOR_LINK_NAMES: TypePathForLinkNames = Object.values(PATHS_NAMES).reduce(

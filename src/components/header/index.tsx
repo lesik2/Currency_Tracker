@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { PATHS_FOR_LINK_NAMES } from '@//app/routes';
+import { PATHS_FOR_LINK_NAMES, TypePathsNames } from '@constants/routes';
 import Label from '@assets/images/label.svg';
 import { STATIC_INFO } from '@constants/index';
 import {
@@ -18,16 +18,12 @@ import { NavigationComponent } from '../Navigation';
 
 export function Header() {
   const location = useLocation();
-  const [active, setActive] = useState(PATHS_FOR_LINK_NAMES[location.pathname] || '');
+  const [active, setActive] = useState(PATHS_FOR_LINK_NAMES[location.pathname as TypePathsNames]);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = (event: React.MouseEvent) => {
-    const nameOfLink = event.currentTarget.getAttribute('data-name');
-    if (nameOfLink) {
-      setActive(nameOfLink);
-      setIsOpen(false);
-    }
-  };
+  useEffect(() => {
+    setActive(PATHS_FOR_LINK_NAMES[location.pathname as TypePathsNames]);
+  }, [location]);
 
   return (
     <HeaderWrapper>
@@ -37,7 +33,7 @@ export function Header() {
           <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
         </BurgerWrapper>
         <Menu isOpen={isOpen} setIsOpen={setIsOpen}>
-          <NavigationComponent handleClick={handleClick} active={active} />
+          <NavigationComponent active={active} />
           <ToggleTheme />
         </Menu>
       </Wrapper>
