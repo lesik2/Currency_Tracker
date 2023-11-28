@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.ul<{ $show?: boolean }>`
+export const SearchList = styled.ul<{ $show?: boolean }>`
   position: absolute;
   left: 0px;
   top: 67px;

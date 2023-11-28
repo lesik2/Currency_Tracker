@@ -29,7 +29,7 @@ export const theme = {
     tablet: 705,
     mobileL: 560,
     mobile: 415,
-  },
+  } as const,
 };
 export const lightTheme: ITheme = {
   ...theme,

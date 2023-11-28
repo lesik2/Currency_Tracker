@@ -14,7 +14,7 @@ export const DateWrapper = styled.div`
     font-size: 14px;
   }
 `;
-export const TextDate = styled.h3`
+export const TextDate = styled.time`
   margin: 0;
   color: ${(props) => props.theme.colors.darkWhite};
   font-size: 33px;

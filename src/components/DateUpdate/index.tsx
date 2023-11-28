@@ -12,7 +12,7 @@ export function DateUpdate() {
     <Wrapper>
       <DateWrapper>
         <DateImage alt="circle animation" src={circleAnimation} />
-        <TextDate>
+        <TextDate dateTime={time}>
           {STATIC_INFO.LAST_UPDATE}
           {' '}
           {time}

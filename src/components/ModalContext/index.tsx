@@ -21,11 +21,10 @@ export function ModalContext({ nameCard, valueOfBase }: IModalContext) {
   };
   const convertCurrency = () => {
     const chosenCurrency = currencies.find((currency) => currency.code === value);
-    if (chosenCurrency) {
-      return roundUpCurrency((parseFloat(amount) / valueOfBase) * chosenCurrency.value);
-    }
 
-    return 0;
+    return chosenCurrency ?
+      roundUpCurrency((parseFloat(amount) / valueOfBase) * chosenCurrency.value)
+      : 0;
   };
 
   return (

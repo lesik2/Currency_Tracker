@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { media } from '@utils/media';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -12,34 +13,36 @@ export const Wrapper = styled.div`
   }
 `;
 export const CoordinateInput = styled.input<{ $isError?: boolean }>`
-  width: 100px;
-  height: 30px;
-  background-color: ${(props) => props.theme.colors.inputBack};
-  color: ${(props) => props.theme.colors.inputText};
-  font-size: 15px;
-  font-style: normal;
-  font-weight: ${(props) => props.theme.fontWeight.normal};
-  line-height: normal;
-  border-radius: 5px;
-  padding: 7px;
-  outline: none;
-  border: none;
-  border: 1px solid ${(props) => (props.$isError ? props.theme.colors.error : '')};
-  &:focus {
-    border: 1px solid
-      ${(props) => (props.$isError ? props.theme.colors.error : props.theme.colors.secondary)};
-    box-shadow: inset 0px 0px 2px
-      ${(props) => (props.$isError ? props.theme.colors.error : props.theme.colors.secondary)};
-  }
-  @media (max-width: ${(props) => props.theme.breakPoints.tablet}px) {
-    width: 70px;
-    height: 25px;
-    padding: 5px;
-  }
-  @media (max-width: ${(props) => props.theme.breakPoints.mobile}px) {
-    width: 57px;
-    height: 22px;
-  }
+  ${({ theme, $isError }) => css`
+    width: 100px;
+    height: 30px;
+    background-color: ${theme.colors.inputBack};
+    color: ${(props) => props.theme.colors.inputText};
+    font-size: 15px;
+    font-style: normal;
+    font-weight: ${theme.fontWeight.normal};
+    line-height: normal;
+    border-radius: 5px;
+    padding: 7px;
+    outline: none;
+    border: none;
+    border: 1px solid ${$isError ? theme.colors.error : ''};
+    &:focus {
+      border: 1px solid
+        ${$isError ? theme.colors.error : theme.colors.secondary};
+      box-shadow: inset 0px 0px 2px
+        ${$isError ? theme.colors.error : theme.colors.secondary};
+    }
+    ${media.tablet`
+      width: 70px;
+      height: 25px;
+      padding: 5px;
+    `}
+    ${media.mobile`
+      width: 57px;
+      height: 22px;
+    `}
+  `};
 `;
 export const ErrorMessage = styled.p`
   position: absolute;

@@ -1,7 +1,7 @@
 import React, { memo, useState } from 'react';
 
 import { REGULAR_EXPRESSIONS, STATIC_INFO, BarCoordinates } from '@constants/index';
-import { IBar, IBarInput } from '@customTypes/index';
+import { IBar, IBarInput, Bar } from '@customTypes/index';
 import { CoordinateInput, ErrorMessage, Wrapper } from './styled';
 
 export const BarInput = memo(({ bar, handleChange, setIsError, id }: IBarInput) => {
@@ -9,7 +9,7 @@ export const BarInput = memo(({ bar, handleChange, setIsError, id }: IBarInput) 
   const isError = (newBar: IBar) => {
     const values = Object.values(newBar);
     for (let i = 0; i < values.length; i += 1) {
-      if (!REGULAR_EXPRESSIONS.validateInput.test(values[i])) {
+      if (!REGULAR_EXPRESSIONS.numberFormatPattern.test(values[i])) {
         setError(true);
         setIsError(true);
 
@@ -27,10 +27,12 @@ export const BarInput = memo(({ bar, handleChange, setIsError, id }: IBarInput) 
     setError(false);
     setIsError(false);
   };
+  // eslint-disable-next-line max-len
+  const isBar = (name: string): name is Bar => BarCoordinates.some((barCoordinate) => barCoordinate === name);
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     const newBar = { ...bar, [name]: value };
-    if (name === 'o' || name === 'c' || name === 'l' || name === 'h') {
+    if (isBar(name)) {
       handleChange(value, id, name);
     }
     isError(newBar);
@@ -41,7 +43,8 @@ export const BarInput = memo(({ bar, handleChange, setIsError, id }: IBarInput) 
       {BarCoordinates.map((item) => (
         <CoordinateInput
           data-cy="bar-input"
-          $isError={bar[item].length !== 0 && !REGULAR_EXPRESSIONS.validateInput.test(bar[item])}
+          $isError={bar[item].length !== 0 &&
+            !REGULAR_EXPRESSIONS.numberFormatPattern.test(bar[item])}
           placeholder={item}
           key={item}
           value={bar[item]}

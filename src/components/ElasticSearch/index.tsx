@@ -1,15 +1,15 @@
-import React from 'react';
+import { MouseEvent, Component } from 'react';
 
 import { IElasticSearch } from '@customTypes/index';
-import { List, Wrapper } from './styled';
+import { List, SearchList } from './styled';
 
-export class ElasticSearch extends React.Component<IElasticSearch> {
+export class ElasticSearch extends Component<IElasticSearch> {
   constructor(props: IElasticSearch) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(event: React.MouseEvent): void {
+  handleClick(event: MouseEvent): void {
     const { setShow, handleChange, setValue } = this.props;
     setShow(false);
     const value = event.currentTarget.textContent;
@@ -23,13 +23,13 @@ export class ElasticSearch extends React.Component<IElasticSearch> {
     const { list } = this.props;
 
     return (
-      <Wrapper>
+      <SearchList>
         {list.map((item) => (
           <List onClick={this.handleClick} key={item.id}>
             {item.nameOfCurrency}
           </List>
         ))}
-      </Wrapper>
+      </SearchList>
     );
   }
 }

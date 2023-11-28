@@ -157,10 +157,10 @@ export interface IChartContext{
   setResult: React.Dispatch<React.SetStateAction<ICandleChart[]>>;
   handleClose: () => void;
 }
-export type Bar = 'o'|'c'|'l'|'h';
+export type Bar = keyof IBar;
 export interface IBarInput{
   bar: IBar;
-  handleChange: (value: string, index: number, key: keyof IBar) => void;
+  handleChange: (value: string, index: number, key: Bar) => void;
   setIsError: React.Dispatch<React.SetStateAction<boolean>>;
   id: number;
 }
