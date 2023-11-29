@@ -1,0 +1,51 @@
+import { IResultCurrencySearch } from '@customTypes/bankCard';
+
+export const SEARCH_DATA: IResultCurrencySearch = {
+  currencies: [
+    {
+      nameOfCurrency: 'Commercial Dollar',
+      id: 21,
+    },
+    {
+      nameOfCurrency: 'Euro',
+      id: 22,
+    },
+    {
+      nameOfCurrency: 'Yen',
+      id: 23,
+    },
+    {
+      nameOfCurrency: 'Yuan',
+      id: 24,
+    },
+    {
+      nameOfCurrency: 'Argentine Pesco',
+      id: 25,
+    },
+    {
+      nameOfCurrency: 'Libra',
+      id: 26,
+    },
+    {
+      nameOfCurrency: 'Australian Dollar',
+      id: 27,
+    },
+    {
+      nameOfCurrency: 'Canadian Dollar',
+      id: 28,
+    },
+    {
+      nameOfCurrency: 'Bitcoin',
+      id: 29,
+    },
+    {
+      nameOfCurrency: 'IFIX',
+      id: 30,
+    },
+    {
+      nameOfCurrency: 'Bovespa Index',
+      id: 31,
+    },
+  ],
+
+};
