@@ -11,6 +11,7 @@ const initialState: AppState = {
   isLightTheme: JSON.parse(localStorage.getItem('theme') ?? 'false'),
   timeOfUpdate: '',
 };
+
 export const appSlice = createSlice({
   name: 'app',
   initialState,

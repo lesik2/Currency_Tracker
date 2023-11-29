@@ -23,12 +23,15 @@ export function SearchForm({ handleChange }: ISearchForm) {
     event.preventDefault();
     handleChange(value);
   };
+
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
   };
+
   useEffect(() => {
     const newList = SEARCH_DATA.currencies.filter((item) =>
       item.nameOfCurrency.toLowerCase().includes(debounced.toLowerCase()));
+
     if (newList) {
       setList(newList);
       setShow(debounced.length >= 1 &&

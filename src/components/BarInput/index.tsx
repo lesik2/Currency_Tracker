@@ -18,6 +18,7 @@ export const BarInput = memo(({ bar, handleChange, setIsError, id }: IBarInput) 
       setIsError(false);
     }
   };
+
   // eslint-disable-next-line max-len
   const isBar = (name: string): name is Bar => BarCoordinates.some((barCoordinate) => barCoordinate === name);
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,6 +27,7 @@ export const BarInput = memo(({ bar, handleChange, setIsError, id }: IBarInput) 
     if (isBar(name)) {
       handleChange(value, id, name);
     }
+
     isError(newBar);
   };
 

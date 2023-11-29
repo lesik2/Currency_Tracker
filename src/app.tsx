@@ -19,6 +19,7 @@ export function App() {
   const { data } = useFetchLatestCurrenciesQuery(getParametersForCurrencies(), {
     pollingInterval: 86400000,
   });
+
   useCurrency(data);
   const theme = useTheme();
 

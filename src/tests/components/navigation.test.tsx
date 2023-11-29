@@ -21,6 +21,7 @@ describe('navigation', () => {
         <NavigationComponent active={LINKS_NAMES[0]} />,
       </BrowserRouter>,
     );
+
     const navigationElement = getByTestId('navigation');
     expect(navigationElement).toBeInTheDocument();
     LINKS_NAMES.forEach((linkName) => {

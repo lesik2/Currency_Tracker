@@ -12,6 +12,7 @@ export function DropDown({ lists, value, setValue }: IDropDown) {
   const handleClick = () => {
     setActive(!active);
   };
+
   const handleSelect = (event: React.MouseEvent) => {
     const code = event.currentTarget.getAttribute('data-code');
     if (code) {

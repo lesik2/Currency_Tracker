@@ -20,6 +20,7 @@ const mockData = {
 
   ],
 };
+
 describe('Home page', () => {
   test('should render Home page', () => {
     const component = render(<Home />);

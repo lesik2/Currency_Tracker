@@ -22,10 +22,12 @@ export function ChartContext({
       return bar;
     }));
   };
+
   const isValidInput = () => {
     if (isError) {
       return false;
     }
+
     for (let i = 0; i < barData.length; i += 1) {
       if (barData.some((item) => BarCoordinates.some((field) => item[field] === ''))) {
         return false;
@@ -34,6 +36,7 @@ export function ChartContext({
 
     return true;
   };
+
   const handleCreateChart = () => {
     if (!isValidInput()) return;
     const resultData = covertDataForChart(barData);
@@ -41,6 +44,7 @@ export function ChartContext({
     setResult(resultData);
     handleClose();
   };
+
   const handleGetRandomValues = () => {
     const data = getRandomData();
     setBarData(barData.map((_bar, index) => ({

@@ -22,6 +22,12 @@
       {
         "regenerator": true
       }
+    ],
+    [
+      "babel-plugin-jsx-remove-data-test-id",
+      {
+        "attributes": ["data-testid", "data-cy"]
+      }
     ]
   ]
 }

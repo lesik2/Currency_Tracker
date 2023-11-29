@@ -12,4 +12,5 @@ export const getParametersForCurrencies = (): string => {
 
   return convert.join('&');
 };
+
 export const roundUpCurrency = (value: number): number => Math.round(value * 100000) / 100000;

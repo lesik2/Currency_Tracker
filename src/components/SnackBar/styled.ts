@@ -9,6 +9,7 @@ const changeWidth = keyframes`
     width: 0%;
   }
 `;
+
 const show = keyframes`
   from {
       right: -100%;
@@ -18,6 +19,7 @@ const show = keyframes`
     right: 30px;
   }
 `;
+
 export const Wrapper = styled.div<{ $isVisible?: boolean }>`
   display: ${(props) => (props.$isVisible ? 'flex' : 'none')};
   width: 450px;

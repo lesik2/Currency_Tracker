@@ -18,6 +18,7 @@ export function CurrencyCard({
   const handleOpen = () => {
     setIsOpen(!isOpen);
   };
+
   const handleClose = () => {
     setIsOpen(!isOpen);
   };

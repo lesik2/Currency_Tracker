@@ -43,4 +43,5 @@ export function getRandomData(dateStr: string = INITIAL_DATA, count: number = BA
 
   return data;
 }
+
 export const BarCoordinates: Bar[] = ['o', 'c', 'l', 'h'];

@@ -14,6 +14,7 @@ const rootReducer = combineReducers({
   [banksAPI.reducerPath]: banksAPI.reducer,
   currenciesReducer,
 });
+
 export const store = configureStore({
   reducer: rootReducer,
   // eslint-disable-next-line arrow-body-style

@@ -29,6 +29,7 @@ export class SnackBar extends React.Component<ISnackBar, SnackBarState> implemen
       if (this.timeoutId) {
         clearTimeout(this.timeoutId);
       }
+
       if (data) {
         this.timeoutId = setTimeout(() => {
           this.setState({ data: false });

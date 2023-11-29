@@ -8,6 +8,7 @@ export const validateInputs = (newBar: IBar) => {
       return true;
     }
   }
+
   const numbers = values.map((item) => parseFloat(item));
   if (Math.max(...numbers) !== parseFloat(newBar.h) ||
   Math.min(...numbers) !== parseFloat(newBar.l)) {

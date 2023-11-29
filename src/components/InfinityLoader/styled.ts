@@ -5,6 +5,7 @@ const spin = keyframes`
     transform: rotate(360deg);
   }
 `;
+
 export const Loader = styled.div`
   align-self: center;
   justify-self: center;

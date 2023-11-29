@@ -50,6 +50,7 @@ export function MapComponent({ value }: IMap) {
   useEffect(() => {
     const banks = CURRENCY_NAMES.includes(value) ?
       generateRandomBanks(BANKS_DATA.banks) : BANKS_DATA.banks;
+
     setListOfMarkers(banks);
   }, [value]);
   useEffect(() => {

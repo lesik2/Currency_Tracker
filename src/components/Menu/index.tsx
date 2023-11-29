@@ -11,6 +11,7 @@ export function Menu({ children, isOpen, setIsOpen }: IMenu) {
   const closeMenu = () => {
     setIsOpen(false);
   };
+
   const handleClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
@@ -23,4 +24,5 @@ export function Menu({ children, isOpen, setIsOpen }: IMenu) {
     </Wrapper>
   );
 }
+
 export default Menu;

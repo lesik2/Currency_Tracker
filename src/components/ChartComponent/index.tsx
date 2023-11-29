@@ -19,12 +19,14 @@ export function ChartComponent({ addToObserver }: IChartComponent) {
     l: '',
     c: '',
   }));
+
   const [isOpen, setIsOpen] = useState(false);
   const options = useThemeChart();
 
   const handleOpen = () => {
     setIsOpen(!isOpen);
   };
+
   const handleClose = () => {
     setIsOpen(!isOpen);
   };

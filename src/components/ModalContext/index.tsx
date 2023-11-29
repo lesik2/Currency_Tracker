@@ -21,6 +21,7 @@ export function ModalContext({ nameCard, valueOfBase }: IModalContext) {
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(event.target.value);
   };
+
   const convertCurrency = () => {
     const chosenCurrency = currencies.find((currency) => currency.code === value);
 

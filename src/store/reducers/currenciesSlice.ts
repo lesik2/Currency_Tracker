@@ -8,6 +8,7 @@ export interface CurrenciesState {
 const initialState: CurrenciesState = {
   currencies: [],
 };
+
 export const currenciesSlice = createSlice({
   name: 'currencies',
   initialState,
