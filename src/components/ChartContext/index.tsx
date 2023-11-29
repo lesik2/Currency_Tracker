@@ -29,7 +29,7 @@ export function ChartContext({
     }
 
     for (let i = 0; i < barData.length; i += 1) {
-      if (barData.some((item) => BarCoordinates.some((field) => item[field] === ''))) {
+      if (BarCoordinates.some((coordinate) => barData[i][coordinate] === '')) {
         return false;
       }
     }

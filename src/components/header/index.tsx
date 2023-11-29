@@ -1,8 +1,4 @@
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-
-import { PATHS_FOR_LINK_NAMES } from '@constants/routes';
-import { TypePathsNames } from '@customTypes/routing';
+import { useState } from 'react';
 import Label from '@assets/images/label.svg';
 import { STATIC_INFO } from '@constants/index';
 import {
@@ -18,13 +14,7 @@ import { ToggleTheme } from '../ToggleTheme/index';
 import { NavigationComponent } from '../Navigation';
 
 export function Header() {
-  const location = useLocation();
-  const [active, setActive] = useState(PATHS_FOR_LINK_NAMES[location.pathname as TypePathsNames]);
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    setActive(PATHS_FOR_LINK_NAMES[location.pathname as TypePathsNames]);
-  }, [location]);
 
   return (
     <HeaderWrapper>
@@ -34,7 +24,7 @@ export function Header() {
           <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
         </BurgerWrapper>
         <Menu isOpen={isOpen} setIsOpen={setIsOpen}>
-          <NavigationComponent active={active} />
+          <NavigationComponent />
           <ToggleTheme />
         </Menu>
       </Wrapper>

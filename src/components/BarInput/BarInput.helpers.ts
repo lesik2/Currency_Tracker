@@ -3,10 +3,8 @@ import { REGULAR_EXPRESSIONS } from '@constants/index';
 
 export const validateInputs = (newBar: IBar) => {
   const values = Object.values(newBar);
-  for (let i = 0; i < values.length; i += 1) {
-    if (!REGULAR_EXPRESSIONS.numberFormatPattern.test(values[i])) {
-      return true;
-    }
+  if (values.some((value) => !REGULAR_EXPRESSIONS.numberFormatPattern.test(value))) {
+    return true;
   }
 
   const numbers = values.map((item) => parseFloat(item));
